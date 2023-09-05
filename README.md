@@ -6,7 +6,7 @@ This is Movies Browser, OUR first project as a group. Our application allows use
 
 ## Demo
 
-https://github.com/MarcelUrbanczyk/Movies-Browser
+https://marcelurbanczyk.github.io/Movies-Browser/
 
 ## Technologies
 
