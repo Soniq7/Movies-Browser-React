@@ -10,6 +10,10 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        
+        color: ${({ theme }) => theme.colors.primaryText};
+        background: ${({ theme }) => theme.colors.siteBackground};
+        line-height: 1.5;
+        font-family: "Poppins", sans-serif;
+        margin: auto;
     }
 `;
