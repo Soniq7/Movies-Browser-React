@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Navigation = styled.nav`
-  width: 1920px;
+  width: 100%;
   height: 94px;
   flex-shrink: 0;
   background: ${({ theme }) => theme.colors.navigation.background};
@@ -11,6 +11,7 @@ export const Navigation = styled.nav`
 export const NavList = styled.ul`
   display: inline-flex;
   gap: 10px;
+  margin: 23px;
 `;
 
 export const MenueItem = styled.li`
