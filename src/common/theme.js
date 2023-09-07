@@ -22,6 +22,7 @@ export const theme = {
     navigation: {
       background: colorCollection.black,
       text: colorCollection.white,
+      border: colorCollection.white,
     },
     genre: {
       background: colorCollection.mystic,

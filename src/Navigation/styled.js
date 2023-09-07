@@ -5,14 +5,29 @@ export const Navigation = styled.nav`
   width: 1920px;
   height: 94px;
   flex-shrink: 0;
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.navigation.background};
 `;
 
 export const NavList = styled.ul`
-
+  display: inline-flex;
+  gap: 10px;
 `;
 
+export const MenueItem = styled.li`
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding: 8px 24px;
+  border-radius: 24px;
+  border: 1px solid ${({ theme }) => theme.colors.navigation.border};
+`;
 
-export const List = styled(NavLink)`
-
+export const StyledNavLink = styled(NavLink)`
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.navigation.text};
+  text-decoration: none;
 `;
