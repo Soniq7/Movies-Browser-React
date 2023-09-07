@@ -1,6 +1,6 @@
 import { HashRouter, Redirect, Route, Switch,  } from "react-router-dom/cjs/react-router-dom";
 import Navigation from "../Navigation";
-import MoviePage from "../features/MoviePage";
+import Movies from "../features/Movies";
 import People from "../features/People";
 import { toMovies, toPeople } from "../routes";
 
@@ -9,7 +9,7 @@ export default () => (
     <Navigation />
      <Switch>
      <Route path={toMovies()}>
-        <MoviePage />
+        <Movies />
       </Route>
       <Route path={toPeople()}>
         <People />
