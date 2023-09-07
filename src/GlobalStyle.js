@@ -10,8 +10,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        color: ${({ theme }) => theme.colors.primaryText};
-        background: ${({ theme }) => theme.colors.siteBackground};
+        color: ${({ theme }) => theme.colors.text.primaryText};
+        background: ${({ theme }) => theme.colors.background.siteBackground};
         line-height: 1.5;
         font-family: "Poppins", sans-serif;
         margin: auto;
