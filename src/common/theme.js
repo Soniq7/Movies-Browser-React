@@ -18,6 +18,7 @@ export const theme = {
     text: {
       primaryText: colorCollection.woodsmoke,
       secondaryText: colorCollection.stormGray,
+      thirdText: colorCollection.waterloo,
     },
     navigation: {
       background: colorCollection.black,
@@ -35,7 +36,7 @@ export const theme = {
   },
   borderRadius: "5px",
   breakpoints: {
-    mobile: "375px",
-    tablet: "820px",
+    mobile: 375,
+    tablet: 820,
   },
 };
