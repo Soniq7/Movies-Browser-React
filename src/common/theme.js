@@ -23,8 +23,11 @@ export const theme = {
       background: colorCollection.black,
       text: colorCollection.white,
       border: colorCollection.white,
+    },
+    search: {
       searchBorder: colorCollection.mystic,
       searchBackground: colorCollection.white,
+      searchIcon: colorCollection.waterloo,
     },
     genre: {
       background: colorCollection.mystic,
