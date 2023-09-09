@@ -23,6 +23,8 @@ export const theme = {
       background: colorCollection.black,
       text: colorCollection.white,
       border: colorCollection.white,
+      searchBorder: colorCollection.mystic,
+      searchBackground: colorCollection.white,
     },
     genre: {
       background: colorCollection.mystic,
