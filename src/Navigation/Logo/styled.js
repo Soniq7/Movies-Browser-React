@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ReactComponent as LogoIcon} from "../../images/icon.svg";
 
 export const Logo = styled.span`
   display: inline-flex;
@@ -7,7 +8,7 @@ export const Logo = styled.span`
   gap: 12px;
 `;
 
-export const VideoIcon = styled.img`
+export const VideoIcon = styled(LogoIcon)`
   width: 40px;
   height: 40px;
 `;
