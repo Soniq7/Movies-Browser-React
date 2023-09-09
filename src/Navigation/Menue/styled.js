@@ -15,7 +15,6 @@ export const NavList = styled.ul`
   gap: 10px;
   margin: 23px;
   padding: 0px 40px;
-  
 `;
 
 export const MenueItem = styled.li`
@@ -23,8 +22,11 @@ export const MenueItem = styled.li`
   align-items: center;
   height: 48px;
   padding: 8px 24px;
-  border-radius: 24px;
-  border: 1px solid ${({ theme }) => theme.colors.navigation.border};
+
+  &:hover, &:active {
+    border-radius: 24px;
+    border: 1px solid ${({ theme }) => theme.colors.navigation.border};
+  }
 `;
 
 export const StyledNavLink = styled(NavLink)`
