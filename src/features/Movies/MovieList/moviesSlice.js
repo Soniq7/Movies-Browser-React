@@ -31,5 +31,6 @@ export const {
 const selectMoviesState = (state) => state.movies;
 
 export const selectMovies = (state) => selectMoviesState(state).movies;
+export const selectLoading = (state) => selectMoviesState(state).loading;
 
 export default moviesSlice.reducer;
