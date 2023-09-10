@@ -1,37 +1,27 @@
-import Tile from "../../../common/Tile";
-import { Wrapper, Header, ListItem, Item } from "./styled";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMovies, selectMovies, selectLoading } from "./moviesSlice";
+import { useEffect } from "react";
+import Success from "./Success";
+import Loading from "../../Loading";
+import Error from "../../Error";
 
 const MovieList = () => {
-    return (
-        <Wrapper>
-            <Header>Popular movie</Header>
-           <ListItem>
-                <Item>
-                    <Tile></Tile>
-                </Item>
-                <Item>
-                    <Tile></Tile>
-                </Item>
-                <Item>
-                    <Tile></Tile>
-                </Item>
-                <Item>
-                    <Tile></Tile>
-                </Item>
-                <Item>
-                    <Tile></Tile>
-                </Item>
-                <Item>
-                    <Tile></Tile>
-                </Item>
-                <Item>
-                    <Tile></Tile>
-                </Item><Item>
-                    <Tile></Tile>
-                </Item>
-           </ListItem>
-        </Wrapper>
-    )
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchMovies());
+  }, []);
+  const movies = useSelector(selectMovies);
+  const { results } = movies;
+  const state = useSelector(selectLoading);
+
+  switch (state) {
+    case "loading":
+      return <Loading />;
+    case "success":
+      return <Success results={results} />;
+    default:
+      return <Error />;
+  }
 };
 
 export default MovieList;
