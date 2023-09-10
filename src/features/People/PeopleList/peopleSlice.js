@@ -31,5 +31,6 @@ export const {
 const selectPeopleState = (state) => state.people;
 
 export const selectPeople = (state) => selectPeopleState(state).people;
+export const selectLoading = (state) => selectPeopleState(state).loading;
 
 export default peopleSlice.reducer;
