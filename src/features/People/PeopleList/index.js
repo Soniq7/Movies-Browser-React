@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchPeople, selectPeople, selectLoading } from "./peopleSlice";
 import { useEffect } from "react";
 import Success from "./Success";
-import Loading from "./Loading";
+import Loading from "../../Loading";
 import Error from "../../Error";
 
 const PeopleList = () => {

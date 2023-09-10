@@ -1,4 +1,4 @@
-import { Loader } from "../../../../common/Loader/styled";
+import { Loader } from "../../common/Loader/styled";
 import { Wrapper } from "./styled";
 
 const Loading = () => (

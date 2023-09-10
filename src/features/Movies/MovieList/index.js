@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies, selectMovies, selectLoading } from "./moviesSlice";
 import { useEffect } from "react";
 import Success from "./Success";
-import Loading from "./Loading";
+import Loading from "../../Loading";
 import Error from "../../Error";
 
 const MovieList = () => {
