@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { Input, LoupeIcon } from "./styled";
+import { Input, LoupeIcon, Wrapper } from "./styled";
 
 const Search = () => {
   const location = useLocation();
@@ -12,12 +12,11 @@ const Search = () => {
       : "";
 
   return (
-    <Input 
-        leftIcon={<LoupeIcon />} 
-        placeholder={placeholderText} 
-    />
+    <Wrapper>
+      <LoupeIcon />
+      <Input placeholder={placeholderText} />
+    </Wrapper>
   );
-  
 };
 
 export default Search;
