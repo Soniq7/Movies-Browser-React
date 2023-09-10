@@ -1,15 +1,14 @@
 import { toMovies, toPeople } from "../routes";
 import { VideoIcon, PageTitle, Logo } from "./Logo/styled";
 import { Navigation, NavList, MenueItem, StyledNavLink } from "./Menue/styled";
-import { Search } from "./Search/styled";
-// import { ReactComponent as VideoIcon} from "../../../public/images/icon.svg";
+import Search from "./Search";
 
 export default () => {
   return (
     <Navigation>
       <NavList>
         <Logo>
-          <VideoIcon src="../../../public/images/icon.svg" />
+          <VideoIcon />
           <PageTitle>Movies Browser</PageTitle>
         </Logo>
         <MenueItem>
