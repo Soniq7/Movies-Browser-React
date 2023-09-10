@@ -42,7 +42,8 @@ export const theme = {
   },
   borderRadius: "5px",
   breakpoints: {
-    mobile: 375,
-    tablet: 820,
+    mobile: "375px",
+    tabletVertical: "820px",
+    tabletHorizontal: "1420px",
   },
 };
