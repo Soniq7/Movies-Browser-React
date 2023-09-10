@@ -5,12 +5,10 @@ export const LoupeIcon = styled(SearchIcon)`
   width: 24px;
   height: 24px;
   position: absolute;
-  margin-left: 420px;
+  margin-left: 435px;
 `;
 
 export const Wrapper = styled.div`
-  margin: 0;
-  padding: 0;
   display: flex;
   align-items: center;
 `;
@@ -21,7 +19,7 @@ export const Input = styled.input`
   flex-shrink: 0;
   border-radius: 33px;
   margin-left: 411px;
-  padding-left: 50px;
+  padding-left: 64px;
   border: 1px solid ${({ theme }) => theme.colors.search.searchBorder};
   background: ${({ theme }) => theme.colors.search.searchBackground};
 `;
