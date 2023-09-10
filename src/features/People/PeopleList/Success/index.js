@@ -1,5 +1,5 @@
 import { ListItem, Item, Header, Wrapper } from "./styled";
-import Tile from "../../../../common/Tile";
+import PersonTile from "../../../../common/PersonTile";
 
 const Success = ({ results }) => (
   <Wrapper>
@@ -8,7 +8,7 @@ const Success = ({ results }) => (
       {results
         ? results.map((person) => (
             <Item key={person.id}>
-              <Tile title={person.name} poster={person.profile_path} />
+              <PersonTile name={person.name} portrait={person.profile_path} />
             </Item>
           ))
         : null}
