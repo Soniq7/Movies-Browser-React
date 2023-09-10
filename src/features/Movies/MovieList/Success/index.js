@@ -3,7 +3,7 @@ import Tile from "../../../../common/Tile";
 
 const Success = ({ results }) => (
   <Wrapper>
-    <Header>Popular movie</Header>
+    <Header>Popular movies</Header>
     <ListItem>
       {results
         ? results.map((movie) => (
