@@ -5,7 +5,7 @@ import {
   TileYear,
   TileGenres,
   TileTags,
-  TileView,
+  TileReview,
   TileRatingIcon,
   TileRating,
   TileVotes,
@@ -30,7 +30,7 @@ const Tile = ({ title, year, rating, votes, poster, genres }) => {
           ""
         )}
 
-        <TileView>
+        <TileReview>
           {rating ? (
             <>
               <TileRatingIcon src={icon} alt="" />
@@ -40,7 +40,7 @@ const Tile = ({ title, year, rating, votes, poster, genres }) => {
             ""
           )}
           {votes ? <TileVotes>{votes} votes</TileVotes> : ""}
-        </TileView>
+        </TileReview>
       </TileWrapper>
     </StyledTile>
   );

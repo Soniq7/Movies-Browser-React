@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledTile = styled.div`
+export const StyledTile = styled.article`
   background: ${({ theme }) => theme.colors.boxBackground};
   padding: 16px;
   width: 324px;
@@ -28,7 +28,8 @@ export const TileImage = styled.img`
   }
 `;
 
-export const TileHeader = styled.div`
+export const TileHeader = styled.h2`
+  margin: 0;
   height: auto;
   font-size: 22px;
   font-weight: 500;
@@ -41,7 +42,8 @@ export const TileHeader = styled.div`
   }
 `;
 
-export const TileYear = styled.div`
+export const TileYear = styled.p`
+  margin: 0;
   font-size: 16px;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.text.secondaryText};
@@ -87,7 +89,7 @@ export const TileTags = styled.li`
   }
 `;
 
-export const TileView = styled.div`
+export const TileReview = styled.div`
   grid-column: 2;
   display: flex;
   gap: 12px;
@@ -98,7 +100,7 @@ export const TileView = styled.div`
   }
 `;
 
-export const TileRating = styled.div`
+export const TileRating = styled.span`
   font-size: 16px;
   font-weight: 600;
   text-align: center;
@@ -125,7 +127,7 @@ export const TileRatingIcon = styled.img`
   }
 `;
 
-export const TileVotes = styled.div`
+export const TileVotes = styled.span`
   font-size: 16px;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.text.secondaryText};
