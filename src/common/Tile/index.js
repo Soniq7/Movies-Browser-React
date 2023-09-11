@@ -33,8 +33,8 @@ const Tile = ({ title, year, rating, votes, poster, genres }) => {
         <TileReview>
           {rating ? (
             <>
-              <TileRatingIcon src={icon} alt="" />
-              <TileRating>{rating}</TileRating>
+              {rating ? <TileRatingIcon src={icon} alt="" /> : ""}
+              <TileRating>{rating ? rating : "No votes yet"}</TileRating>
             </>
           ) : (
             ""
