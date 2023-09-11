@@ -28,7 +28,6 @@ export const Item = styled.li`
 `;
 
 export const Header = styled.h1`
-  padding: 0 30px;
   font-size: 36px;
   font-weight: 600;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -50,7 +49,13 @@ export const Section = styled.section`
 `;
 
 export const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: minmax(300px, 1350px);
+  justify-content: center;
   padding: 0 20px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorizontal}) {
+    grid-template-columns: auto;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: 0;
   }
