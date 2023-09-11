@@ -43,6 +43,7 @@ export const theme = {
   borderRadius: "5px",
   breakpoints: {
     mobile: "375px",
+    navigation: "960px",
     tabletVertical: "820px",
     tabletHorizontal: "1420px",
   },
