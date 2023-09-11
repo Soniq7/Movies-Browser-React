@@ -18,18 +18,14 @@ export const NavList = styled.ul`
 `;
 
 export const MenueItem = styled.li`
+   display: inline-flex;
+`;
+
+export const StyledNavLink = styled(NavLink)`
   display: inline-flex;
   align-items: center;
   height: 48px;
   padding: 8px 24px;
-
-  &:hover, &:active {
-    border-radius: 24px;
-    border: 1px solid ${({ theme }) => theme.colors.navigation.border};
-  }
-`;
-
-export const StyledNavLink = styled(NavLink)`
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -37,4 +33,14 @@ export const StyledNavLink = styled(NavLink)`
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.navigation.text};
   text-decoration: none;
+
+  &:hover {
+    border-radius: 24px;
+    border: 1px solid ${({ theme }) => theme.colors.navigation.border};
+  }
+
+  &.active {
+    border-radius: 24px;
+    border: 1px solid ${({ theme }) => theme.colors.navigation.border};
+  }
 `;
