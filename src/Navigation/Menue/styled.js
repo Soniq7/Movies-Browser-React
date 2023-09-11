@@ -19,7 +19,7 @@ export const NavList = styled.ul`
   gap: 12px;
   margin: auto;
   padding: 0 10px;
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVertical}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     gap: 10px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.navigation}) {
@@ -46,7 +46,7 @@ export const MenueItem = styled.li`
     border-radius: 24px;
     border: 1px solid ${({ theme }) => theme.colors.navigation.border};
   }
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVertical}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: 8px 12px;
     height: 43px;
   }

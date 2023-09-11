@@ -16,7 +16,7 @@ export const Logo = styled.span`
 export const VideoIcon = styled(LogoIcon)`
   width: 40px;
   height: 40px;
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVertical}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 17px;
     height: 17px;
   }
@@ -31,7 +31,7 @@ export const PageTitle = styled.p`
   letter-spacing: -1.5px;
   text-transform: capitalize;
   white-space: nowrap;
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVertical}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 16px;
   }
 `;

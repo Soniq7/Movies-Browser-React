@@ -6,7 +6,7 @@ export const LoupeIcon = styled(SearchIcon)`
   height: 24px;
   margin: 0 0 0 24px;
   position: absolute;
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVertical}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 16px;
     height: 16px;
   }
@@ -35,7 +35,7 @@ export const Input = styled.input`
   padding-left: 64px;
   border: 1px solid ${({ theme }) => theme.colors.search.searchBorder};
   background: ${({ theme }) => theme.colors.search.searchBackground};
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVertical}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     height: 44px;
     width: 288px;
   }
