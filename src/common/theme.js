@@ -42,7 +42,9 @@ export const theme = {
   },
   borderRadius: "5px",
   breakpoints: {
-    mobile: 375,
-    tablet: 820,
+    mobile: "550px",
+    navigation: "960px",
+    tabletVertical: "820px",
+    tabletHorizontal: "1420px",
   },
 };

@@ -1,23 +1,23 @@
 import {
-  Tiled,
+  StyledTile,
   TileImage,
-  TileContent,
   TileHeader,
   TileYear,
   TileGenres,
   TileTags,
-  TileView,
+  TileReview,
   TileRatingIcon,
   TileRating,
   TileVotes,
+  TileWrapper,
 } from "./styled";
 import icon from "../../images/shape-star.png";
 
 const Tile = ({ title, year, rating, votes, poster, genres }) => {
   return (
-    <Tiled>
+    <StyledTile>
       <TileImage src={`https://image.tmdb.org/t/p/original/${poster}`} alt="" />
-      <TileContent>
+      <TileWrapper>
         <TileHeader>{title}</TileHeader>
         {year ? <TileYear>{year}</TileYear> : ""}
         {genres ? (
@@ -29,19 +29,20 @@ const Tile = ({ title, year, rating, votes, poster, genres }) => {
         ) : (
           ""
         )}
-      </TileContent>
-      <TileView>
-        {rating ? (
-          <>
-            <TileRatingIcon src={icon} alt="" />
-            <TileRating>{rating}</TileRating>
-          </>
-        ) : (
-          ""
-        )}
-        {votes ? <TileVotes>{votes} votes</TileVotes> : ""}
-      </TileView>
-    </Tiled>
+
+        <TileReview>
+          {rating ? (
+            <>
+              {rating ? <TileRatingIcon src={icon} alt="" /> : ""}
+              <TileRating>{rating ? rating : "No votes yet"}</TileRating>
+            </>
+          ) : (
+            ""
+          )}
+          {votes ? <TileVotes>{votes} votes</TileVotes> : ""}
+        </TileReview>
+      </TileWrapper>
+    </StyledTile>
   );
 };
 
