@@ -24,7 +24,6 @@ const Tile = ({ title, year, rating, votes, poster, genres }) => {
           <TileGenres>
             <TileTags>Action</TileTags>
             <TileTags>Adventure</TileTags>
-            <TileTags>Drama</TileTags>
           </TileGenres>
         ) : (
           ""
