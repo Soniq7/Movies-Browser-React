@@ -10,7 +10,7 @@ export default () => {
   return (
     <Navigation>
       <NavList>
-        <Logo>
+        <Logo to="/">
           <VideoIcon />
           <PageTitle>
             Movies Browser

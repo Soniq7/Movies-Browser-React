@@ -1,12 +1,14 @@
 import styled from "styled-components";
 import { ReactComponent as LogoIcon } from "../../images/icon.svg";
+import { NavLink } from "react-router-dom";
 
-export const Logo = styled.span`
+export const Logo = styled(NavLink)`
   display: inline-flex;
   align-items: center;
   height: 48px;
   gap: 12px;
   margin-right: 68px;
+  text-decoration: none;
   @media (max-width: ${({ theme }) => theme.breakpoints.navigation}) {
     margin-right: 0;
     height: 43px;
