@@ -1,11 +1,15 @@
-import { Name, Tile, Frame, Photo } from "./styled";
+import { Name, Tile, Frame, Photo, StyledLink } from "./styled";
 
-const PersonTile = ({ portrait, name }) => (
+const PersonTile = ({ portrait, name, id }) => (
   <Tile>
     <Frame>
-      <Photo src={`https://image.tmdb.org/t/p/original/${portrait}`} />
+      <StyledLink to={`/people/${id}`}>
+        <Photo src={`https://image.tmdb.org/t/p/original/${portrait}`} />
+      </StyledLink>
     </Frame>
-    <Name>{name}</Name>
+    <Name>
+      <StyledLink to={`/people/${id}`}>{name}</StyledLink>
+    </Name>
   </Tile>
 );
 

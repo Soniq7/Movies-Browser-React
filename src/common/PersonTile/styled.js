@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
 export const Tile = styled.article`
   width: 208px;
@@ -35,6 +36,11 @@ export const Photo = styled.img`
     width: 120px;
     height: 178px;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.text.primaryText};
 `;
 
 export const Name = styled.p`

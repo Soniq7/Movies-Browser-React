@@ -9,7 +9,11 @@ const Success = ({ results }) => (
         {results
           ? results.map((person) => (
               <Item key={person.id}>
-                <PersonTile name={person.name} portrait={person.profile_path} />
+                <PersonTile
+                  name={person.name}
+                  portrait={person.profile_path}
+                  id={person.id}
+                />
               </Item>
             ))
           : null}
