@@ -1,5 +1,3 @@
+const MoviePage = () => <></>;
 
-
-export default () => (
-    <></>
-);
+export default MoviePage;

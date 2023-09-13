@@ -16,6 +16,7 @@ const Success = ({ results }) => (
                   votes={movie.vote_count}
                   poster={movie.poster_path}
                   genres={"."}
+                  id={movie.id}
                 />
               </Item>
             ))

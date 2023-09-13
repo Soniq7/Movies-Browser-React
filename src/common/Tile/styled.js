@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
 export const StyledTile = styled.article`
   background: ${({ theme }) => theme.colors.boxBackground};
@@ -28,12 +29,16 @@ export const TileImage = styled.img`
   }
 `;
 
-export const TileHeader = styled.h2`
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.text.primaryText};
+`;
+
+export const TileTitle = styled.p`
   margin: 0;
   height: auto;
   font-size: 22px;
   font-weight: 500;
-  color: ${({ theme }) => theme.colors.primaryText};
   @media (max-width: 700px) {
     font-size: 26px;
   }

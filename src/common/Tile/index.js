@@ -1,7 +1,7 @@
 import {
   StyledTile,
   TileImage,
-  TileHeader,
+  TileTitle,
   TileYear,
   TileGenres,
   TileTags,
@@ -10,15 +10,23 @@ import {
   TileRating,
   TileVotes,
   TileWrapper,
+  StyledLink,
 } from "./styled";
 import icon from "../../images/shape-star.png";
 
-const Tile = ({ title, year, rating, votes, poster, genres }) => {
+const Tile = ({ title, year, rating, votes, poster, genres, id }) => {
   return (
     <StyledTile>
-      <TileImage src={`https://image.tmdb.org/t/p/original/${poster}`} alt="" />
+      <StyledLink to={`/movies/${id}`}>
+        <TileImage
+          src={`https://image.tmdb.org/t/p/original/${poster}`}
+          alt="Movie Poster"
+        />
+      </StyledLink>
       <TileWrapper>
-        <TileHeader>{title}</TileHeader>
+        <TileTitle>
+          <StyledLink to={`/movies/${id}`}>{title}</StyledLink>
+        </TileTitle>
         {year ? <TileYear>{year}</TileYear> : ""}
         {genres ? (
           <TileGenres>
