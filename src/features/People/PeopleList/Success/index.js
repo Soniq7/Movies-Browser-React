@@ -1,10 +1,11 @@
-import { ListItem, Item, Header, Wrapper, Section } from "./styled";
+import { ListItem, Item } from "./styled";
 import PersonTile from "../../../../common/PersonTile";
+import Section from "../../../../common/Section";
 
 const Success = ({ results }) => (
-  <Section>
-    <Wrapper>
-      <Header>Popular people</Header>
+  <Section
+    header="Popular people"
+    content={
       <ListItem>
         {results
           ? results.map((person) => (
@@ -18,8 +19,8 @@ const Success = ({ results }) => (
             ))
           : null}
       </ListItem>
-    </Wrapper>
-  </Section>
+    }
+  />
 );
 
 export default Success;

@@ -26,37 +26,3 @@ export const Item = styled.li`
     font-size: 12px;
   }
 `;
-
-export const Header = styled.h1`
-  font-size: 36px;
-  font-weight: 600;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: 20px;
-    font-weight: 600;
-    padding: 0;
-  }
-`;
-
-export const Section = styled.section`
-  width: auto;
-  margin: 56px auto auto;
-  align-items: center;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    margin: 24px auto auto;
-    width: 288px;
-    font-weight: 600;
-  }
-`;
-
-export const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: minmax(300px, 1350px);
-  justify-content: center;
-  padding: 0 20px;
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorizontal}) {
-    grid-template-columns: auto;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    padding: 0;
-  }
-`;
