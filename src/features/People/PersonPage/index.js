@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import Success from "./Success";
 import Error from "../../Error";
 import { getPerson } from "./getPerson";
+import { getPersonCredits } from "./getPersonCredits";
 import Loading from "../../Loading";
 import { useParams } from "react-router-dom/cjs/react-router-dom";
 
 const PersonPage = () => {
   const [personData, setPersonData] = useState(null);
+  const [personCreditsData, setPersonCreditsData] = useState(null);
 
   const { id } = useParams();
 
@@ -20,6 +22,14 @@ const PersonPage = () => {
         })
         .catch(() => {
           setPersonData("error");
+        });
+
+      getPersonCredits(id)
+        .then((personCredits) => {
+          setPersonCreditsData(personCredits);
+        })
+        .catch(() => {
+          setPersonCreditsData("error");
         });
     }, 500); //to show loading screen;
 
@@ -36,7 +46,12 @@ const PersonPage = () => {
       return <Loading />;
 
     default:
-      return <Success personData={personData} />;
+      return (
+        <Success
+          personData={personData}
+          personCreditsData={personCreditsData}
+        />
+      );
   }
 };
 
