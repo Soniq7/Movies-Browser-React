@@ -5,6 +5,7 @@ const colorCollection = {
   whisper: "#F5F5FA",
   mystic: "#E4E6F0",
   stormGray: "#74788B",
+  silver: "#C4C4C4",
   white: "#FFF",
   pattensBlue: "#D6E4FF",
 };
@@ -12,6 +13,7 @@ const colorCollection = {
 export const theme = {
   colors: {
     background: {
+      imagePlaceholder: colorCollection.silver,
       siteBackground: colorCollection.whisper,
       boxBackground: colorCollection.white,
     },
