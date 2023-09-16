@@ -37,14 +37,22 @@ export const Portrait = styled.img`
   }
 `;
 
-export const Content = styled.span`
+export const PersonContent = styled.span`
   display: grid;
-  grid-template-rows: auto auto auto 1fr;
+  grid-template-rows: repeat(3, auto) 1fr;
   grid-gap: 24px;
   padding: 8px 0;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    grid-template-rows: auto auto 1fr;
+    grid-template-rows: repeat(2, auto) 1fr;
     grid-gap: 16px;
+    padding: 0;
+  }
+`;
+
+export const MovieContent = styled(PersonContent)`
+  grid-template-rows: repeat(6, auto) 1fr;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-gap: 8px;
   }
 `;
 
@@ -95,7 +103,7 @@ export const Info = styled.dd`
     font-size: 20px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: 14px;
+    font-size: 12px;
   }
 `;
 
@@ -113,4 +121,55 @@ export const Description = styled.p`
 
 export const MobileDescription = styled(Description)`
   grid-column: span 2;
+`;
+
+export const Year = styled.p`
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 13px;
+  }
+`;
+
+export const Rating = styled.span`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
+
+export const RatingScore = styled.p`
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 13px;
+  }
+`;
+
+export const VoteCount = styled.p`
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 12px;
+  }
+`;
+
+export const RatingScale = styled(VoteCount)``;
+
+export const Genres = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  row-gap: 8px;
+  list-style: none;
+  padding-left: 0;
+  flex-shrink: 0;
+  margin: -4px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    gap: 8px;
+  }
 `;
