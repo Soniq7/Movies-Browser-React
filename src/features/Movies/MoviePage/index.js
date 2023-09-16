@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import Success from "./Success";
 import Error from "../../Error";
 import { getMovie } from "./getMovie";
+import { getMovieCredits } from "./getMovieCredits";
 import Loading from "../../Loading";
 import { useParams } from "react-router-dom/cjs/react-router-dom";
 
 const MoviePage = () => {
   const [movieData, setMovieData] = useState(null);
+  const [movieCredits, setMovieCredits] = useState(null);
 
   const { id } = useParams();
 
@@ -21,12 +23,20 @@ const MoviePage = () => {
         .catch(() => {
           setMovieData("error");
         });
-    }, 500); //to show loading screen;
 
+      getMovieCredits(id)
+        .then((movieCredits) => {
+          setMovieCredits(movieCredits);
+        })
+        .catch(() => {
+          setMovieCredits("error");
+        });
+    }, 500); //to show loading screen;
     return () => {
       clearTimeout(timeoutId);
     };
   }, []);
+  console.log(movieCredits);
 
   switch (movieData) {
     case "error":
@@ -36,7 +46,7 @@ const MoviePage = () => {
       return <Loading />;
 
     default:
-      return <Success movieData={movieData} />;
+      return <Success movieData={movieData} movieCredits={movieCredits} />;
   }
 };
 
