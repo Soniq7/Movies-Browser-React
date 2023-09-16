@@ -83,10 +83,6 @@ export const TileTags = styled.li`
   padding: 8px 16px;
   border-radius: 5px;
   grid-row: 1;
-  @media (max-width: 700px) {
-    padding: 12px 24px;
-    font-size: 18px;
-  }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: 4px 8px;
     font-size: 10px;
