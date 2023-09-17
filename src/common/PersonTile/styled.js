@@ -1,8 +1,9 @@
 import { styled } from "styled-components";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
 export const Tile = styled.article`
   width: 208px;
-  height: 339px;
+  height: 100%;
   justify-content: center;
   background: ${({ theme }) => theme.colors.background.boxBackground};
   border-radius: ${({ theme }) => theme.borderRadius};
@@ -37,6 +38,11 @@ export const Photo = styled.img`
   }
 `;
 
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.text.primaryText};
+`;
+
 export const Name = styled.p`
   text-align: center;
   font-size: 22px;
@@ -46,4 +52,18 @@ export const Name = styled.p`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 14px;
   }
+`;
+
+export const Job = styled.p`
+  color: ${({ theme }) => theme.colors.text.thirdText};
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+`;
+
+export const Content = styled.span`
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
 `;

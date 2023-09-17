@@ -15,6 +15,9 @@ export const getPopularPeople = async () => {
     options
   );
 
-  if (!response.ok) new Error(response.statusText);
+  if (response.status !== 200) {
+    return "error";
+  }
+
   return await response.data;
 };

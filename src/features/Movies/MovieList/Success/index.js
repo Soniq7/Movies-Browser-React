@@ -1,10 +1,11 @@
-import { ListItem, Item, Header, Wrapper, Section } from "./styled";
+import { ListItem, Item } from "./styled";
 import Tile from "../../../../common/Tile";
+import Section from "../../../../common/Section";
 
 const Success = ({ results }) => (
-  <Section>
-    <Wrapper>
-      <Header>Popular movies</Header>
+  <Section
+    header="Popular movies"
+    content={
       <ListItem>
         {results
           ? results.map((movie) => (
@@ -16,13 +17,14 @@ const Success = ({ results }) => (
                   votes={movie.vote_count}
                   poster={movie.poster_path}
                   genres={"."}
+                  id={movie.id}
                 />
               </Item>
             ))
           : null}
       </ListItem>
-    </Wrapper>
-  </Section>
+    }
+  />
 );
 
 export default Success;
