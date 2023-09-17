@@ -13,7 +13,7 @@ import PersonPage from "../features/People/PersonPage";
 import { toMovies, toMovie, toPeople, toPerson } from "../routes";
 
 export default () => (
-  <HashRouter basename="movies-browser/">
+  <HashRouter>
     <Navigation />
     <Main>
       <Switch>
