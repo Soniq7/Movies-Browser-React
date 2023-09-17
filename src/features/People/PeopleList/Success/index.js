@@ -1,6 +1,3 @@
-import { ListItem, Item, Header, Wrapper } from "./styled";
-import Tile from "../../../../common/Tile";
-import Pagination from "../../../Pagination";
 import { ListItem, Item, Header, Wrapper, Section } from "./styled";
 import PersonTile from "../../../../common/PersonTile";
 
