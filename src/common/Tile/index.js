@@ -11,11 +11,22 @@ import {
   TileVotes,
   TileWrapper,
   StyledLink,
+  Job,
 } from "./styled";
 import icon from "../../images/shape-star.png";
 import ImagePlaceholder from "../ImagePlaceholder";
 
-const Tile = ({ title, year, rating, votes, poster, genres, id }) => {
+const Tile = ({
+  title,
+  year,
+  rating,
+  votes,
+  poster,
+  genres,
+  id,
+  job,
+  isActorPageTile,
+}) => {
   return (
     <StyledTile>
       <StyledLink to={`/movies/${id}`}>
@@ -32,7 +43,15 @@ const Tile = ({ title, year, rating, votes, poster, genres, id }) => {
         <TileTitle>
           <StyledLink to={`/movies/${id}`}>{title}</StyledLink>
         </TileTitle>
-        {year ? <TileYear>{year}</TileYear> : ""}
+        {!year && job ? <Job>{job}</Job> : ""}
+        {year && job ? (
+          <Job>
+            {job} ({year})
+          </Job>
+        ) : (
+          ""
+        )}
+        {!isActorPageTile && year ? <TileYear>{year}</TileYear> : ""}
         {genres ? (
           <TileGenres>
             <TileTags>Action</TileTags>

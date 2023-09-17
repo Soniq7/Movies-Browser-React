@@ -5,6 +5,7 @@ export const StyledTile = styled.article`
   background: ${({ theme }) => theme.colors.boxBackground};
   padding: 16px;
   width: 324px;
+  height: auto;
   box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.5);
   border-radius: 5px;
   @media (max-width: 700px) {
@@ -14,7 +15,6 @@ export const StyledTile = styled.article`
     width: auto;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    max-height: 201px;
     max-width: 445px;
   }
 `;
@@ -61,6 +61,8 @@ export const TileYear = styled.p`
     font-size: 13px;
   }
 `;
+
+export const Job = styled(TileYear)``;
 
 export const TileGenres = styled.ul`
   grid-column: 2;
