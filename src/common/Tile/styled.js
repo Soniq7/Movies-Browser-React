@@ -5,9 +5,11 @@ export const StyledTile = styled.article`
   background: ${({ theme }) => theme.colors.boxBackground};
   padding: 16px;
   width: 324px;
-  height: auto;
+  height: 100%;
   box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.5);
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
   @media (max-width: 700px) {
     display: grid;
     grid-template-columns: auto auto;
@@ -53,7 +55,7 @@ export const TileYear = styled.p`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.text.secondaryText};
   padding-left: 0;
-  grid-column: 2;
+  grid-column: 1;
   @media (max-width: 700px) {
     font-size: 20px;
   }
@@ -65,7 +67,7 @@ export const TileYear = styled.p`
 export const Job = styled(TileYear)``;
 
 export const TileGenres = styled.ul`
-  grid-column: 2;
+  grid-column: 1;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -93,27 +95,27 @@ export const TileTags = styled.li`
 `;
 
 export const TileReview = styled.div`
-  grid-column: 2;
+  grid-column: 1;
   display: flex;
   gap: 12px;
   margin-top: auto;
+  grid-row: 5;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin: 0;
     gap: 8px;
   }
 `;
 
-export const TileRating = styled.span`
-  font-size: 16px;
+export const TileRating = styled(TileYear)`
   font-weight: 600;
-  text-align: center;
   padding-left: 6px;
-  @media (max-width: 700px) {
-    font-size: 20px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: 13px;
-  }
+  color: unset;
+`;
+
+export const TileVotes = styled(TileYear)`
+  font-weight: 400;
+  padding-left: 6px;
+  color: unset;
 `;
 
 export const TileRatingIcon = styled.img`
@@ -130,23 +132,9 @@ export const TileRatingIcon = styled.img`
   }
 `;
 
-export const TileVotes = styled.span`
-  font-size: 16px;
-  font-weight: 400;
-  color: ${({ theme }) => theme.colors.text.secondaryText};
-  padding-left: 6px;
-  white-space: nowrap;
-  @media (max-width: 700px) {
-    font-size: 20px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: 13px;
-  }
-`;
-
-export const TileWrapper = styled.span`
+export const TileWrapper = styled.div`
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  height: 180px;
 `;
