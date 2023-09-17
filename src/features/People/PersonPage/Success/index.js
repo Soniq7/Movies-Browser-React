@@ -33,7 +33,7 @@ const Success = ({ personData, personCreditsData }) => {
         }
       />
 
-      {cast ? (
+      {cast.length > 0 ? (
         <Section
           header={`Movies - cast (${cast.length})`}
           content={
@@ -42,12 +42,15 @@ const Success = ({ personData, personCreditsData }) => {
                 ? cast.map((role) => (
                     <Item key={role.id}>
                       <Tile
+                        isActorPageTile={true}
                         poster={role.poster_path}
                         title={role.title}
-                        role={role.character}
+                        job={role.character}
+                        year={role.release_date.substring(0, 4)}
                         genres={"."}
                         rating={role.vote_average}
                         votes={role.vote_count}
+                        id={role.id}
                       />
                     </Item>
                   ))
@@ -59,7 +62,7 @@ const Success = ({ personData, personCreditsData }) => {
         ""
       )}
 
-      {crew ? (
+      {crew.length > 0 ? (
         <Section
           header={`Movies - crew (${crew.length})`}
           content={
@@ -74,6 +77,7 @@ const Success = ({ personData, personCreditsData }) => {
                         genres={"."}
                         rating={role.vote_average}
                         votes={role.vote_count}
+                        id={role.id}
                       />
                     </Item>
                   ))
