@@ -10,7 +10,7 @@ const Pagination = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&${page}&perPage=${perPage}&sort_by=popularity.desc&with_cast=false&with_companies=false&with_crew=false`);
+        const response = await fetch(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&perPage=${perPage}&sort_by=popularity.desc&with_cast=false&with_companies=false&with_crew=false`);
         const result = await response.json();
         setData(result);
 
