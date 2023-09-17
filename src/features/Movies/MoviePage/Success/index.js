@@ -46,6 +46,7 @@ const Success = ({ movieData, movieCredits }) => {
                         portrait={person.profile_path}
                         name={person.name}
                         job={person.character}
+                        id={person.id}
                       />
                     </Item>
                   ))
@@ -70,6 +71,7 @@ const Success = ({ movieData, movieCredits }) => {
                         portrait={person.profile_path}
                         name={person.name}
                         job={person.job}
+                        id={person.id}
                       />
                     </Item>
                   ))
