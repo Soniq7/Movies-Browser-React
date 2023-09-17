@@ -12,10 +12,10 @@ export const Loader = styled(LoaderIcon)`
   height: auto;
   margin-top: 200px;
   animation: ${spin} 1s linear infinite;
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVertical}) {
     width: 70px;
   }
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 35px;
   }
 `;

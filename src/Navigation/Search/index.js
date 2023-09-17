@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { Input, LoupeIcon, Wrapper } from "./styled";
+import { Input, LoupeIcon, Wrapper, IconWrapper } from "./styled";
 
 const Search = () => {
   const location = useLocation();
@@ -13,7 +13,9 @@ const Search = () => {
 
   return (
     <Wrapper>
-      <LoupeIcon />
+      <IconWrapper>
+        <LoupeIcon />
+      </IconWrapper>
       <Input placeholder={placeholderText} />
     </Wrapper>
   );
