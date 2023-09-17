@@ -1,7 +1,7 @@
 import {
   StyledTile,
   TileImage,
-  TileHeader,
+  TileTitle,
   TileYear,
   TileGenres,
   TileTags,
@@ -10,16 +10,48 @@ import {
   TileRating,
   TileVotes,
   TileWrapper,
+  StyledLink,
+  Job,
 } from "./styled";
 import icon from "../../images/shape-star.png";
+import ImagePlaceholder from "../ImagePlaceholder";
 
-const Tile = ({ title, year, rating, votes, poster, genres }) => {
+const Tile = ({
+  title,
+  year,
+  rating,
+  votes,
+  poster,
+  genres,
+  id,
+  job,
+  isActorPageTile,
+}) => {
   return (
     <StyledTile>
-      <TileImage src={`https://image.tmdb.org/t/p/original/${poster}`} alt="" />
+      <StyledLink to={`/movies/${id}`}>
+        {poster ? (
+          <TileImage
+            src={`https://image.tmdb.org/t/p/original/${poster}`}
+            alt="Movie Poster"
+          />
+        ) : (
+          <ImagePlaceholder isPerson={false} />
+        )}
+      </StyledLink>
       <TileWrapper>
-        <TileHeader>{title}</TileHeader>
-        {year ? <TileYear>{year}</TileYear> : ""}
+        <TileTitle>
+          <StyledLink to={`/movies/${id}`}>{title}</StyledLink>
+        </TileTitle>
+        {!year && job ? <Job>{job}</Job> : ""}
+        {year && job ? (
+          <Job>
+            {job} ({year})
+          </Job>
+        ) : (
+          ""
+        )}
+        {!isActorPageTile && year ? <TileYear>{year}</TileYear> : ""}
         {genres ? (
           <TileGenres>
             <TileTags>Action</TileTags>
@@ -32,13 +64,13 @@ const Tile = ({ title, year, rating, votes, poster, genres }) => {
         <TileReview>
           {rating ? (
             <>
-              {rating ? <TileRatingIcon src={icon} alt="" /> : ""}
-              <TileRating>{rating ? rating : "No votes yet"}</TileRating>
+              <TileRatingIcon src={icon} alt="" />
+              <TileRating>{rating}</TileRating>
             </>
           ) : (
             ""
           )}
-          {votes ? <TileVotes>{votes} votes</TileVotes> : ""}
+          <TileVotes>{votes ? `${votes} votes` : "No votes yet"}</TileVotes>
         </TileReview>
       </TileWrapper>
     </StyledTile>

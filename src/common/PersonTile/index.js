@@ -1,11 +1,23 @@
-import { Name, Tile, Frame, Photo } from "./styled";
+import { Name, Tile, Frame, Photo, StyledLink, Job, Content } from "./styled";
+import ImagePlaceholder from "../ImagePlaceholder";
 
-const PersonTile = ({ portrait, name }) => (
+const PersonTile = ({ portrait, name, id, job, isPerson }) => (
   <Tile>
     <Frame>
-      <Photo src={`https://image.tmdb.org/t/p/original/${portrait}`} />
+      <StyledLink to={`/people/${id}`}>
+        {portrait ? (
+          <Photo src={`https://image.tmdb.org/t/p/original/${portrait}`} />
+        ) : (
+          <ImagePlaceholder isPerson={isPerson} />
+        )}
+      </StyledLink>
     </Frame>
-    <Name>{name}</Name>
+    <Content>
+      <Name>
+        <StyledLink to={`/people/${id}`}>{name}</StyledLink>
+      </Name>
+      {job ? <Job>{job}</Job> : ""}
+    </Content>
   </Tile>
 );
 

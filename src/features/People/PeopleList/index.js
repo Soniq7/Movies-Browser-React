@@ -19,8 +19,10 @@ const PeopleList = () => {
       return <Loading />;
     case "success":
       return <Success results={results} />;
-    default:
+    case "error":
       return <Error />;
+    default:
+      return null;
   }
 };
 
