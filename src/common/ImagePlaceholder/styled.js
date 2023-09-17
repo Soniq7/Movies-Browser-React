@@ -28,3 +28,5 @@ export const PersonFrame = styled(MovieFrame)`
     height: 178px;
   }
 `;
+
+export const PersonPageFrame = styled(MovieFrame)``;

@@ -23,6 +23,7 @@ import { TileTags, TileRatingIcon } from "../Tile/styled";
 import icon from "../../images/shape-star.png";
 import { useEffect, useState } from "react";
 import { getWidth } from "../getWidth";
+import ImagePlaceholder from "../ImagePlaceholder";
 
 const PageTile = ({
   isPersonTile,
@@ -55,7 +56,11 @@ const PageTile = ({
   if (isPersonTile) {
     return (
       <Tile>
-        <Portrait src={`https://image.tmdb.org/t/p/original/${image}`} />
+        {image ? (
+          <Portrait src={`https://image.tmdb.org/t/p/original/${image}`} />
+        ) : (
+          <ImagePlaceholder isPerson={true} isPage={true} />
+        )}
         <PersonContent>
           <Name>{name}</Name>
           <PersonalInfo>
@@ -63,11 +68,11 @@ const PageTile = ({
               <Term>
                 {viewportWidth > 670 ? "Date of birth:" : "Birth:"} &nbsp;{" "}
               </Term>
-              <Info>{formatDate(dateOfBirth)} </Info>
+              <Info>{dateOfBirth ? formatDate(dateOfBirth) : "-"} </Info>
             </InfoWrapper>
             <InfoWrapper>
               <Term>Place of birth: &nbsp; </Term>
-              <Info>{placeOfBirth}</Info>
+              <Info>{placeOfBirth ? placeOfBirth : "-"}</Info>
             </InfoWrapper>
           </PersonalInfo>
           {viewportWidth >= 700 ? (
@@ -80,11 +85,20 @@ const PageTile = ({
       </Tile>
     );
   }
-  const [countryList] = production;
+  let countryList = [];
+
+  if (production) {
+    [countryList] = production;
+  }
+
   const { iso_3166_1: countriesShort, name: countries } = countryList;
   return (
     <Tile>
-      <Portrait src={`https://image.tmdb.org/t/p/original/${poster}`} />
+      {poster ? (
+        <Portrait src={`https://image.tmdb.org/t/p/original/${poster}`} />
+      ) : (
+        <ImagePlaceholder />
+      )}
       <MovieContent>
         <Name>{name}</Name>
         <Year>{release_date.substring(0, 4)}</Year>

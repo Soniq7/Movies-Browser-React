@@ -1,6 +1,20 @@
-import { Camera, MovieFrame, PersonFrame, Person } from "./styled";
+import {
+  Camera,
+  MovieFrame,
+  PersonFrame,
+  Person,
+  PersonPageFrame,
+} from "./styled";
 
-const ImagePlaceholder = ({ isPerson }) => {
+const ImagePlaceholder = ({ isPerson, isPage }) => {
+  if (isPerson && isPage) {
+    return (
+      <PersonPageFrame>
+        <Person />
+      </PersonPageFrame>
+    );
+  }
+
   if (isPerson) {
     return (
       <PersonFrame>
