@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as PaginationVectorTwo} from "../../images/VectorTwo.svg";
-import { ReactComponent as PaginationVectorFirst} from "../../images/VectorFirst.svg";
+import { ReactComponent as PaginationVectorTwo} from "../../../images/VectorTwo.svg";
+import { ReactComponent as PaginationVectorFirst} from "../../../images/VectorFirst.svg";
 
 export const Wrapper = styled.div`
     display: flex;
@@ -56,12 +56,17 @@ export const VectorFirst = styled(PaginationVectorFirst)`
     flex-wrap: wrap;
     width: 7px;
     height: 11px;
-    color: #0044CC;
+    fill: #0044CC;
+`;
 
-    &:disabled {
-    background-color: #7E839A;
+export const VectorFirstDisabled = styled(PaginationVectorFirst)`
+    display: flex;
+    flex-wrap: wrap;
+    width: 7px;
+    height: 11px;
+    fill: #7E839A;
     cursor: not-allowed;
-    }
+    transform: rotate(180deg);
 `;
 
 export const VectorSecond = styled(PaginationVectorTwo)`
@@ -69,10 +74,23 @@ export const VectorSecond = styled(PaginationVectorTwo)`
     flex-wrap: wrap;
     width: 7px;
     height: 11px;
-    color: #0044CC;
+    
+`;
 
-    &:disabled {
-    background-color: #7E839A;
+export const VectorSecondDisabled = styled(PaginationVectorFirst)`
+    display: flex;
+    flex-wrap: wrap;
+    width: 7px;
+    height: 11px;
+    fill: #7E839A;
     cursor: not-allowed;
-    }
+    transform: rotate(180deg);
+`;
+
+export const VectorSecondActive = styled(PaginationVectorTwo)`
+    display: flex;
+    flex-wrap: wrap;
+    width: 7px;
+    height: 11px;
+    transform: rotate(180deg);
 `;

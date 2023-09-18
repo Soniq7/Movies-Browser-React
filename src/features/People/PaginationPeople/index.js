@@ -1,24 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { Wrapper, Button, Buttons, CurrentPages, Pages, VectorSecond, VectorFirst } from './styled';
+import { useDispatch } from 'react-redux';
+import { Wrapper, Button, Buttons, CurrentPages, Pages,  VectorSecondActive, VectorSecond, VectorFirst, VectorFirstDisabled } from "./styled";
+import { options } from "./getKeyPeople";
+import { fetchPeopleError, fetchPeopleLoading, fetchPeopleSuccess } from '../PeopleList/peopleSlice';
 
-const Pagination = () => {
+const PaginationPeople = () => {
+  const dispatch = useDispatch();
   const [data, setData] = useState([]); 
   const [page, setPage] = useState(1); 
   const [totalPages, setTotalPages] = useState(1); 
-  const perPage = 8;
 
   useEffect(() => {
     const fetchData = async () => {
+      dispatch(fetchPeopleLoading());
       try {
-        const response = await fetch(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&${page}&perPage=${perPage}&sort_by=popularity.desc&with_cast=false&with_companies=false&with_crew=false`);
+        const response = await fetch(`https://api.themoviedb.org/3/person/popular?language=en-US&page=${page}`,
+        options
+        );
         const result = await response.json();
         setData(result);
 
         const totalResults = result.total_results;
-        const totalPages = Math.ceil(totalResults / perPage);
+        const totalPages = Math.ceil(totalResults);
         setTotalPages(totalPages);
+        dispatch(fetchPeopleSuccess(result));
+
       } catch (error) {
         console.error('Błąd pobierania danych:', error);
+        dispatch(fetchPeopleError());
       }
     };
 
@@ -40,7 +49,7 @@ const Pagination = () => {
   };
 
   const lastPage = () => {
-    setPage(totalPages);
+    setPage(500);
   };
 
   return (
@@ -52,29 +61,29 @@ const Pagination = () => {
       </ul>
       <Buttons>
         <Button onClick={firstPage} disabled={page === 1}>
-          <VectorFirst />
+          {page > 1 ? <VectorSecondActive/> : <VectorFirst />}
             First
         </Button>
         <Button onClick={prevPage} disabled={page === 1}>
-          <VectorFirst />
+        {page > 1 ? <VectorSecondActive/> : <VectorFirst />}
             Previous
         </Button>
         </Buttons>
         <CurrentPages>
-          <Pages>Page</Pages>{page}<Pages>of</Pages>{totalPages}
+          <Pages>Page</Pages>{page}<Pages>of</Pages>{500}
         </CurrentPages>
         <Buttons>
-        <Button onClick={nextPage} disabled={page === totalPages}> 
+        <Button onClick={nextPage} disabled={page === 500}> 
+          {page === 500 ? <VectorFirstDisabled /> : <VectorSecond />}
           Next
-          <VectorSecond />
         </Button>
-        <Button onClick={lastPage} disabled={page === totalPages}>
+        <Button onClick={lastPage} disabled={page === 500}>
+          {page === 500 ? <VectorFirstDisabled /> : <VectorSecond />}
           Last
-          <VectorSecond />
         </Button>
       </Buttons>
     </Wrapper>
   );
 };
 
-export default Pagination;
+export default PaginationPeople;
