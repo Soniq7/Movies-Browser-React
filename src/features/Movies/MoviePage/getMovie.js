@@ -9,15 +9,17 @@ const options = {
   },
 };
 
-export const getPopularMovies = async () => {
-  const response = await axios.get(
-    "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_cast=false&with_companies=false&with_crew=false",
-    options
-  );
-
-  if (response.status !== 200) {
+export const getMovie = async (id) => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+      options
+    );
+    if (response.status !== 200) {
+      return "error";
+    }
+    return response.data;
+  } catch {
     return "error";
   }
-
-  return await response.data;
 };
