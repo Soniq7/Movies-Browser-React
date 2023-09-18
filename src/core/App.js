@@ -4,7 +4,6 @@ import {
   Route,
   Switch,
 } from "react-router-dom/cjs/react-router-dom";
-import { Main } from "./main";
 import Navigation from "../Navigation";
 import MovieList from "../features/Movies/MovieList";
 import MoviePage from "../features/Movies/MoviePage";
