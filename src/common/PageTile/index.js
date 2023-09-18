@@ -124,7 +124,7 @@ const PageTile = ({
         {votes ? (
           <Rating>
             <TileRatingIcon src={icon} alt="" />
-            <RatingScore>{score.toFixed(1)}</RatingScore>
+            <RatingScore>{score}</RatingScore>
             <RatingScale>/10</RatingScale>
             <VoteCount>{`${votes} votes`} </VoteCount>
           </Rating>

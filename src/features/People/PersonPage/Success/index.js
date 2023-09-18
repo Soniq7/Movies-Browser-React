@@ -1,6 +1,7 @@
 import PageTile from "../../../../common/PageTile";
 import Section from "../../../../common/Section";
 import Tile from "../../../../common/Tile";
+import { Main } from "../../../../common/main";
 import { Item, List } from "./styled";
 
 const Success = ({ personData, personCreditsData }) => {
@@ -15,7 +16,7 @@ const Success = ({ personData, personCreditsData }) => {
   console.log(cast);
 
   return (
-    <>
+    <Main>
       <Section
         content={
           personData ? (
@@ -48,7 +49,7 @@ const Success = ({ personData, personCreditsData }) => {
                         job={role.character}
                         year={role.release_date.substring(0, 4)}
                         genres={"."}
-                        rating={role.vote_average}
+                        rating={role.vote_average.toFixed(1)}
                         votes={role.vote_count}
                         id={role.id}
                       />
@@ -75,7 +76,7 @@ const Success = ({ personData, personCreditsData }) => {
                         title={role.title}
                         job={role.job}
                         genres={"."}
-                        rating={role.vote_average}
+                        rating={role.vote_average.toFixed(1)}
                         votes={role.vote_count}
                         id={role.id}
                       />
@@ -88,7 +89,7 @@ const Success = ({ personData, personCreditsData }) => {
       ) : (
         ""
       )}
-    </>
+    </Main>
   );
 };
 
