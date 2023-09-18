@@ -1,25 +1,25 @@
 import {
   Shadow,
   BackdropPoster,
+  Header,
+  Wrapper,
   Content,
   Title,
-  Header,
-  Container,
 } from "./styled";
+import shadow from "../../../../../images/shadow.png";
 
 const Backdrop = ({ imagePath, title, score, votes }) => {
   return (
     <Header>
-      <Container>
-        <Shadow>
-          <BackdropPoster
-            src={`https://image.tmdb.org/t/p/original/${imagePath}`}
-          />
-          <Content>
-            <Title>{title}</Title>
-          </Content>
-        </Shadow>
-      </Container>
+      <Shadow src={shadow} />
+      <Wrapper>
+        <Content>
+          <Title>{title}</Title>
+        </Content>
+        <BackdropPoster
+          src={`https://image.tmdb.org/t/p/original/${imagePath}`}
+        />
+      </Wrapper>
     </Header>
   );
 };
