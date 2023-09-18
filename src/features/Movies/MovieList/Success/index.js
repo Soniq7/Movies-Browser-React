@@ -15,7 +15,7 @@ const Success = ({ results }) => (
                   <Tile
                     title={movie.original_title}
                     year={movie.release_date.substring(0, 4)}
-                    rating={movie.vote_average}
+                    rating={movie.vote_average.toFixed(1)}
                     votes={movie.vote_count}
                     poster={movie.poster_path}
                     genres={"."}
