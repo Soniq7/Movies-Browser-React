@@ -10,7 +10,6 @@ const PaginationPeople = () => {
   const [page, setPage] = useState(1); 
   const [totalPages, setTotalPages] = useState(1); 
 
-
   useEffect(() => {
     const fetchData = async () => {
       dispatch(fetchPeopleLoading());
