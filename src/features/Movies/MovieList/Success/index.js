@@ -1,6 +1,5 @@
 import { ListItem, Item, Header, Wrapper, Section } from "./styled";
 import Tile from "../../../../common/Tile";
-import Pagination from "../../../Pagination";
 
 const Success = ({ results }) => (
   <Section>
@@ -22,7 +21,6 @@ const Success = ({ results }) => (
             ))
           : null}
       </ListItem>
-      <Pagination/>
     </Wrapper>
   </Section>
 );
