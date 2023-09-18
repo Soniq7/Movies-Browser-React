@@ -17,7 +17,12 @@ const Success = ({ movieData, movieCredits }) => {
   return (
     <>
       {movieData ? (
-        <Backdrop imagePath={movieData.backdrop_path} title={movieData.title} />
+        <Backdrop
+          imagePath={movieData.backdrop_path}
+          title={movieData.title}
+          score={movieData.vote_average.toFixed(1)}
+          votes={movieData.vote_count}
+        />
       ) : (
         ""
       )}
@@ -33,7 +38,7 @@ const Success = ({ movieData, movieCredits }) => {
                 production={movieData.production_countries}
                 release_date={movieData.release_date}
                 genreList={movieData.genres}
-                score={movieData.vote_average}
+                score={movieData.vote_average.toFixed(1)}
                 votes={movieData.vote_count}
               />
             ) : (
