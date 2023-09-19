@@ -1,12 +1,12 @@
 import { ListItem, Item } from "./styled";
 import Tile from "../../../../common/Tile";
 import Section from "../../../../common/Section";
-import { Main } from "../../../../common/main";
+import { ListMain } from "../../../../common/main";
 import Pagination from "../../../Pagination/index";
 
 const Success = ({ results }) => (
   <>
-    <Main>
+    <ListMain>
       <Section
         header="Popular movies"
         content={
@@ -29,7 +29,7 @@ const Success = ({ results }) => (
           </ListItem>
         }
       />
-    </Main>
+    </ListMain>
     <Pagination isMovieList={true} />
   </>
 );
