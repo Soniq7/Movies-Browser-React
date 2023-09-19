@@ -9,6 +9,7 @@ export const StyledTile = styled.article`
   box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.5);
   border-radius: 5px;
   display: flex;
+  gap: 16px;
   flex-direction: column;
   @media (max-width: 700px) {
     display: grid;

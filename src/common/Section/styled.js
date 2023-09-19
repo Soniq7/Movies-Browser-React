@@ -12,7 +12,6 @@ export const Header = styled.h1`
 
 export const StyledSection = styled.section`
   margin: 56px 0 0;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin: 24px auto auto;
   }
