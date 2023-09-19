@@ -1,12 +1,12 @@
 import { ListItem, Item } from "./styled";
 import PersonTile from "../../../../common/PersonTile";
 import Section from "../../../../common/Section";
-import { Main } from "../../../../common/main";
+import { ListMain } from "../../../../common/main";
 import Pagination from "../../../Pagination";
 
 const Success = ({ results }) => (
   <>
-    <Main>
+    <ListMain>
       <Section
         header="Popular people"
         content={
@@ -25,7 +25,7 @@ const Success = ({ results }) => (
           </ListItem>
         }
       />
-    </Main>
+    </ListMain>
     <Pagination />
   </>
 );
