@@ -28,8 +28,8 @@ const Tile = ({
   isActorPageTile,
 }) => {
   return (
-    <StyledTile>
-      <StyledLink to={`/movies/${id}`}>
+    <StyledLink to={`/movies/${id}`}>
+      <StyledTile>
         {poster ? (
           <TileImage
             src={`https://image.tmdb.org/t/p/original/${poster}`}
@@ -38,42 +38,40 @@ const Tile = ({
         ) : (
           <ImagePlaceholder isPerson={false} />
         )}
-      </StyledLink>
-      <TileWrapper>
-        <TileTitle>
-          <StyledLink to={`/movies/${id}`}>{title}</StyledLink>
-        </TileTitle>
-        {!year && job ? <Job>{job}</Job> : ""}
-        {year && job ? (
-          <Job>
-            {job} ({year})
-          </Job>
-        ) : (
-          ""
-        )}
-        {!isActorPageTile && year ? <TileYear>{year}</TileYear> : ""}
-        {genres ? (
-          <TileGenres>
-            <TileTags>Action</TileTags>
-            <TileTags>Adventure</TileTags>
-          </TileGenres>
-        ) : (
-          ""
-        )}
-
-        <TileReview>
-          {rating ? (
-            <>
-              <TileRatingIcon src={icon} alt="" />
-              <TileRating>{rating}</TileRating>
-            </>
+        <TileWrapper>
+          <TileTitle>{title}</TileTitle>
+          {!year && job ? <Job>{job}</Job> : ""}
+          {year && job ? (
+            <Job>
+              {job} ({year})
+            </Job>
           ) : (
             ""
           )}
-          <TileVotes>{votes ? `${votes} votes` : "No votes yet"}</TileVotes>
-        </TileReview>
-      </TileWrapper>
-    </StyledTile>
+          {!isActorPageTile && year ? <TileYear>{year}</TileYear> : ""}
+          {genres ? (
+            <TileGenres>
+              <TileTags>Action</TileTags>
+              <TileTags>Adventure</TileTags>
+            </TileGenres>
+          ) : (
+            ""
+          )}
+
+          <TileReview>
+            {rating && rating != 0 ? (
+              <>
+                <TileRatingIcon src={icon} alt="" />
+                <TileRating>{rating}</TileRating>
+              </>
+            ) : (
+              ""
+            )}
+            <TileVotes>{votes ? `${votes} votes` : "No votes yet"}</TileVotes>
+          </TileReview>
+        </TileWrapper>
+      </StyledTile>
+    </StyledLink>
   );
 };
 
