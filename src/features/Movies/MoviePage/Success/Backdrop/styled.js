@@ -3,25 +3,26 @@ import { ReactComponent as Star } from "../../../../../images/shape-star.svg";
 
 export const Shadow = styled.img`
   position: absolute;
-  max-height: 770px;
+  height: 770px;
+  width: 100%;
   z-index: 1;
   @media (max-width: 1450px) {
-    max-height: 650px;
+    height: 650px;
   }
   @media (max-width: 1230px) {
-    max-height: 500px;
+    height: 500px;
   }
   @media (max-width: 960px) {
-    max-height: 400px;
+    height: 400px;
   }
   @media (max-width: 760px) {
-    max-height: 340px;
+    height: 340px;
   }
   @media (max-width: 600px) {
-    max-height: 250px;
+    height: 250px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    max-height: 148px;
+    height: 148px;
   }
 `;
 
