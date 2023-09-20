@@ -40,6 +40,8 @@ export const Button = styled.button`
 export const CurrentPages = styled.div`
   display: flex;
   gap: 8px;
+  font-weight: 600;
+  font-size: 16px;
 `;
 
 export const Pages = styled.div`
