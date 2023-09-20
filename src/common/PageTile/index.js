@@ -87,11 +87,13 @@ const PageTile = ({
   }
   let countryList = [];
 
-  if (production) {
+  if (production.length > 0) {
     [countryList] = production;
   }
 
-  const { iso_3166_1: countriesShort, name: countries } = countryList;
+  const countriesShort = countryList?.iso_3166_1 || "";
+  const countries = countryList?.name || "";
+
   return (
     <Tile>
       {poster ? (
@@ -103,10 +105,14 @@ const PageTile = ({
         <Name>{name}</Name>
         <Year>{release_date.substring(0, 4)}</Year>
         <PersonalInfo>
-          <InfoWrapper>
-            {viewportWidth > 670 ? <Term>Production: &nbsp;</Term> : ""}
-            <Info>{viewportWidth > 670 ? countries : countriesShort}</Info>
-          </InfoWrapper>
+          {production != "" ? (
+            <InfoWrapper>
+              {viewportWidth > 670 ? <Term>Production: &nbsp;</Term> : ""}
+              <Info>{viewportWidth > 670 ? countries : countriesShort}</Info>
+            </InfoWrapper>
+          ) : (
+            ""
+          )}
           <InfoWrapper>
             {viewportWidth > 670 ? <Term>Release date: &nbsp;</Term> : ""}
             <Info>{formatDate(release_date)} </Info>
