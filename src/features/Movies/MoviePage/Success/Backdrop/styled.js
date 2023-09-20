@@ -39,6 +39,7 @@ export const Header = styled.header`
 
 export const Wrapper = styled.div`
   position: relative;
+  width: 73%;
 `;
 
 export const Content = styled.span`
