@@ -22,7 +22,7 @@ export const Tile = styled.article`
 `;
 
 export const Portrait = styled.img`
-  width: 399px;
+  width: 389px;
   height: 564px;
   border-radius: ${({ theme }) => theme.borderRadius};
 
