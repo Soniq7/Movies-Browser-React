@@ -1,6 +1,6 @@
-import PageTile from "../../../../common/PageTile";
+import PageTile from "../../../../common/Tiles/PageTile";
 import Section from "../../../../common/Section";
-import Tile from "../../../../common/Tile";
+import Tile from "../../../../common/Tiles/Tile";
 import { Main } from "../../../../common/main";
 import { Item, List } from "./styled";
 
@@ -44,12 +44,12 @@ const Success = ({ personData, personCreditsData }) => {
                     <Item key={role.id}>
                       <Tile
                         isActorPageTile={true}
-                        poster={role.poster_path}
-                        title={role.title}
+                        image={role.poster_path}
+                        name={role.title}
                         job={role.character}
                         year={role.release_date.substring(0, 4)}
                         genres={"."}
-                        rating={role.vote_average.toFixed(1)}
+                        score={role.vote_average.toFixed(1)}
                         votes={role.vote_count}
                         id={role.id}
                       />
@@ -72,11 +72,11 @@ const Success = ({ personData, personCreditsData }) => {
                 ? crew.map((role) => (
                     <Item key={role.id}>
                       <Tile
-                        poster={role.poster_path}
-                        title={role.title}
+                        image={role.poster_path}
+                        name={role.title}
                         job={role.job}
                         genres={"."}
-                        rating={role.vote_average.toFixed(1)}
+                        score={role.vote_average.toFixed(1)}
                         votes={role.vote_count}
                         id={role.id}
                       />

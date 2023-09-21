@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
 import { getWidth } from "../../../../../common/getWidth";
 import shadow from "../../../../../images/shadow.png";
 
-const Backdrop = ({ imagePath, title, score, votes }) => {
+const Backdrop = ({ image, name, score, votes }) => {
   const [viewportWidth, setViewportWidth] = useState(getWidth());
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const Backdrop = ({ imagePath, title, score, votes }) => {
       <Shadow src={shadow} />
       <Wrapper>
         <Content>
-          <Title>{title}</Title>
+          <Title>{name}</Title>
           <Review>
             <ReviewIcon />
             <Score>{score}</Score>
@@ -43,9 +43,7 @@ const Backdrop = ({ imagePath, title, score, votes }) => {
           </Review>
           {viewportWidth > 700 ? <Votes>{votes} votes</Votes> : ""}
         </Content>
-        <BackdropPoster
-          src={`https://image.tmdb.org/t/p/original/${imagePath}`}
-        />
+        <BackdropPoster src={`https://image.tmdb.org/t/p/original/${image}`} />
       </Wrapper>
     </Header>
   );
