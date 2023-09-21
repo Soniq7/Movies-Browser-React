@@ -4,14 +4,16 @@ import {
   fetchMoviesError,
   fetchMoviesSuccess,
   fetchMoviesLoading,
+  selectMoviePage,
 } from "./moviesSlice";
-import { call, takeLatest, put, delay } from "redux-saga/effects";
+import { call, takeLatest, put, delay, select } from "redux-saga/effects";
 
 function* fetchMoviesHandler() {
   try {
+    const page = yield select(selectMoviePage);
     yield put(fetchMoviesLoading());
     yield delay(500);
-    const movies = yield call(getPopularMovies);
+    const movies = yield call(getPopularMovies, page);
     yield put(fetchMoviesSuccess(movies));
   } catch {
     yield put(fetchMoviesError());

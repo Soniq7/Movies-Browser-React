@@ -2,8 +2,8 @@ import PageTile from "../../../../common/PageTile";
 import Section from "../../../../common/Section";
 import PersonTile from "../../../../common/PersonTile";
 import { Item, List } from "./styled";
-import { Main } from "../../../../common/main";
-import Backdrop from "./Backdrop";
+import { PageMain } from "../../../../common/main";
+import Backdrop from "./Backdrop/index";
 
 const Success = ({ movieData, movieCredits }) => {
   let cast = [];
@@ -16,7 +16,7 @@ const Success = ({ movieData, movieCredits }) => {
 
   return (
     <>
-      {movieData ? (
+      {movieData && movieData.backdrop_path ? (
         <Backdrop
           imagePath={movieData.backdrop_path}
           title={movieData.title}
@@ -26,7 +26,7 @@ const Success = ({ movieData, movieCredits }) => {
       ) : (
         ""
       )}
-      <Main>
+      <PageMain>
         <Section
           content={
             movieData ? (
@@ -96,7 +96,7 @@ const Success = ({ movieData, movieCredits }) => {
         ) : (
           ""
         )}
-      </Main>
+      </PageMain>
     </>
   );
 };

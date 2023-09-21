@@ -1,13 +1,13 @@
 import { Loader } from "../../common/Loader/styled";
 import { Wrapper } from "./styled";
-import { Main } from "../../common/main";
+import { PageMain } from "../../common/main";
 
 const Loading = () => (
-  <Main>
+  <PageMain>
     <Wrapper>
       <Loader />
     </Wrapper>
-  </Main>
+  </PageMain>
 );
 
 export default Loading;

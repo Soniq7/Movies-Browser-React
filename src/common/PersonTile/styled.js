@@ -11,8 +11,7 @@ export const Tile = styled.article`
   box-shadow: ${({ theme }) => theme.boxShadow.tile};
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 136px;
-    height: 245px;
-    padding: 8px 8px 33px 8px;
+    padding: 8px;
   }
 `;
 
@@ -60,6 +59,9 @@ export const Job = styled.p`
   font-size: 18px;
   line-height: 1.5;
   margin: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 12px;
+  }
 `;
 
 export const Content = styled.span`

@@ -1,7 +1,7 @@
 import PageTile from "../../../../common/PageTile";
 import Section from "../../../../common/Section";
 import Tile from "../../../../common/Tile";
-import { Main } from "../../../../common/main";
+import { PageMain } from "../../../../common/main";
 import { Item, List } from "./styled";
 
 const Success = ({ personData, personCreditsData }) => {
@@ -16,7 +16,7 @@ const Success = ({ personData, personCreditsData }) => {
   console.log(cast);
 
   return (
-    <Main>
+    <PageMain>
       <Section
         content={
           personData ? (
@@ -89,7 +89,7 @@ const Success = ({ personData, personCreditsData }) => {
       ) : (
         ""
       )}
-    </Main>
+    </PageMain>
   );
 };
 

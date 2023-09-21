@@ -9,9 +9,9 @@ const options = {
   },
 };
 
-export const getPopularPeople = async () => {
+export const getPopularPeople = async (page) => {
   const response = await axios.get(
-    "https://api.themoviedb.org/3/person/popular?language=en-US&page=1",
+    `https://api.themoviedb.org/3/person/popular?language=en-US&page=${page}`,
     options
   );
 
