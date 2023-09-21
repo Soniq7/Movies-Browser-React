@@ -1,21 +1,26 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector  } from "react-redux";
 import { Input, LoupeIcon, Wrapper, IconWrapper } from "./styled";
 import { useQueryParameter, useReplaceQueryParameter } from "./queryParameters";
 import searchQueryParamName from "./searchQueryParamName";
+import { selectSearchTerm, updateSearchTerm } from "../../features/Movies/MovieList/moviesSlice";
 
 const Search = () => {
   const location = useLocation();
+  const dispatch = useDispatch();
+  const searchTerm = useSelector(selectSearchTerm);
 
   const query = useQueryParameter(searchQueryParamName);
   const replaceQueryParameter = useReplaceQueryParameter();
   
 
-  const [searchTerm, setSearchTerm] = useState(query || "");
+  const [localSearchTerm, setLocalSearchTerm] = useState(query || "");
 
   const onInputChange = (event) => {
     const value = event.target.value;
-    setSearchTerm(value);
+    dispatch(updateSearchTerm(value));
+    setLocalSearchTerm(value);
     replaceQueryParameter({
       key: searchQueryParamName,
       value: value.trim() !== "" ? value : undefined,
@@ -36,7 +41,7 @@ const Search = () => {
       </IconWrapper>
       <Input
         placeholder={placeholderText}
-        value={searchTerm}
+        value={localSearchTerm}
         onChange={onInputChange}
       />
     </Wrapper>

@@ -6,12 +6,13 @@ import {
   fetchMoviesLoading,
 } from "./moviesSlice";
 import { call, takeLatest, put, delay } from "redux-saga/effects";
-import { getSearchResults } from "./getSearchReasult";
+import { getSearchResults } from "./getSearchResult";
 
 function* fetchSeachResultsHandler() {
   try {
     yield put(fetchMoviesLoading());
     const data = yield call(getSearchResults);
+    const movies = data.results;
     yield put(fetchMoviesSuccess(movies));
   } catch {
     yield put(fetchMoviesError());
@@ -29,7 +30,6 @@ function* fetchMoviesHandler() {
     }
   }
   
-
 export function* SearchResultsSaga() {
   yield takeLatest(fetchSearchResults.type, fetchSeachResultsHandler);
   yield takeLatest(fetchMovies.type, fetchMoviesHandler);
