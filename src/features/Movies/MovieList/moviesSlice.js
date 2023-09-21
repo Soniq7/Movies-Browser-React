@@ -18,11 +18,13 @@ const moviesSlice = createSlice({
       state.movies = movies;
     },
     fetchMovies: () => {},
+    fetchSearchResults: () => {},
   },
 });
 
 export const {
   fetchMovies,
+  fetchSearchResults,
   fetchMoviesSuccess,
   fetchMoviesLoading,
   fetchMoviesError,
