@@ -29,6 +29,7 @@ export const Shadow = styled.img`
 export const BackdropPoster = styled(Shadow)`
   position: static;
   z-index: -2;
+  width: auto;
 `;
 
 export const Header = styled.header`
