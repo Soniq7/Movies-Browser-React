@@ -5,7 +5,6 @@ import { ListMain } from "../../../../common/main";
 import Pagination from "../../../Pagination/index";
 
 const Success = ({ movies, genreList }) => {
-  console.log(movies);
   return (
     <>
       <ListMain>
