@@ -36,7 +36,6 @@ const MoviePage = () => {
       clearTimeout(timeoutId);
     };
   }, []);
-  console.log(movieCredits);
 
   switch (movieData) {
     case "error":
