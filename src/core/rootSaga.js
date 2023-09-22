@@ -1,6 +1,6 @@
 import { moviesSaga } from "../features/Movies/MovieList/moviesSaga";
 import { peopleSaga } from "../features/People/PeopleList/peopleSaga";
-import { genresSaga } from "../features/Movies/Genres/genreSaga";
+import { genresSaga } from "../features/Movies/Genres/genresSaga";
 import { all } from "redux-saga/effects";
 
 export function* rootSaga() {
