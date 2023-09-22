@@ -13,8 +13,6 @@ const Success = ({ personData, personCreditsData, genreList }) => {
     cast = personCreditsData.cast;
   }
 
-  console.log(cast);
-
   return (
     <PageMain>
       <Section
