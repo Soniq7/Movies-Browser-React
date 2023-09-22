@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ListItem = styled.ul`
+export const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
   justify-content: center;

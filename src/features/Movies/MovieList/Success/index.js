@@ -1,4 +1,4 @@
-import { ListItem, Item } from "./styled";
+import { List, Item } from "./styled";
 import Tile from "../../../../common/Tiles/Tile";
 import Section from "../../../../common/Section";
 import { ListMain } from "../../../../common/main";
@@ -10,7 +10,7 @@ const Success = ({ results }) => (
       <Section
         header="Popular movies"
         content={
-          <ListItem>
+          <List>
             {results
               ? results.map((movie) => (
                   <Item key={movie.id}>
@@ -26,7 +26,7 @@ const Success = ({ results }) => (
                   </Item>
                 ))
               : null}
-          </ListItem>
+          </List>
         }
       />
     </ListMain>
