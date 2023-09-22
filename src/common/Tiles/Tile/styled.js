@@ -104,7 +104,6 @@ export const PersonTile = styled(Tile)`
   justify-content: center;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 136px;
-    height: 245px;
     padding: 8px;
   }
 `;

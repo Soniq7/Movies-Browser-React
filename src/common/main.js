@@ -17,15 +17,8 @@ export const PageMain = styled.main`
 `;
 export const ListMain = styled.main`
   justify-content: center;
-  padding: 0 20px;
+  padding: 0 40px;
   width: auto;
   margin: 0 auto;
   align-items: center;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorizontal}) {
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 288px;
-    padding: 0;
-  }
 `;

@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
 export const ListItem = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
   justify-content: center;
   gap: 24px;
   padding: 0;
+  margin: 0;
   @media (max-width: 700px) {
     gap: 16px;
+  }
+  @media (max-width: 550px) {
+    grid-template-columns: repeat(auto-fit, 136px);
   }
 `;
 
