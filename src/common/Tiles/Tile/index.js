@@ -77,7 +77,7 @@ const Tile = ({
             {genres ? (
               <GenreList>
                 {genres.map((genre) => (
-                  <GenreTag>{genre}</GenreTag>
+                  <GenreTag key={genre}>{genre}</GenreTag>
                 ))}
               </GenreList>
             ) : (
