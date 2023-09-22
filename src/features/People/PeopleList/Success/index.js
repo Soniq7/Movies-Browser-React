@@ -1,5 +1,5 @@
 import { ListItem, Item } from "./styled";
-import PersonTile from "../../../../common/PersonTile";
+import Tile from "../../../../common/Tiles/Tile";
 import Section from "../../../../common/Section";
 import { ListMain } from "../../../../common/main";
 import Pagination from "../../../Pagination";
@@ -14,9 +14,10 @@ const Success = ({ results }) => (
             {results
               ? results.map((person) => (
                   <Item key={person.id}>
-                    <PersonTile
+                    <Tile
+                      isPersonTile={true}
                       name={person.name}
-                      portrait={person.profile_path}
+                      image={person.profile_path}
                       id={person.id}
                     />
                   </Item>

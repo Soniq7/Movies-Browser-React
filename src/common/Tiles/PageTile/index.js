@@ -1,29 +1,29 @@
 import {
-  Tile,
-  Portrait,
+  StyledTile,
+  Image,
   PersonContent,
   MovieContent,
   Name,
-  PersonalInfo,
+  InfoList,
   Term,
   Info,
   Description,
   MobileDescription,
-  InfoWrapper,
+  InfoListWrapper,
   Year,
-  Genres,
+  GenreList,
   Rating,
-  RatingScore,
-  VoteCount,
+  Score,
+  Votes,
   RatingScale,
 } from "./styled";
+import { GenreTag, RatingIcon } from "../defaultTileStyles";
 
-import { formatDate } from "../formatDate";
-import { TileTags, TileRatingIcon } from "../Tile/styled";
-import icon from "../../images/shape-star.png";
+import { formatDate } from "../../formatDate";
+import icon from "../../../images/shape-star.png";
 import { useEffect, useState } from "react";
-import { getWidth } from "../getWidth";
-import ImagePlaceholder from "../ImagePlaceholder";
+import { getWidth } from "../../getWidth";
+import ImagePlaceholder from "../../ImagePlaceholder";
 
 const PageTile = ({
   isPersonTile,
@@ -32,9 +32,8 @@ const PageTile = ({
   description,
   dateOfBirth,
   placeOfBirth,
-  poster,
   production,
-  release_date,
+  releaseDate,
   genreList,
   score,
   votes,
@@ -55,36 +54,37 @@ const PageTile = ({
 
   if (isPersonTile) {
     return (
-      <Tile>
+      <StyledTile>
         {image ? (
-          <Portrait src={`https://image.tmdb.org/t/p/original/${image}`} />
+          <Image src={`https://image.tmdb.org/t/p/original/${image}`} />
         ) : (
-          <ImagePlaceholder isPerson={true} isPage={true} />
+          <ImagePlaceholder isPerson={true} isPageTile={true} />
         )}
         <PersonContent>
           <Name>{name}</Name>
-          <PersonalInfo>
-            <InfoWrapper>
+          <InfoList>
+            <InfoListWrapper>
               <Term>
                 {viewportWidth > 670 ? "Date of birth:" : "Birth:"} &nbsp;{" "}
               </Term>
               <Info>{dateOfBirth ? formatDate(dateOfBirth) : "-"} </Info>
-            </InfoWrapper>
-            <InfoWrapper>
+            </InfoListWrapper>
+            <InfoListWrapper>
               <Term>Place of birth: &nbsp; </Term>
               <Info>{placeOfBirth ? placeOfBirth : "-"}</Info>
-            </InfoWrapper>
-          </PersonalInfo>
-          {viewportWidth >= 700 ? (
+            </InfoListWrapper>
+          </InfoList>
+          {description && viewportWidth >= 700 ? (
             <Description>{description}</Description>
           ) : null}
         </PersonContent>
-        {viewportWidth <= 700 ? (
+        {description && viewportWidth <= 700 ? (
           <MobileDescription>{description}</MobileDescription>
         ) : null}
-      </Tile>
+      </StyledTile>
     );
   }
+
   let countryList = [];
 
   if (production.length > 0) {
@@ -95,54 +95,54 @@ const PageTile = ({
   const countries = countryList?.name || "";
 
   return (
-    <Tile>
-      {poster ? (
-        <Portrait src={`https://image.tmdb.org/t/p/original/${poster}`} />
+    <StyledTile>
+      {image ? (
+        <Image src={`https://image.tmdb.org/t/p/original/${image}`} />
       ) : (
         <ImagePlaceholder />
       )}
       <MovieContent>
         <Name>{name}</Name>
-        <Year>{release_date.substring(0, 4)}</Year>
-        <PersonalInfo>
-          {production != "" ? (
-            <InfoWrapper>
+        <Year>{releaseDate.substring(0, 4)}</Year>
+        <InfoList>
+          {production !== "" ? (
+            <InfoListWrapper>
               {viewportWidth > 670 ? <Term>Production: &nbsp;</Term> : ""}
               <Info>{viewportWidth > 670 ? countries : countriesShort}</Info>
-            </InfoWrapper>
+            </InfoListWrapper>
           ) : (
             ""
           )}
-          <InfoWrapper>
+          <InfoListWrapper>
             {viewportWidth > 670 ? <Term>Release date: &nbsp;</Term> : ""}
-            <Info>{formatDate(release_date)} </Info>
-          </InfoWrapper>
-        </PersonalInfo>
+            <Info>{formatDate(releaseDate)} </Info>
+          </InfoListWrapper>
+        </InfoList>
         {genreList ? (
-          <Genres>
+          <GenreList>
             {genreList.map((genre) => (
-              <TileTags key={genre.id}>{genre.name}</TileTags>
+              <GenreTag key={genre.id}>{genre.name}</GenreTag>
             ))}
-          </Genres>
+          </GenreList>
         ) : (
           ""
         )}
         {votes ? (
           <Rating>
-            <TileRatingIcon src={icon} alt="" />
-            <RatingScore>{score}</RatingScore>
+            <RatingIcon src={icon} alt="" />
+            <Score>{score}</Score>
             <RatingScale>/10</RatingScale>
-            <VoteCount>{`${votes} votes`} </VoteCount>
+            <Votes>{`${votes} votes`} </Votes>
           </Rating>
         ) : (
-          <VoteCount>No votes yet</VoteCount>
+          <Votes>No votes yet</Votes>
         )}
         {viewportWidth >= 700 ? <Description>{description}</Description> : null}
       </MovieContent>
       {viewportWidth <= 700 ? (
         <MobileDescription>{description}</MobileDescription>
       ) : null}
-    </Tile>
+    </StyledTile>
   );
 };
 

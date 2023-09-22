@@ -1,20 +1,14 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom/cjs/react-router-dom";
+import { Tile, Title } from "../defaultTileStyles";
 
-export const StyledTile = styled.article`
-  background: ${({ theme }) => theme.colors.boxBackground};
-  padding: 16px;
+export const MovieTile = styled(Tile)`
   width: 324px;
-  height: 100%;
-  box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.5);
-  border-radius: 5px;
   display: flex;
   gap: 16px;
   flex-direction: column;
   @media (max-width: 700px) {
     display: grid;
     grid-template-columns: auto auto;
-    grid-gap: 16px;
     width: auto;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -22,7 +16,7 @@ export const StyledTile = styled.article`
   }
 `;
 
-export const TileImage = styled.img`
+export const Poster = styled.img`
   width: 292px;
   height: 434px;
   border-radius: 5px;
@@ -32,16 +26,8 @@ export const TileImage = styled.img`
   }
 `;
 
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: ${({ theme }) => theme.colors.text.primaryText};
-`;
-
-export const TileTitle = styled.p`
-  margin: 0;
+export const MovieTitle = styled(Title)`
   height: auto;
-  font-size: 22px;
-  font-weight: 500;
   @media (max-width: 700px) {
     font-size: 26px;
   }
@@ -50,7 +36,7 @@ export const TileTitle = styled.p`
   }
 `;
 
-export const TileYear = styled.p`
+export const Year = styled.p`
   margin: 0;
   font-size: 16px;
   font-weight: 400;
@@ -65,9 +51,9 @@ export const TileYear = styled.p`
   }
 `;
 
-export const Job = styled(TileYear)``;
+export const Job = styled(Year)``;
 
-export const TileGenres = styled.ul`
+export const GenreList = styled.ul`
   grid-column: 1;
   display: flex;
   flex-wrap: wrap;
@@ -80,22 +66,7 @@ export const TileGenres = styled.ul`
   }
 `;
 
-export const TileTags = styled.li`
-  font-size: 14px;
-  font-weight: 400;
-  background: ${({ theme }) => theme.colors.genre.background};
-  margin: 4px;
-  padding: 8px 16px;
-  border-radius: 5px;
-  grid-row: 1;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    padding: 4px 8px;
-    font-size: 10px;
-    margin: 0;
-  }
-`;
-
-export const TileReview = styled.div`
+export const Review = styled.div`
   grid-column: 1;
   display: flex;
   gap: 12px;
@@ -107,35 +78,72 @@ export const TileReview = styled.div`
   }
 `;
 
-export const TileRating = styled(TileYear)`
+export const Rating = styled(Year)`
   font-weight: 600;
   padding-left: 6px;
   color: unset;
 `;
 
-export const TileVotes = styled(TileYear)`
+export const Votes = styled(Rating)`
   font-weight: 400;
-  padding-left: 6px;
-  color: unset;
 `;
 
-export const TileRatingIcon = styled.img`
-  width: 24px;
-  height: 24px;
-  @media (max-width: 700px) {
-    width: 28px;
-    height: 28px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 16px;
-    height: 16px;
-  }
-`;
-
-export const TileWrapper = styled.div`
+export const MovieContent = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 8px;
+`;
+/////////////////////////////////////////////////////////
+
+export const PersonName = styled(Title)`
+  text-align: center;
+`;
+export const PersonTile = styled(Tile)`
+  width: 208px;
+  justify-content: center;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 136px;
+    height: 245px;
+    padding: 8px;
+  }
+`;
+
+export const Frame = styled.div`
+  overflow: hidden;
+  width: 176px;
+  height: 231px;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  margin: 0 0 12px 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 120px;
+    height: 178px;
+    margin: 0 0 8px 0;
+  }
+`;
+
+export const Photo = styled.img`
+  width: 177px;
+  height: 264px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 120px;
+    height: 178px;
+  }
+`;
+
+export const Role = styled.p`
+  color: ${({ theme }) => theme.colors.text.thirdText};
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 12px;
+  }
+`;
+
+export const PersonContent = styled.span`
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
 `;
