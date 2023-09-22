@@ -5,11 +5,12 @@ import { getPerson } from "./getPerson";
 import { getPersonCredits } from "./getPersonCredits";
 import Loading from "../../Loading";
 import { useParams } from "react-router-dom/cjs/react-router-dom";
-
+import { selectGenres } from "../../Movies/Genres/genresSlice";
+import { useSelector } from "react-redux";
 const PersonPage = () => {
   const [personData, setPersonData] = useState(null);
   const [personCreditsData, setPersonCreditsData] = useState(null);
-
+  const genres = useSelector(selectGenres);
   const { id } = useParams();
 
   useEffect(() => {
@@ -50,6 +51,7 @@ const PersonPage = () => {
         <Success
           personData={personData}
           personCreditsData={personCreditsData}
+          genreList={genres}
         />
       );
   }
