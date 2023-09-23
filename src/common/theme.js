@@ -8,6 +8,7 @@ const colorCollection = {
   silver: "#C4C4C4",
   white: "#FFF",
   pattensBlue: "#D6E4FF",
+  scienceBlue: "#0044CC",
 };
 
 export const theme = {
@@ -16,12 +17,14 @@ export const theme = {
       imagePlaceholder: colorCollection.silver,
       siteBackground: colorCollection.whisper,
       boxBackground: colorCollection.white,
+      button: colorCollection.scienceBlue,
     },
     text: {
       primaryText: colorCollection.woodsmoke,
       secondaryText: colorCollection.stormGray,
       thirdText: colorCollection.waterloo,
       backdropText: colorCollection.white,
+      button: colorCollection.white,
     },
     navigation: {
       background: colorCollection.black,
