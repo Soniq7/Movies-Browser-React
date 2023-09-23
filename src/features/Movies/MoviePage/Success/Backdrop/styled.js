@@ -1,94 +1,62 @@
 import { styled } from "styled-components";
 import { ReactComponent as Star } from "../../../../../images/shape-star.svg";
 
+export const Header = styled.header`
+  position: relative;
+`;
+
+export const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
 export const Shadow = styled.img`
   position: absolute;
-  height: 770px;
-  width: 100%;
-  z-index: 1;
-  @media (max-width: 1450px) {
-    height: 650px;
-  }
-  @media (max-width: 1230px) {
-    height: 500px;
-  }
-  @media (max-width: 960px) {
-    height: 400px;
-  }
-  @media (max-width: 760px) {
-    height: 340px;
-  }
-  @media (max-width: 600px) {
-    height: 250px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    height: 148px;
-  }
-`;
-
-export const BackdropPoster = styled(Shadow)`
-  position: static;
-  z-index: -2;
-`;
-
-export const Header = styled.header`
-  display: flex;
-  justify-content: center;
-  background-color: black;
-`;
-
-export const Wrapper = styled.div`
-  position: relative;
-  width: 73%;
-`;
-
-export const Content = styled.span`
-  z-index: 1;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  top: 0;
   height: 100%;
-  padding: 56px 0;
-  @media (max-width: 760px) {
-    padding: 28px;
-  }
-  @media (max-width: 700px) {
-    padding: 28px 14px;
-  }
-  @media (max-width: 700px) {
-    padding: 28px 14px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    padding: 8px;
-  }
+  width: 100%;
 `;
 
-export const Title = styled.h1`
-  color: white;
+export const Poster = styled.img`
+  display: block;
+  width: 100%;
+  max-height: 770px;
+  margin: 0 auto;
+  max-width: 1368px;
+`;
+
+export const StarImage = styled(Star)`
+  width: 40px;
+  height: 40px;
+`;
+
+export const Title = styled.div`
   font-size: 64px;
   font-weight: 600;
   line-height: 1.2;
-  margin: 0 0 24px 0;
-  @media (max-width: 1450px) {
-    font-size: 56px;
-  }
-  @media (max-width: 1230px) {
-    font-size: 36px;
+  @media (max-width: 850px) {
+    font-size: 50px;
   }
   @media (max-width: 760px) {
+    font-size: 36px;
+  }
+  @media (max-width: 550px) {
     font-size: 24px;
-    margin: 0 0 12px 0;
-  }
-  @media (max-width: 600px) {
-    font-size: 20px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    margin: 0 0 4px 0;
-    font-size: 14px;
   }
 `;
 
+export const Content = styled.div`
+  position: absolute;
+  bottom: 56px;
+  margin: 1% 15%;
+  color: ${({ theme }) => theme.colors.text.backdropText};
+  @media (max-width: 760px) {
+    bottom: 40px;
+  }
+  @media (max-width: 450px) {
+    bottom: 20px;
+  }
+`;
 export const Review = styled.div`
   display: flex;
   gap: 8px;
@@ -108,7 +76,7 @@ export const ReviewIcon = styled(Star)`
 
 export const Score = styled.p`
   margin: 0;
-  color: white;
+  color: ${({ theme }) => theme.colors.text.backdropText};
   font-size: 30px;
   font-weight: 500;
   line-height: 1.3;
@@ -137,6 +105,9 @@ export const Scale = styled(Score)`
 
 export const Votes = styled(Scale)`
   margin-top: 16px;
+  @media (max-width: 800px) {
+    margin-top: 10px;
+  }
   @media (max-width: 700px) {
     margin-top: 0;
   }
