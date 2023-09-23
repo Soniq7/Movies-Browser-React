@@ -18,8 +18,8 @@ const moviesSlice = createSlice({
       state.loading = "success";
       state.movies = movies;
     },
-    updateSearchTerm: (state, action) => {
-      state.searchTerm = action.payload;
+    updateSearchTerm: (state, {payload: action}) => {
+      state.searchTerm = action;
     },
     fetchMovies: () => {},
   },

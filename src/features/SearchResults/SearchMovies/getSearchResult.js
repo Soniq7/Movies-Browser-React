@@ -9,15 +9,19 @@ const options = {
   },
 };
 
-export const getSeachResult = async () => {
-  const response = await axios.get(
-    "https://api.themoviedb.org/3/search/movie?query=title&include_adult=false&language=en-US&page=1",
-    options
-  );
+export const getSeachResult = async (query, apiKey) => {
+  const url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(query)}&api_key=${apiKey}`;
+  
+  try {
+    const response = await axios.get(url, options);
 
-  if (response.status !== 200) {
+    if (response.status !== 200) {
+      return "error";
+    }
+
+    return response.data;
+  } catch (error) {
+    console.error('Błąd:', error);
     return "error";
   }
-
-  return await response.data;
 };
