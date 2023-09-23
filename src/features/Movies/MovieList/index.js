@@ -11,7 +11,6 @@ const MovieList = () => {
 
   useEffect(() => {
     dispatch(fetchMovies());
-    dispatch(fetchGenres());
   }, []);
 
   const state = useSelector(selectLoading);
