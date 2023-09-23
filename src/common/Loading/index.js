@@ -1,5 +1,4 @@
-import { Loader } from "../../common/Loader/styled";
-import { Wrapper } from "./styled";
+import { Wrapper, Loader } from "./styled";
 import { PageMain } from "../../common/main";
 
 const Loading = () => (

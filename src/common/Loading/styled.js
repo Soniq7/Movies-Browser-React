@@ -1,5 +1,11 @@
-import styled, { keyframes } from "styled-components";
+import { styled, keyframes } from "styled-components";
 import { ReactComponent as LoaderIcon } from "./loader.svg";
+
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const spin = keyframes`
 to{

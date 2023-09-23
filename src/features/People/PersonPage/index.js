@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Success from "./Success";
-import Error from "../../Error";
+import Error from "../../../common/Error";
+import Loading from "../../../common/Loading";
 import { getPerson } from "./getPerson";
 import { getPersonCredits } from "./getPersonCredits";
-import Loading from "../../Loading";
 import { useParams } from "react-router-dom/cjs/react-router-dom";
 
 const PersonPage = () => {

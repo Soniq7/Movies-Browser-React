@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Success from "./Success";
-import Error from "../../Error";
+import Loading from "../../../common/Loading";
+import Error from "../../../common/Error";
 import { getMovie } from "./getMovie";
 import { getMovieCredits } from "./getMovieCredits";
-import Loading from "../../Loading";
 import { useParams } from "react-router-dom/cjs/react-router-dom";
 
 const MoviePage = () => {
