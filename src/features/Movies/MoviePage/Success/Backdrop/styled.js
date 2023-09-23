@@ -38,7 +38,6 @@ export const Shadow = styled.img`
   grid-row: 1;
   grid-column: 1;
   height: 100%;
-  background-position: center;
   width: 100vw;
   @media (min-width: 1921px) {
     width: 1920px;
