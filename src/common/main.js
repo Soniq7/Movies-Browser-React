@@ -10,7 +10,7 @@ export const PageMain = styled.main`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorizontal}) {
     grid-template-columns: auto;
-    padding: 0 20px 210px 0;
+    padding: 0 20px 210px 20px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: 10px 10px 80px 10px;
