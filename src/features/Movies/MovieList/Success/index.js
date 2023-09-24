@@ -1,14 +1,29 @@
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { ListItem, Item } from "./styled";
 import Tile from "../../../../common/Tiles/Tile";
 import Section from "../../../../common/Section";
 import { ListMain } from "../../../../common/main";
 import Pagination from "../../../Pagination/index";
+import { selectSearchTerm } from "../moviesSlice";
 
-const Success = ({ results }) => (
-  <>
+const Success = ({ results }) => {
+  const [pageTitle, setPageTitle] = useState('Popular movies');
+  const searchTerm = useSelector(selectSearchTerm);
+
+  useEffect(() => {
+    if (searchTerm) {
+      setPageTitle(`Search results for "${searchTerm}" (${results.length})`);
+    } else {
+      setPageTitle('Popular movies');
+    }
+  }, [searchTerm, results]);
+  
+  return (
+    <>
     <ListMain>
       <Section
-        header="Popular movies"
+        header={pageTitle}
         content={
           <ListItem>
             {results
@@ -32,6 +47,8 @@ const Success = ({ results }) => (
     </ListMain>
     <Pagination isMovieList={true} />
   </>
-);
+
+  )
+};
 
 export default Success;
