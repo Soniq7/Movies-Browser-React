@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import { useHistory } from "react-router-dom";
 import { toMovies, toPeople } from "../routes";
 import { VideoIcon, PageTitle, Logo } from "./Logo/styled";
 import { Navigation, NavList, MenueItem, StyledNavLink } from "./Menue/styled";
@@ -6,11 +8,18 @@ import Search from "./Search";
 
 
 export default () => {
+  const history = useHistory();
+  const searchRef = useRef(null);
+
+  const handleLogoClick = () => {
+    history.push("/");
+    searchRef.current.resetSearch();
+  };
 
   return (
     <Navigation>
       <NavList>
-        <Logo to="/">
+        <Logo to="/" onClick={handleLogoClick}>
           <VideoIcon />
           <PageTitle>
             Movies Browser
@@ -26,7 +35,7 @@ export default () => {
             People
           </StyledNavLink>
         </MenueItem>
-        <Search />
+        <Search ref={searchRef}/>
       </NavList>
     </Navigation>
   );
