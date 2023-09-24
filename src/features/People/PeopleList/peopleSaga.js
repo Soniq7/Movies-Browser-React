@@ -5,13 +5,15 @@ import {
   fetchPeopleLoading,
   fetchPeopleSuccess,
 } from "./peopleSlice";
-import { call, takeLatest, put, delay } from "redux-saga/effects";
+import { selectPeoplePage } from "./peopleSlice";
+import { call, takeLatest, put, delay, select } from "redux-saga/effects";
 
 function* fetchPeopleHandler() {
   try {
+    const page = yield select(selectPeoplePage);
     yield put(fetchPeopleLoading());
     yield delay(500);
-    const people = yield call(getPopularPeople);
+    const people = yield call(getPopularPeople, page);
     yield put(fetchPeopleSuccess(people));
   } catch {
     yield put(fetchPeopleError());

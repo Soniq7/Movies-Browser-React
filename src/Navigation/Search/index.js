@@ -50,12 +50,14 @@ const Search = forwardRef((props, ref) => {
     resetSearch,
   }));
 
-  const placeholderText =
-    location.pathname === "/movies"
-      ? "Search for movies..."
-      : location.pathname === "/people"
-      ? "Search for people..."
-      : "";
+  const pathname = location.pathname;
+
+
+  const placeholderText = pathname.startsWith("/movies")
+    ? "Search for movies..."
+    : pathname.startsWith("/people")
+    ? "Search for people..."
+    : "";
 
   return (
     <Wrapper>

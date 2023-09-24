@@ -1,15 +1,25 @@
 import { styled } from "styled-components";
+import { Tile, Title } from "../defaultTileStyles";
 
-export const Tile = styled.article`
-  background: ${({ theme }) => theme.colors.background.boxBackground};
-  display: grid;
-  grid-template-columns: auto auto;
+export const Name = styled(Title)`
+  font-size: 36px;
+  font-weight: 600;
+  @media (max-width: ${({ theme }) => theme.breakpoints.navigation}) {
+    font-size: 32px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 14px;
+  }
+`;
+
+export const StyledTile = styled(Tile)`
+  display: flex;
   gap: 40px;
   padding: 40px;
-
-  box-shadow: ${({ theme }) => theme.boxShadow.tile};
+  height: auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.navigation}) {
+    display: grid;
     grid-template-columns: 292px auto;
   }
 
@@ -17,12 +27,12 @@ export const Tile = styled.article`
     font-weight: 400;
     grid-template-columns: 116px auto;
     padding: 16px;
-    gap: 16px;
+    grid-gap: 16px;
   }
 `;
 
-export const Portrait = styled.img`
-  width: 399px;
+export const Image = styled.img`
+  width: 389px;
   height: 564px;
   border-radius: ${({ theme }) => theme.borderRadius};
 
@@ -42,6 +52,7 @@ export const PersonContent = styled.span`
   grid-template-rows: repeat(3, auto) 1fr;
   grid-gap: 24px;
   padding: 8px 0;
+  flex-grow: 1;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     grid-template-rows: repeat(2, auto) 1fr;
     grid-gap: 16px;
@@ -56,28 +67,14 @@ export const MovieContent = styled(PersonContent)`
   }
 `;
 
-export const Name = styled.p`
-  margin: 0;
-  font-size: 36px;
-  font-weight: 600;
-  line-height: 1.2;
-  @media (max-width: ${({ theme }) => theme.breakpoints.navigation}) {
-    font-size: 32px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: 14px;
-  }
-`;
-
-export const PersonalInfo = styled.dl`
+export const InfoList = styled.dl`
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin: 0;
 `;
 
-export const InfoWrapper = styled.span`
+export const InfoListWrapper = styled.span`
   display: flex;
   flex-wrap: wrap;
 `;
@@ -91,7 +88,7 @@ export const Term = styled.dt`
     font-size: 20px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: 14px;
+    font-size: 12px;
   }
 `;
 
@@ -138,7 +135,7 @@ export const Rating = styled.span`
   gap: 8px;
 `;
 
-export const RatingScore = styled.p`
+export const Score = styled.p`
   font-size: 22px;
   font-weight: 500;
   line-height: 1.3;
@@ -148,7 +145,7 @@ export const RatingScore = styled.p`
   }
 `;
 
-export const VoteCount = styled.p`
+export const Votes = styled.p`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.2;
@@ -158,9 +155,9 @@ export const VoteCount = styled.p`
   }
 `;
 
-export const RatingScale = styled(VoteCount)``;
+export const RatingScale = styled(Votes)``;
 
-export const Genres = styled.ul`
+export const GenreList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 16px;

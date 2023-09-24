@@ -6,10 +6,10 @@ import {
   Wrapper,
   Container,
 } from "./styled";
-import { Main } from "../../common/main";
+import { PageMain } from "../../common/main";
 
 const Error = () => (
-  <Main>
+  <PageMain>
     <Wrapper>
       <Danger />
       <Container>
@@ -21,7 +21,7 @@ const Error = () => (
         <Button>Back to home page</Button>
       </Container>
     </Wrapper>
-  </Main>
+  </PageMain>
 );
 
 export default Error;

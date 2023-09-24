@@ -10,8 +10,6 @@ import MoviePage from "../features/Movies/MoviePage";
 import PeopleList from "../features/People/PeopleList";
 import PersonPage from "../features/People/PersonPage";
 import { toMovies, toMovie, toPeople, toPerson } from "../routes";
-import PaginationMovie from "../features/Movies/PaginationMovie";
-import PaginationPeople from "../features/People/PaginationPeople";
 
 export default () => (
   <HashRouter>
@@ -22,18 +20,15 @@ export default () => (
       </Route>
       <Route path={toMovies()}>
         <MovieList />
-        <PaginationMovie />
       </Route>
       <Route path={toPerson()}>
         <PersonPage />
       </Route>
       <Route path={toPeople()}>
         <PeopleList />
-        <PaginationPeople />
       </Route>
       <Route path="/">
         <Redirect to={toMovies()} />
-        <PaginationMovie />
       </Route>
     </Switch>
   </HashRouter>

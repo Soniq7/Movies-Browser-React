@@ -6,8 +6,8 @@ import {
   PersonPageFrame,
 } from "./styled";
 
-const ImagePlaceholder = ({ isPerson, isPage }) => {
-  if (isPerson && isPage) {
+const ImagePlaceholder = ({ isPersonTile, isPageTile }) => {
+  if (isPersonTile && isPageTile) {
     return (
       <PersonPageFrame>
         <Person />
@@ -15,7 +15,7 @@ const ImagePlaceholder = ({ isPerson, isPage }) => {
     );
   }
 
-  if (isPerson) {
+  if (isPersonTile) {
     return (
       <PersonFrame>
         <Person />

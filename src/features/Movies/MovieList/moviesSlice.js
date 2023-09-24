@@ -6,6 +6,7 @@ const moviesSlice = createSlice({
     movies: [],
     loading: "idle",
     searchTerm: "",
+    page: 1,
   },
   reducers: {
     fetchMoviesLoading: (state) => {
@@ -22,6 +23,18 @@ const moviesSlice = createSlice({
       state.searchTerm = action;
     },
     fetchMovies: () => {},
+    nextMoviePage: (state) => {
+      state.page = state.page + 1;
+    },
+    prevMoviePage: (state) => {
+      state.page = state.page - 1;
+    },
+    lastMoviePage: (state) => {
+      state.page = 500;
+    },
+    firstMoviePage: (state) => {
+      state.page = 1;
+    },
   },
 });
 
@@ -31,11 +44,16 @@ export const {
   fetchMoviesLoading,
   fetchMoviesError,
   updateSearchTerm,
+  nextMoviePage,
+  prevMoviePage,
+  lastMoviePage,
+  firstMoviePage,
 } = moviesSlice.actions;
 
 const selectMoviesState = (state) => state.movies;
 
 export const selectMovies = (state) => selectMoviesState(state).movies;
+export const selectMoviePage = (state) => selectMoviesState(state).page;
 export const selectLoading = (state) => selectMoviesState(state).loading;
 export const selectSearchTerm = (state) => selectMoviesState(state).searchTerm;
 

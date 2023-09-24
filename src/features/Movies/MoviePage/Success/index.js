@@ -1,9 +1,9 @@
-import PageTile from "../../../../common/PageTile";
+import PageTile from "../../../../common/Tiles/PageTile";
 import Section from "../../../../common/Section";
-import PersonTile from "../../../../common/PersonTile";
+import Tile from "../../../../common/Tiles/Tile";
 import { Item, List } from "./styled";
-import { Main } from "../../../../common/main";
-import Backdrop from "./Backdrop";
+import { PageMain } from "../../../../common/main";
+import Backdrop from "./Backdrop/index";
 
 const Success = ({ movieData, movieCredits }) => {
   let cast = [];
@@ -16,17 +16,17 @@ const Success = ({ movieData, movieCredits }) => {
 
   return (
     <>
-      {movieData ? (
+      {movieData && movieData.backdrop_path ? (
         <Backdrop
-          imagePath={movieData.backdrop_path}
-          title={movieData.title}
+          image={movieData.backdrop_path}
+          name={movieData.title}
           score={movieData.vote_average.toFixed(1)}
           votes={movieData.vote_count}
         />
       ) : (
         ""
       )}
-      <Main>
+      <PageMain>
         <Section
           content={
             movieData ? (
@@ -34,9 +34,9 @@ const Success = ({ movieData, movieCredits }) => {
                 isPersonTile={false}
                 name={movieData.title}
                 description={movieData.overview}
-                poster={movieData.poster_path}
+                image={movieData.poster_path}
                 production={movieData.production_countries}
-                release_date={movieData.release_date}
+                releaseDate={movieData.release_date}
                 genreList={movieData.genres}
                 score={movieData.vote_average.toFixed(1)}
                 votes={movieData.vote_count}
@@ -55,9 +55,9 @@ const Success = ({ movieData, movieCredits }) => {
                 {cast
                   ? cast.map((person) => (
                       <Item key={person.id}>
-                        <PersonTile
-                          isPerson={true}
-                          portrait={person.profile_path}
+                        <Tile
+                          isPersonTile={true}
+                          image={person.profile_path}
                           name={person.name}
                           job={person.character}
                           id={person.id}
@@ -80,9 +80,9 @@ const Success = ({ movieData, movieCredits }) => {
                 {crew
                   ? crew.map((person) => (
                       <Item key={person.id}>
-                        <PersonTile
-                          isPerson={true}
-                          portrait={person.profile_path}
+                        <Tile
+                          isPersonTile={true}
+                          image={person.profile_path}
                           name={person.name}
                           job={person.job}
                           id={person.id}
@@ -96,7 +96,7 @@ const Success = ({ movieData, movieCredits }) => {
         ) : (
           ""
         )}
-      </Main>
+      </PageMain>
     </>
   );
 };
