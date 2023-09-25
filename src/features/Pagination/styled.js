@@ -2,27 +2,6 @@ import styled from "styled-components";
 import { ReactComponent as PaginationVectorTwo } from "../../images/VectorTwo.svg";
 import { ReactComponent as PaginationVectorFirst } from "../../images/VectorFirst.svg";
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  gap: 24px;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    gap: 8px;
-  }
-`;
-
-export const Buttons = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    gap: 8px;
-  }
-`;
-
 export const Button = styled.button`
   display: flex;
   flex-wrap: wrap;
@@ -43,6 +22,15 @@ export const Button = styled.button`
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: 8px 12px;
+  }
+`;
+
+export const Buttons = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    gap: 8px;
   }
 `;
 
@@ -105,6 +93,18 @@ export const VectorSecond = styled(PaginationVectorTwo)`
   }
 `;
 
+export const VectorSecondActive = styled(PaginationVectorTwo)`
+  display: flex;
+  flex-wrap: wrap;
+  width: 7px;
+  height: 11px;
+  transform: rotate(180deg);
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 7px;
+    height: 8px;
+  }
+`;
+
 export const VectorSecondDisabled = styled(PaginationVectorFirst)`
   display: flex;
   flex-wrap: wrap;
@@ -119,14 +119,14 @@ export const VectorSecondDisabled = styled(PaginationVectorFirst)`
   }
 `;
 
-export const VectorSecondActive = styled(PaginationVectorTwo)`
+export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 7px;
-  height: 11px;
-  transform: rotate(180deg);
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 24px;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 7px;
-    height: 8px;
+    gap: 8px;
   }
 `;

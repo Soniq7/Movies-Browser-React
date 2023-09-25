@@ -15,8 +15,8 @@ export const Name = styled(Title)`
 export const StyledTile = styled(Tile)`
   display: flex;
   gap: 40px;
-  padding: 40px;
   height: auto;
+  padding: 40px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.navigation}) {
     display: grid;
@@ -25,37 +25,37 @@ export const StyledTile = styled(Tile)`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-weight: 400;
+    grid-gap: 16px;
     grid-template-columns: 116px auto;
     padding: 16px;
-    grid-gap: 16px;
   }
 `;
 
 export const Image = styled.img`
-  width: 389px;
-  height: 564px;
   border-radius: ${({ theme }) => theme.borderRadius};
+  height: 564px;
+  width: 389px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.navigation}) {
-    width: 292px;
     height: 434px;
+    width: 292px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 116px;
     height: 163px;
+    width: 116px;
   }
 `;
 
 export const PersonContent = styled.span`
   display: grid;
-  grid-template-rows: repeat(3, auto) 1fr;
-  grid-gap: 24px;
-  padding: 8px 0;
   flex-grow: 1;
+  grid-gap: 24px;
+  grid-template-rows: repeat(3, auto) 1fr;
+  padding: 8px 0;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    grid-template-rows: repeat(2, auto) 1fr;
     grid-gap: 16px;
+    grid-template-rows: repeat(2, auto) 1fr;
     padding: 0;
   }
 `;
@@ -93,9 +93,9 @@ export const Term = styled.dt`
 `;
 
 export const Info = styled.dd`
-  margin: 0;
   font-size: 18px;
   line-height: 1.2;
+  margin: 0;
   @media (max-width: ${({ theme }) => theme.breakpoints.navigation}) {
     font-size: 20px;
   }
@@ -130,8 +130,8 @@ export const Year = styled.p`
 `;
 
 export const Rating = styled.span`
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 8px;
 `;
 
@@ -159,13 +159,13 @@ export const RatingScale = styled(Votes)``;
 
 export const GenreList = styled.ul`
   display: flex;
+  flex-shrink: 0;
   flex-wrap: wrap;
   gap: 16px;
-  row-gap: 8px;
   list-style: none;
-  padding-left: 0;
-  flex-shrink: 0;
   margin: -4px;
+  padding-left: 0;
+  row-gap: 8px;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     gap: 8px;
   }

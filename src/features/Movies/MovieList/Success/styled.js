@@ -3,10 +3,10 @@ import { styled, css } from "styled-components";
 export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 24px;
-  padding: 0;
+  justify-content: space-between;
   margin: 0;
+  padding: 0;
   ${({ shortList }) =>
     shortList &&
     css`

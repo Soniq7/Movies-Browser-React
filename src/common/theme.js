@@ -1,14 +1,14 @@
 const colorCollection = {
   black: "#000000",
-  woodsmoke: "#18181B",
-  waterloo: "#7E839A",
-  whisper: "#F5F5FA",
   mystic: "#E4E6F0",
-  stormGray: "#74788B",
-  silver: "#C4C4C4",
-  white: "#FFF",
   pattensBlue: "#D6E4FF",
   scienceBlue: "#0044CC",
+  silver: "#C4C4C4",
+  stormGray: "#74788B",
+  waterloo: "#7E839A",
+  whisper: "#F5F5FA",
+  white: "#FFF",
+  woodsmoke: "#18181B",
 };
 
 export const theme = {
