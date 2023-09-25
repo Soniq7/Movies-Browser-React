@@ -5,8 +5,6 @@ import { VideoIcon, PageTitle, Logo } from "./Logo/styled";
 import { Navigation, NavList, MenueItem, StyledNavLink } from "./Menue/styled";
 import Search from "./Search";
 
-
-
 export default () => {
   const history = useHistory();
   const searchRef = useRef(null);

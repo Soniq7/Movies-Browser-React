@@ -16,13 +16,15 @@ function* fetchMoviesHandler() {
     yield put(fetchMoviesLoading());
     yield delay(500);
 
-    const movies = searchTerm
+    const moviesData = searchTerm
       ? yield call(getSeachResult, searchTerm)
       : yield call(getPopularMovies);
 
     const page = yield select(selectMoviePage);
     yield delay(500);
-    yield put(fetchMoviesSuccess(movies));
+    const movies = yield call(getPopularMovies, page);
+    yield put(fetchMoviesSuccess(moviesData, movies));
+
   } catch {
     yield put(fetchMoviesError());
   }
