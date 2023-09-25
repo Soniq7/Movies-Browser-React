@@ -8,8 +8,8 @@ import {
 import { selectGenres } from "../../Genres/genresSlice";
 import { useEffect } from "react";
 import Success from "./Success";
-import Loading from "../../Loading";
-import Error from "../../Error";
+import Loading from "../../../common/Loading";
+import Error from "../../../common/Error";
 
 const MovieList = () => {
   const dispatch = useDispatch();

@@ -1,15 +1,15 @@
 import {
-  Shadow,
-  BackdropPoster,
-  Header,
-  Wrapper,
   Content,
+  Header,
+  Poster,
   Title,
-  ReviewIcon,
   Review,
   Score,
-  Scale,
   Votes,
+  Scale,
+  Shadow,
+  ReviewIcon,
+  Wrapper,
 } from "./styled";
 import { useEffect, useState } from "react";
 import { getWidth } from "../../../../../common/getWidth";
@@ -33,17 +33,21 @@ const Backdrop = ({ image, name, score, votes }) => {
     <Header>
       <Shadow src={shadow} />
       <Wrapper>
-        <Content>
-          <Title>{name}</Title>
-          <Review>
-            <ReviewIcon />
-            <Score>{score}</Score>
-            <Scale>/10</Scale>
-            {viewportWidth <= 700 ? <Votes>{votes} votes</Votes> : ""}
-          </Review>
-          {viewportWidth > 700 ? <Votes>{votes} votes</Votes> : ""}
-        </Content>
-        <BackdropPoster src={`https://image.tmdb.org/t/p/original/${image}`} />
+        <Poster src={`https://image.tmdb.org/t/p/original/${image}`} />
+        {image && (
+          <Content>
+            <span>
+              <Title>{name}</Title>
+              <Review>
+                <ReviewIcon />
+                <Score>{score}</Score>
+                <Scale>/10</Scale>
+                {viewportWidth <= 700 ? <Votes>{votes} votes</Votes> : ""}
+              </Review>
+              {viewportWidth > 700 ? <Votes>{votes} votes</Votes> : ""}
+            </span>
+          </Content>
+        )}
       </Wrapper>
     </Header>
   );
