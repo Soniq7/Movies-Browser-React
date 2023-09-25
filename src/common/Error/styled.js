@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { ReactComponent as DangerIcon } from "./danger.svg";
 
 export const Danger = styled(DangerIcon)`
+  height: auto;
   margin: 180px 0 0;
   width: 120px;
-  height: auto;
   @media (max-width: 960px) {
     margin: 100px 0 0;
     width: 100px;
@@ -12,16 +12,16 @@ export const Danger = styled(DangerIcon)`
 `;
 
 export const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
 `;
 
 export const Container = styled.div`
-  margin: 24px 0 0;
   gap: 24px;
+  margin: 24px 0 0;
   text-align: center;
   @media (max-width: 960px) {
     margin: 12px 0 0;
@@ -47,18 +47,18 @@ export const Description = styled.p`
 `;
 
 export const Button = styled.button`
-  border: none;
-  border-radius: 5px;
   background: ${({ theme }) => theme.colors.background.button};
-  padding: 16px 24px;
-  gap: 10px;
+  border-radius: 5px;
+  border: none;
   color: ${({ theme }) => theme.colors.text.button};
   font-family: Open Sans;
   font-size: 14px;
   font-weight: 700;
+  gap: 10px;
   line-height: 19px;
+  padding: 16px 24px;
   @media (max-width: 960px) {
-    padding: 12px 16px;
     font-size: 12px;
+    padding: 12px 16px;
   }
 `;

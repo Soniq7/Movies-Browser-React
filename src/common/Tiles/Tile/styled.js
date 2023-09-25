@@ -2,27 +2,28 @@ import styled from "styled-components";
 import { Tile, Title } from "../defaultTileStyles";
 
 export const MovieTile = styled(Tile)`
-  width: 324px;
   display: flex;
-  gap: 16px;
   flex-direction: column;
-  @media (max-width: 700px) {
+  gap: 16px;
+  width: 324px;
+  @media (max-width: 750px) {
     display: grid;
-    grid-template-columns: auto auto;
-    width: auto;
+    grid-template-columns: 292px auto;
+    width: 100%;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-template-columns: 114px auto;
     max-width: 445px;
   }
 `;
 
 export const Poster = styled.img`
-  width: 292px;
-  height: 434px;
   border-radius: 5px;
+  height: 434px;
+  width: 292px;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 114px;
     height: 169px;
+    width: 114px;
   }
 `;
 
@@ -37,12 +38,12 @@ export const MovieTitle = styled(Title)`
 `;
 
 export const Year = styled.p`
-  margin: 0;
+  color: ${({ theme }) => theme.colors.text.secondaryText};
   font-size: 16px;
   font-weight: 400;
-  color: ${({ theme }) => theme.colors.text.secondaryText};
-  padding-left: 0;
   grid-column: 1;
+  margin: 0;
+  padding-left: 0;
   @media (max-width: 700px) {
     font-size: 20px;
   }
@@ -54,95 +55,115 @@ export const Year = styled.p`
 export const Job = styled(Year)``;
 
 export const GenreList = styled.ul`
-  grid-column: 1;
   display: flex;
   flex-wrap: wrap;
+  grid-column: 1;
   list-style: none;
-  padding-left: 0;
   margin: -4px;
+  padding-left: 0;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     gap: 8px;
     margin-bottom: 8px;
   }
 `;
 
+export const Description = styled.p`
+  display: none;
+  font-size: 14px;
+  margin: 0;
+  @media (max-width: 750px) and (min-width: 650px) {
+    display: block;
+  }
+  @media (max-width: 550px) and (min-width: 420px) {
+    display: block;
+    font-size: 10px;
+  }
+`;
+
 export const Review = styled.div`
-  grid-column: 1;
   display: flex;
   gap: 12px;
-  margin-top: auto;
+  grid-column: 1;
   grid-row: 5;
+  margin-top: auto;
+  @media (max-width: 750px) and (min-width: 600px) {
+    white-space: nowrap;
+  }
+  @media (max-width: 750px) {
+    gap: 8px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin: 0;
-    gap: 8px;
   }
 `;
 
 export const Rating = styled(Year)`
+  color: unset;
   font-weight: 600;
   padding-left: 6px;
-  color: unset;
 `;
 
 export const Votes = styled(Rating)`
+  color: ${({ theme }) => theme.colors.text.thirdText};
   font-weight: 400;
 `;
 
 export const MovieContent = styled.div`
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   gap: 8px;
 `;
-/////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////// Movie Tile
+///////////////////////////////////////////////////////// Person Tile
 
 export const PersonName = styled(Title)`
   text-align: center;
 `;
 export const PersonTile = styled(Tile)`
-  width: 208px;
   justify-content: center;
+  width: 208px;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 136px;
     padding: 8px;
+    width: 136px;
   }
 `;
 
 export const Frame = styled.div`
+  border-radius: ${({ theme }) => theme.borderRadius};
+  height: 231px;
+  margin: 0 0 12px 0;
   overflow: hidden;
   width: 176px;
-  height: 231px;
-  border-radius: ${({ theme }) => theme.borderRadius};
-  margin: 0 0 12px 0;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 120px;
     height: 178px;
     margin: 0 0 8px 0;
+    width: 120px;
   }
 `;
 
 export const Photo = styled.img`
-  width: 177px;
   height: 264px;
+  width: 177px;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 120px;
     height: 178px;
+    width: 120px;
   }
 `;
 
 export const Role = styled.p`
   color: ${({ theme }) => theme.colors.text.thirdText};
-  text-align: center;
   font-size: 18px;
   line-height: 1.5;
   margin: 0;
+  text-align: center;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 12px;
   }
 `;
 
 export const PersonContent = styled.span`
+  align-content: space-between;
   display: flex;
   flex-direction: column;
-  align-content: space-between;
 `;

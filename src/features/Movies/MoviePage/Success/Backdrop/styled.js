@@ -2,13 +2,13 @@ import { styled } from "styled-components";
 import { ReactComponent as Star } from "../../../../../images/shape-star.svg";
 
 export const Header = styled.header`
-  display: flex;
   background: black;
-  width: 100%;
+  display: flex;
   height: 770px;
   justify-content: center;
-  position: relative;
   overflow: hidden;
+  position: relative;
+  width: 100%;
   @media (max-width: 1450px) {
     height: 600px;
   }
@@ -33,12 +33,12 @@ export const Header = styled.header`
 `;
 
 export const Shadow = styled.img`
-  z-index: 1;
-  position: absolute;
-  grid-row: 1;
   grid-column: 1;
+  grid-row: 1;
   height: 100%;
+  position: absolute;
   width: 100vw;
+  z-index: 1;
   @media (min-width: 1921px) {
     width: 1920px;
   }
@@ -66,29 +66,29 @@ export const Shadow = styled.img`
 `;
 
 export const Wrapper = styled.div`
-  position: relative;
   display: grid;
-  justify-content: center;
   grid-template-columns: minmax(320px, 1368px);
   grid-template-rows: minmax(148px, 770px);
+  justify-content: center;
+  position: relative;
 `;
 
 export const Poster = styled.img`
-  position: relative;
-  justify-self: center;
-  grid-row: 1;
   grid-column: 1;
+  grid-row: 1;
   height: 100%;
+  justify-self: center;
+  position: relative;
 `;
 
 export const Content = styled.div`
-  color: ${({ theme }) => theme.colors.text.backdropText};
-  grid-row: 1;
-  grid-column: 1;
-  z-index: 2;
-  display: grid;
   align-items: end;
+  color: ${({ theme }) => theme.colors.text.backdropText};
+  display: grid;
+  grid-column: 1;
+  grid-row: 1;
   padding: 56px;
+  z-index: 2;
   @media (max-width: 1230px) {
     padding: 40px 60px;
   }
@@ -107,15 +107,15 @@ export const Content = styled.div`
 `;
 
 export const StarImage = styled(Star)`
-  width: 40px;
   height: 40px;
+  width: 40px;
 `;
 
 export const Title = styled.h1`
-  margin: 24px 0;
   font-size: 64px;
   font-weight: 600;
   line-height: 1.2;
+  margin: 24px 0;
   @media (max-width: 1230px) {
     font-size: 50px;
   }
@@ -131,9 +131,9 @@ export const Title = styled.h1`
   }
 `;
 export const Review = styled.div`
+  align-items: center;
   display: flex;
   gap: 8px;
-  align-items: center;
   @media (max-width: 700px) {
     margin-bottom: 20px;
   }
@@ -143,8 +143,8 @@ export const Review = styled.div`
 `;
 
 export const ReviewIcon = styled(Star)`
-  width: 40px;
   height: auto;
+  width: 40px;
   @media (max-width: 1230px) {
     width: 30px;
   }
@@ -157,11 +157,11 @@ export const ReviewIcon = styled(Star)`
 `;
 
 export const Score = styled.p`
-  margin: 0;
   color: ${({ theme }) => theme.colors.text.backdropText};
   font-size: 30px;
   font-weight: 500;
   line-height: 1.3;
+  margin: 0;
   @media (max-width: 1230px) {
     font-size: 24px;
   }

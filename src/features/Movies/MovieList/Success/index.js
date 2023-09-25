@@ -10,7 +10,7 @@ const Success = ({ movies, genreList }) => (
       <Section
         header="Popular movies"
         content={
-          <List>
+          <List shortList={movies.length < 6}>
             {movies
               ? movies.map((movie) => (
                   <Item key={movie.id}>
@@ -20,6 +20,7 @@ const Success = ({ movies, genreList }) => (
                       score={movie.vote_average.toFixed(1)}
                       votes={movie.vote_count}
                       image={movie.poster_path}
+                      description={movie.overview}
                       genres={movie.genre_ids.map(
                         (genreId) =>
                           genreList.find((genre) => genre.id === genreId)?.name

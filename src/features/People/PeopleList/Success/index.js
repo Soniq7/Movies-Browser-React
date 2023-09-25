@@ -10,7 +10,7 @@ const Success = ({ results }) => (
       <Section
         header="Popular people"
         content={
-          <List>
+          <List shortList={results.length < 7}>
             {results
               ? results.map((person) => (
                   <Item key={person.id}>

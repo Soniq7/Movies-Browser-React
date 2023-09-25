@@ -15,6 +15,7 @@ import {
   GenreList,
   Role,
   MovieTile,
+  Description,
 } from "./styled";
 import { StyledLink, GenreTag, RatingIcon } from "../defaultTileStyles";
 import icon from "../../../images/shape-star.png";
@@ -31,6 +32,7 @@ const Tile = ({
   job,
   isActorPageTile,
   name,
+  description,
 }) => {
   if (isPersonTile)
     return (
@@ -83,7 +85,7 @@ const Tile = ({
             ) : (
               ""
             )}
-
+            {description ? <Description>{description}</Description> : ""}
             <Review>
               {score && score != 0 ? (
                 <>

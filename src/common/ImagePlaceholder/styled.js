@@ -6,26 +6,26 @@ export const Camera = styled(CameraIcon)``;
 export const Person = styled(PersonIcon)``;
 
 export const MovieFrame = styled.div`
-  background: ${({ theme }) => theme.colors.background.imagePlaceholder};
-  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 292px;
-  height: 434px;
+  background: ${({ theme }) => theme.colors.background.imagePlaceholder};
   border-radius: 5px;
+  display: flex;
+  height: 434px;
+  justify-content: center;
   margin-bottom: 7px;
+  width: 292px;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 114px;
     height: 169px;
+    width: 114px;
   }
 `;
 
 export const PersonFrame = styled(MovieFrame)`
-  width: 176px;
   height: 231px;
+  width: 176px;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 120px;
     height: 178px;
+    width: 120px;
   }
 `;
 
