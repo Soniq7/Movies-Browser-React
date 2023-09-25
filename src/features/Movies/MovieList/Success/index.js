@@ -6,6 +6,7 @@ import Section from "../../../../common/Section";
 import { ListMain } from "../../../../common/main";
 import Pagination from "../../../Pagination/index";
 import { selectSearchTerm } from "../moviesSlice";
+import NotFound from "../../../SearchResults/NotFound";
 
 const Success = ({ results }) => {
   const [pageTitle, setPageTitle] = useState("Popular movies");
@@ -18,6 +19,10 @@ const Success = ({ results }) => {
       setPageTitle("Popular movies");
     }
   }, [searchTerm, results]);
+
+  if (results.length === 0) {
+    return <NotFound searchTerm={searchTerm} />;
+  }
 
   return (
     <>

@@ -1,21 +1,13 @@
-import { useSelector } from "react-redux";
-import { selectSearchTerm } from "../../Movies/MovieList/moviesSlice";
 import { PageMain } from "../../../common/main";
+import { NotFoundImage, Wrapper, Header } from "./styled";
 
-const NotFound = () => {
-  const searchTerm = useSelector(selectSearchTerm);
-
-  return (
-    <PageMain>
-      <Wrapper>
-        <Container>
-          <ErrorHeader>
-            {`Sorry, there are no results for "${searchTerm}"`}
-          </ErrorHeader>
-        </Container>
-      </Wrapper>
-    </PageMain>
-  );
-};
+const NotFound = ({ searchTerm }) => (
+  <PageMain>
+    <Wrapper>
+      <Header>{`Sorry, there are no results for "${searchTerm}"`}</Header>
+      <NotFoundImage />
+    </Wrapper>
+  </PageMain>
+);
 
 export default NotFound;
