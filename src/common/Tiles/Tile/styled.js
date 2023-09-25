@@ -87,8 +87,10 @@ export const Review = styled.div`
   margin-top: auto;
   grid-row: 5;
   @media (max-width: 750px) and (min-width: 600px) {
-    gap: 8px;
     white-space: nowrap;
+  }
+  @media (max-width: 750px) {
+    gap: 8px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin: 0;
@@ -103,6 +105,7 @@ export const Rating = styled(Year)`
 
 export const Votes = styled(Rating)`
   font-weight: 400;
+  color: ${({ theme }) => theme.colors.text.thirdText};
 `;
 
 export const MovieContent = styled.div`
