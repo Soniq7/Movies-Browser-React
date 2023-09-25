@@ -9,12 +9,18 @@ export const Wrapper = styled.div`
   justify-content: center;
   padding: 40px;
   gap: 24px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    gap: 8px;
+  }
 `;
 
 export const Buttons = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    gap: 8px;
+  }
 `;
 
 export const Button = styled.button`
@@ -35,6 +41,9 @@ export const Button = styled.button`
     background-color: #e4e6f0;
     cursor: not-allowed;
   }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 8px 12px;
+  }
 `;
 
 export const CurrentPages = styled.div`
@@ -42,6 +51,9 @@ export const CurrentPages = styled.div`
   gap: 8px;
   font-weight: 600;
   font-size: 16px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 12px;
+  }
 `;
 
 export const Pages = styled.div`
@@ -51,6 +63,9 @@ export const Pages = styled.div`
   font-size: 16px;
   font-weight: 400;
   color: #7e839a;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 12px;
+  }
 `;
 
 export const VectorFirst = styled(PaginationVectorFirst)`
@@ -59,6 +74,10 @@ export const VectorFirst = styled(PaginationVectorFirst)`
   width: 7px;
   height: 11px;
   fill: #0044cc;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 7px;
+    height: 8px;
+  }
 `;
 
 export const VectorFirstDisabled = styled(PaginationVectorFirst)`
@@ -69,6 +88,10 @@ export const VectorFirstDisabled = styled(PaginationVectorFirst)`
   fill: #7e839a;
   cursor: not-allowed;
   transform: rotate(180deg);
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 7px;
+    height: 8px;
+  }
 `;
 
 export const VectorSecond = styled(PaginationVectorTwo)`
@@ -76,6 +99,10 @@ export const VectorSecond = styled(PaginationVectorTwo)`
   flex-wrap: wrap;
   width: 7px;
   height: 11px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 7px;
+    height: 8px;
+  }
 `;
 
 export const VectorSecondDisabled = styled(PaginationVectorFirst)`
@@ -86,6 +113,10 @@ export const VectorSecondDisabled = styled(PaginationVectorFirst)`
   fill: #7e839a;
   cursor: not-allowed;
   transform: rotate(180deg);
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 7px;
+    height: 8px;
+  }
 `;
 
 export const VectorSecondActive = styled(PaginationVectorTwo)`
@@ -94,4 +125,8 @@ export const VectorSecondActive = styled(PaginationVectorTwo)`
   width: 7px;
   height: 11px;
   transform: rotate(180deg);
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 7px;
+    height: 8px;
+  }
 `;
