@@ -14,17 +14,19 @@ function* fetchMoviesHandler() {
   try {
     const searchTerm = yield select(selectSearchTerm);
     yield put(fetchMoviesLoading());
-    yield delay(1500);
 
-    const moviesData = searchTerm
-      ? yield call(getSeachResult, searchTerm)
-      : yield call(getPopularMovies);
-
+    let moviesData;
     const page = yield select(selectMoviePage);
-    yield delay(500);
-    const movies = yield call(getPopularMovies, page);
-    yield put(fetchMoviesSuccess(moviesData, movies));
 
+    if (searchTerm) {
+      yield delay(1500);
+      moviesData = yield call(getSeachResult, searchTerm);
+    } else {
+      yield delay(500);
+      moviesData = yield yield call(getPopularMovies, page);
+    }
+
+    yield put(fetchMoviesSuccess(moviesData));
   } catch {
     yield put(fetchMoviesError());
   }
