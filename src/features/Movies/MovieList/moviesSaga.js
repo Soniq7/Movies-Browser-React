@@ -14,7 +14,7 @@ function* fetchMoviesHandler() {
   try {
     const searchTerm = yield select(selectSearchTerm);
     yield put(fetchMoviesLoading());
-    yield delay(500);
+    yield delay(1500);
 
     const moviesData = searchTerm
       ? yield call(getSeachResult, searchTerm)
