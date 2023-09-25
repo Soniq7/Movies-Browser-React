@@ -1,5 +1,11 @@
-import styled, { keyframes } from "styled-components";
+import { styled, keyframes } from "styled-components";
 import { ReactComponent as LoaderIcon } from "./loader.svg";
+
+export const Wrapper = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+`;
 
 export const spin = keyframes`
 to{
@@ -8,10 +14,10 @@ to{
 `;
 
 export const Loader = styled(LoaderIcon)`
-  width: 100px;
+  animation: ${spin} 1s linear infinite;
   height: auto;
   margin-top: 200px;
-  animation: ${spin} 1s linear infinite;
+  width: 100px;
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletVertical}) {
     width: 70px;
   }

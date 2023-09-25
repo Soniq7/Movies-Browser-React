@@ -3,31 +3,31 @@ import { ReactComponent as LogoIcon } from "../../images/icon.svg";
 import { NavLink } from "react-router-dom";
 
 export const Logo = styled(NavLink)`
-  display: inline-flex;
   align-items: center;
-  height: 48px;
+  display: inline-flex;
   gap: 12px;
+  height: 48px;
   margin-right: 68px;
   text-decoration: none;
   @media (max-width: ${({ theme }) => theme.breakpoints.navigation}) {
-    margin-right: 0;
     height: 43px;
+    margin-right: 0;
   }
 `;
 
 export const VideoIcon = styled(LogoIcon)`
-  width: 40px;
   height: 40px;
+  width: 40px;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 17px;
     height: 17px;
+    width: 17px;
   }
 `;
 
 export const PageTitle = styled.p`
+  align-self: center;
   color: ${({ theme }) => theme.colors.navigation.text};
   display: flex;
-  align-self: center;
   font-size: 24px;
   font-weight: 500;
   letter-spacing: -1.5px;

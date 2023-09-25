@@ -9,8 +9,8 @@ export const ListItem = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  padding: 0;
   margin: 0;
+  padding: 0;
 `;
 
 export const Item = styled.li`

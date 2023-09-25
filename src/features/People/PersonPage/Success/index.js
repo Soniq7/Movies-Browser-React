@@ -4,7 +4,7 @@ import Tile from "../../../../common/Tiles/Tile";
 import { PageMain } from "../../../../common/main";
 import { Item, List } from "./styled";
 
-const Success = ({ personData, personCreditsData }) => {
+const Success = ({ personData, personCreditsData, genreList }) => {
   let cast = [];
   let crew = [];
 
@@ -12,8 +12,6 @@ const Success = ({ personData, personCreditsData }) => {
     crew = personCreditsData.crew;
     cast = personCreditsData.cast;
   }
-
-  console.log(cast);
 
   return (
     <PageMain>
@@ -48,7 +46,11 @@ const Success = ({ personData, personCreditsData }) => {
                         name={role.title}
                         job={role.character}
                         year={role.release_date.substring(0, 4)}
-                        genres={"."}
+                        genres={role.genre_ids.map(
+                          (genreId) =>
+                            genreList.find((genre) => genre.id === genreId)
+                              ?.name
+                        )}
                         score={role.vote_average.toFixed(1)}
                         votes={role.vote_count}
                         id={role.id}
@@ -75,7 +77,11 @@ const Success = ({ personData, personCreditsData }) => {
                         image={role.poster_path}
                         name={role.title}
                         job={role.job}
-                        genres={"."}
+                        genres={role.genre_ids.map(
+                          (genreId) =>
+                            genreList.find((genre) => genre.id === genreId)
+                              ?.name
+                        )}
                         score={role.vote_average.toFixed(1)}
                         votes={role.vote_count}
                         id={role.id}

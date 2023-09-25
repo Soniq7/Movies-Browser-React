@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const Item = styled.li`
+  list-style: none;
+  margin: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 12px;
+  }
+`;
+
 export const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, auto);
@@ -16,13 +24,5 @@ export const List = styled.ul`
   @media (max-width: 700px) {
     grid-template-columns: auto;
     grid-gap: 16px;
-  }
-`;
-
-export const Item = styled.li`
-  list-style: none;
-  margin: 0;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: 12px;
   }
 `;

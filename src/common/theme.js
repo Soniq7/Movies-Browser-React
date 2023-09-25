@@ -1,13 +1,14 @@
 const colorCollection = {
   black: "#000000",
-  woodsmoke: "#18181B",
+  mystic: "#E4E6F0",
+  pattensBlue: "#D6E4FF",
+  scienceBlue: "#0044CC",
+  silver: "#C4C4C4",
+  stormGray: "#74788B",
   waterloo: "#7E839A",
   whisper: "#F5F5FA",
-  mystic: "#E4E6F0",
-  stormGray: "#74788B",
-  silver: "#C4C4C4",
   white: "#FFF",
-  pattensBlue: "#D6E4FF",
+  woodsmoke: "#18181B",
 };
 
 export const theme = {
@@ -16,12 +17,14 @@ export const theme = {
       imagePlaceholder: colorCollection.silver,
       siteBackground: colorCollection.whisper,
       boxBackground: colorCollection.white,
+      button: colorCollection.scienceBlue,
     },
     text: {
       primaryText: colorCollection.woodsmoke,
       secondaryText: colorCollection.stormGray,
       thirdText: colorCollection.waterloo,
       backdropText: colorCollection.white,
+      button: colorCollection.white,
     },
     navigation: {
       background: colorCollection.black,
