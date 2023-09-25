@@ -6,13 +6,14 @@ export const MovieTile = styled(Tile)`
   display: flex;
   gap: 16px;
   flex-direction: column;
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     display: grid;
-    grid-template-columns: auto auto;
-    width: auto;
+    grid-template-columns: 292px auto;
+    width: 100%;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     max-width: 445px;
+    grid-template-columns: 114px auto;
   }
 `;
 
@@ -66,15 +67,31 @@ export const GenreList = styled.ul`
   }
 `;
 
+export const Description = styled.p`
+  margin: 0;
+  font-size: 14px;
+  display: none;
+  @media (max-width: 750px) and (min-width: 650px) {
+    display: block;
+  }
+  @media (max-width: 550px) and (min-width: 420px) {
+    display: block;
+    font-size: 10px;
+  }
+`;
+
 export const Review = styled.div`
   grid-column: 1;
   display: flex;
   gap: 12px;
   margin-top: auto;
   grid-row: 5;
+  @media (max-width: 750px) and (min-width: 600px) {
+    gap: 8px;
+    white-space: nowrap;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin: 0;
-    gap: 8px;
   }
 `;
 
@@ -94,7 +111,8 @@ export const MovieContent = styled.div`
   flex-direction: column;
   gap: 8px;
 `;
-/////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////// Movie Tile
+///////////////////////////////////////////////////////// Person Tile
 
 export const PersonName = styled(Title)`
   text-align: center;
