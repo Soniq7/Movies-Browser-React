@@ -76,8 +76,9 @@ const Tile = ({
             {!isActorPageTile && year ? <Year>{year}</Year> : ""}
             {genres ? (
               <GenreList>
-                <GenreTag>Action</GenreTag>
-                <GenreTag>Adventure</GenreTag>
+                {genres.map((genre) => (
+                  <GenreTag key={genre}>{genre}</GenreTag>
+                ))}
               </GenreList>
             ) : (
               ""

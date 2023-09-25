@@ -21,9 +21,7 @@ function* fetchMoviesHandler() {
       : yield call(getPopularMovies);
 
     const page = yield select(selectMoviePage);
-    yield put(fetchMoviesLoading());
     yield delay(500);
-    const movies = yield call(getPopularMovies, page);
     yield put(fetchMoviesSuccess(movies));
   } catch {
     yield put(fetchMoviesError());
