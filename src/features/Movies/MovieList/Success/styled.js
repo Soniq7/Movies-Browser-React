@@ -10,7 +10,7 @@ export const List = styled.ul`
   ${({ shortList }) =>
     shortList &&
     css`
-      justify-content: center;
+      justify-content: flex-start;
     `}
   @media (max-width: 1100px) {
     justify-content: center;
