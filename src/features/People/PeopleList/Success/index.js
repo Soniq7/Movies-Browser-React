@@ -1,14 +1,34 @@
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { List, Item } from "./styled";
 import Tile from "../../../../common/Tiles/Tile";
 import Section from "../../../../common/Section";
 import { ListMain } from "../../../../common/main";
 import Pagination from "../../../Pagination";
+import { selectSearchTerm } from "../peopleSlice";
+import NotFound from "../../../SearchResults/NotFound";
 
-const Success = ({ results }) => (
-  <>
+const Success = ({ results }) => {
+  const [pageTitle, setPageTitle] = useState("Popular people");
+  const searchTerm = useSelector(selectSearchTerm);
+
+  useEffect(() => {
+    if (searchTerm) {
+      setPageTitle(`Search results for "${searchTerm}" (${results.length})`);
+    } else {
+      setPageTitle("Popular people");
+    }
+  }, [searchTerm, results]);
+
+  if (results.length === 0) {
+    return <NotFound searchTerm={searchTerm} />;
+  }
+
+  return (
+    <>
     <ListMain>
       <Section
-        header="Popular people"
+        header={pageTitle}
         content={
           <List shortList={results.length < 7}>
             {results
@@ -29,6 +49,7 @@ const Success = ({ results }) => (
     </ListMain>
     <Pagination />
   </>
-);
+  );
+};
 
 export default Success;

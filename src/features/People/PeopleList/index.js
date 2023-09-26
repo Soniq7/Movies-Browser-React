@@ -1,5 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPeople, selectPeople, selectLoading } from "./peopleSlice";
+import {
+  fetchPeople,
+  selectPeople,
+  selectLoading,
+  selectSearchTerm,
+} from "./peopleSlice";
 import { useEffect } from "react";
 import Success from "./Success";
 import Loading from "../../../common/Loading";
@@ -7,12 +12,15 @@ import Error from "../../../common/Error";
 
 const PeopleList = () => {
   const dispatch = useDispatch();
+  const searchTerm = useSelector(selectSearchTerm);
+
   useEffect(() => {
     dispatch(fetchPeople());
-  }, []);
+  }, [dispatch, searchTerm]);
+
   const people = useSelector(selectPeople);
-  const { results } = people;
   const state = useSelector(selectLoading);
+  const { results } = people;
 
   switch (state) {
     case "loading":
