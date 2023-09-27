@@ -3,7 +3,7 @@ import {
   fetchMovies,
   selectMovies,
   selectLoading,
-  selectSearchTerm,
+  selectMoviesSearchTerm,
 } from "./moviesSlice";
 import { selectGenres } from "../../Genres/genresSlice";
 import { useEffect } from "react";
@@ -13,7 +13,7 @@ import Error from "../../../common/Error";
 
 const MovieList = () => {
   const dispatch = useDispatch();
-  const searchTerm = useSelector(selectSearchTerm);
+  const searchTerm = useSelector(selectMoviesSearchTerm);
 
   useEffect(() => {
     dispatch(fetchMovies());

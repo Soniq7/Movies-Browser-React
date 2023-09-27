@@ -5,27 +5,27 @@ import {
   fetchPeopleError,
   fetchPeopleLoading,
   fetchPeopleSuccess,
-  selectSearchTerm,
+  selectPeopleSearchTerm,
   selectPeoplePage,
 } from "./peopleSlice";
 import { call, takeLatest, put, delay, select } from "redux-saga/effects";
 
 function* fetchPeopleHandler() {
   try {
-    const searchTerm = yield select(selectSearchTerm);
+    const searchTerm = yield select(selectPeopleSearchTerm);
     yield put(fetchPeopleLoading());
 
     let peopleData;
     const page = yield select(selectPeoplePage);
 
     if (searchTerm) {
-      yield delay(1500);
+      yield delay(1000);
       peopleData = yield call(getSearchPeopleResult, searchTerm);
     } else {
       yield delay(500);
       peopleData = yield yield call(getPopularPeople, page);
     }
-    
+
     yield put(fetchPeopleSuccess(peopleData));
   } catch {
     yield put(fetchPeopleError());

@@ -5,12 +5,12 @@ import Tile from "../../../../common/Tiles/Tile";
 import Section from "../../../../common/Section";
 import { ListMain } from "../../../../common/main";
 import Pagination from "../../../Pagination";
-import { selectSearchTerm } from "../peopleSlice";
+import { selectPeopleSearchTerm } from "../peopleSlice";
 import NotFound from "../../../SearchResults/NotFound";
 
 const Success = ({ results }) => {
   const [pageTitle, setPageTitle] = useState("Popular people");
-  const searchTerm = useSelector(selectSearchTerm);
+  const searchTerm = useSelector(selectPeopleSearchTerm);
 
   useEffect(() => {
     if (searchTerm) {
@@ -26,29 +26,29 @@ const Success = ({ results }) => {
 
   return (
     <>
-    <ListMain>
-      <Section
-        header={pageTitle}
-        content={
-          <List shortList={results.length < 7}>
-            {results
-              ? results.map((person) => (
-                  <Item key={person.id}>
-                    <Tile
-                      isPersonTile={true}
-                      name={person.name}
-                      image={person.profile_path}
-                      id={person.id}
-                    />
-                  </Item>
-                ))
-              : null}
-          </List>
-        }
-      />
-    </ListMain>
-    <Pagination />
-  </>
+      <ListMain>
+        <Section
+          header={pageTitle}
+          content={
+            <List shortList={results.length < 7}>
+              {results
+                ? results.map((person) => (
+                    <Item key={person.id}>
+                      <Tile
+                        isPersonTile={true}
+                        name={person.name}
+                        image={person.profile_path}
+                        id={person.id}
+                      />
+                    </Item>
+                  ))
+                : null}
+            </List>
+          }
+        />
+      </ListMain>
+      <Pagination />
+    </>
   );
 };
 

@@ -3,7 +3,7 @@ import {
   fetchPeople,
   selectPeople,
   selectLoading,
-  selectSearchTerm,
+  selectPeopleSearchTerm,
 } from "./peopleSlice";
 import { useEffect } from "react";
 import Success from "./Success";
@@ -12,7 +12,7 @@ import Error from "../../../common/Error";
 
 const PeopleList = () => {
   const dispatch = useDispatch();
-  const searchTerm = useSelector(selectSearchTerm);
+  const searchTerm = useSelector(selectPeopleSearchTerm);
 
   useEffect(() => {
     dispatch(fetchPeople());

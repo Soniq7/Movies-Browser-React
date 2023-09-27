@@ -19,7 +19,7 @@ const peopleSlice = createSlice({
       state.loading = "success";
       state.people = people;
     },
-    updateSearchTerm: (state, {payload: action}) => {
+    updatePeopleSearchTerm: (state, { payload: action }) => {
       state.searchTerm = action;
     },
     fetchPeople: () => {},
@@ -43,7 +43,7 @@ export const {
   fetchPeopleSuccess,
   fetchPeopleLoading,
   fetchPeopleError,
-  updateSearchTerm,
+  updatePeopleSearchTerm,
   nextPeoplePage,
   prevPeoplePage,
   lastPeoplePage,
@@ -55,6 +55,7 @@ const selectPeopleState = (state) => state.people;
 export const selectPeople = (state) => selectPeopleState(state).people;
 export const selectPeoplePage = (state) => selectPeopleState(state).page;
 export const selectLoading = (state) => selectPeopleState(state).loading;
-export const selectSearchTerm = (state) => selectPeopleState(state).searchTerm;
+export const selectPeopleSearchTerm = (state) =>
+  selectPeopleState(state).searchTerm;
 
 export default peopleSlice.reducer;

@@ -5,14 +5,14 @@ import {
   fetchMoviesError,
   fetchMoviesSuccess,
   fetchMoviesLoading,
-  selectSearchTerm,
+  selectMoviesSearchTerm,
   selectMoviePage,
 } from "./moviesSlice";
 import { call, takeLatest, put, delay, select } from "redux-saga/effects";
 
 function* fetchMoviesHandler() {
   try {
-    const searchTerm = yield select(selectSearchTerm);
+    const searchTerm = yield select(selectMoviesSearchTerm);
     yield put(fetchMoviesLoading());
 
     let moviesData;
