@@ -20,7 +20,7 @@ function* fetchPeopleHandler() {
 
     if (searchTerm) {
       yield delay(1000);
-      peopleData = yield call(getSearchPeopleResult, searchTerm);
+      peopleData = yield call(getSearchPeopleResult, searchTerm, page);
     } else {
       yield delay(500);
       peopleData = yield yield call(getPopularPeople, page);

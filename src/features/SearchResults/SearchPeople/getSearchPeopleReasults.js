@@ -9,19 +9,21 @@ const options = {
   },
 };
 
-export const getSearchPeopleResult = async (query, apiKey) => {
-    const url = `https://api.themoviedb.org/3/search/person?query=${encodeURIComponent(query)}&api_key=${apiKey}`;
-    
-    try {
-      const response = await axios.get(url, options);
-  
-      if (response.status !== 200) {
-        return "error";
-      }
-  
-      return response.data;
-    } catch (error) {
-      console.error('Błąd:', error);
+export const getSearchPeopleResult = async (query, page) => {
+  const url = `https://api.themoviedb.org/3/search/person?query=${encodeURIComponent(
+    query
+  )}&page=${page}`;
+
+  try {
+    const response = await axios.get(url, options);
+
+    if (response.status !== 200) {
       return "error";
     }
-  };
+
+    return response.data;
+  } catch (error) {
+    console.error("Błąd:", error);
+    return "error";
+  }
+};
