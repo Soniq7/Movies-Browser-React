@@ -17,13 +17,12 @@ function* fetchMoviesHandler() {
 
     let moviesData;
     const page = yield select(selectMoviePage);
-
     if (searchTerm) {
       yield delay(1500);
-      moviesData = yield call(getSearchMoviesResult, searchTerm);
+      moviesData = yield call(getSearchMoviesResult, searchTerm, page);
     } else {
       yield delay(500);
-      moviesData = yield yield call(getPopularMovies, page);
+      moviesData = yield call(getPopularMovies, page);
     }
 
     yield put(fetchMoviesSuccess(moviesData));

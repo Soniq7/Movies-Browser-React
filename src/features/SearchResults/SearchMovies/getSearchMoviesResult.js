@@ -9,9 +9,11 @@ const options = {
   },
 };
 
-export const getSearchMoviesResult = async (query, apiKey) => {
-  const url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(query)}&api_key=${apiKey}`;
-  
+export const getSearchMoviesResult = async (query, page) => {
+  const url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(
+    query
+  )}&page=${page ? page : 1}`;
+
   try {
     const response = await axios.get(url, options);
 
@@ -21,7 +23,7 @@ export const getSearchMoviesResult = async (query, apiKey) => {
 
     return response.data;
   } catch (error) {
-    console.error('Błąd:', error);
+    console.error("Błąd:", error);
     return "error";
   }
 };
