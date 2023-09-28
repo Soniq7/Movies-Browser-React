@@ -1,5 +1,5 @@
 import { getPopularMovies } from "./getPopularMovies";
-import { getSeachResult } from "../../SearchResults/SearchMovies/getSearchResult";
+import { getSearchMoviesResult } from "../../SearchResults/SearchMovies/getSearchMoviesResult";
 import {
   fetchMovies,
   fetchMoviesError,
@@ -20,7 +20,7 @@ function* fetchMoviesHandler() {
 
     if (searchTerm) {
       yield delay(1500);
-      moviesData = yield call(getSeachResult, searchTerm);
+      moviesData = yield call(getSearchMoviesResult, searchTerm);
     } else {
       yield delay(500);
       moviesData = yield yield call(getPopularMovies, page);

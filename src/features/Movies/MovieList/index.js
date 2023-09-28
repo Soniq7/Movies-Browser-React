@@ -23,7 +23,6 @@ const MovieList = () => {
   const state = useSelector(selectLoading);
   const genres = useSelector(selectGenres);
   const { results } = movies;
-  console.log(results);
 
   switch (state) {
     case "loading":

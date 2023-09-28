@@ -9,7 +9,7 @@ export default () => {
   const history = useHistory();
   const searchRef = useRef(null);
 
-  const handleLogoClick = () => {
+  const handleResetClick = () => {
     history.push("/");
     searchRef.current.resetSearch();
   };
@@ -17,23 +17,34 @@ export default () => {
   return (
     <Navigation>
       <NavList>
-        <Logo to="/" onClick={handleLogoClick}>
+        <Logo 
+          to="/" 
+          onClick={handleResetClick}
+        >
           <VideoIcon />
           <PageTitle>
             Movies Browser
           </PageTitle>
         </Logo>
         <MenueItem>
-          <StyledNavLink to={toMovies()}>
+          <StyledNavLink 
+            to={toMovies()} 
+            onClick={handleResetClick}
+          >
             Movies
           </StyledNavLink>
         </MenueItem>
         <MenueItem>
-          <StyledNavLink to={toPeople()}>
+          <StyledNavLink 
+            to={toPeople()} 
+            onClick={handleResetClick}
+          >
             People
           </StyledNavLink>
         </MenueItem>
-        <Search ref={searchRef}/>
+        <Search 
+          ref={searchRef}
+        />
       </NavList>
     </Navigation>
   );

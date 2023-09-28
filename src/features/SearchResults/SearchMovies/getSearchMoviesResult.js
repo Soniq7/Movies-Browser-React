@@ -9,7 +9,7 @@ const options = {
   },
 };
 
-export const getSeachResult = async (query, apiKey) => {
+export const getSearchMoviesResult = async (query, apiKey) => {
   const url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(query)}&api_key=${apiKey}`;
   
   try {
