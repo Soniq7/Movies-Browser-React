@@ -5,12 +5,12 @@ import Tile from "../../../../common/Tiles/Tile";
 import Section from "../../../../common/Section";
 import { ListMain } from "../../../../common/main";
 import Pagination from "../../../Pagination/index";
-import { selectSearchTerm } from "../moviesSlice";
+import { selectMoviesSearchTerm } from "../moviesSlice";
 import NotFound from "../../../SearchResults/NotFound";
 
 const Success = ({ movies, genreList }) => {
   const [pageTitle, setPageTitle] = useState("Popular movies");
-  const searchTerm = useSelector(selectSearchTerm);
+  const searchTerm = useSelector(selectMoviesSearchTerm);
 
   useEffect(() => {
     if (searchTerm) {

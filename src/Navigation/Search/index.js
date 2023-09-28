@@ -1,26 +1,15 @@
 import { useState, useImperativeHandle, forwardRef } from "react";
 import { useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  Input,
-  LoupeIcon,
-  Wrapper,
-  IconWrapper,
-} from "./styled";
-import {
-  useQueryParameter,
-  useReplaceQueryParameter,
-} from "./queryParameters";
+import { useDispatch } from "react-redux";
+import { Input, LoupeIcon, Wrapper, IconWrapper } from "./styled";
+import { useQueryParameter, useReplaceQueryParameter } from "./queryParameters";
 import searchQueryParamName from "./searchQueryParamName";
-import {
-  selectSearchTerm,
-  updateSearchTerm,
-} from "../../features/Movies/MovieList/moviesSlice";
+import { updateMoviesSearchTerm } from "../../features/Movies/MovieList/moviesSlice";
+import { updatePeopleSearchTerm } from "../../features/People/PeopleList/peopleSlice";
 
 const Search = forwardRef((props, ref) => {
   const location = useLocation();
   const dispatch = useDispatch();
-  const searchTerm = useSelector(selectSearchTerm);
 
   const query = useQueryParameter(searchQueryParamName);
   const replaceQueryParameter = useReplaceQueryParameter();
@@ -29,7 +18,8 @@ const Search = forwardRef((props, ref) => {
 
   const onInputChange = (event) => {
     const value = event.target.value;
-    dispatch(updateSearchTerm(value));
+    dispatch(updateMoviesSearchTerm(value));
+    dispatch(updatePeopleSearchTerm(value));
     setLocalSearchTerm(value);
     replaceQueryParameter({
       key: searchQueryParamName,
@@ -39,7 +29,8 @@ const Search = forwardRef((props, ref) => {
 
   const resetSearch = () => {
     setLocalSearchTerm("");
-    dispatch(updateSearchTerm(""));
+    dispatch(updateMoviesSearchTerm(""));
+    dispatch(updatePeopleSearchTerm(""));
     replaceQueryParameter({
       key: searchQueryParamName,
       value: "",
@@ -51,7 +42,6 @@ const Search = forwardRef((props, ref) => {
   }));
 
   const pathname = location.pathname;
-
 
   const placeholderText = pathname.startsWith("/movies")
     ? "Search for movies..."
