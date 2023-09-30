@@ -5,6 +5,7 @@ import {
   firstMoviePage,
   selectMoviePage,
   fetchMovies,
+  selectMaxMoviePages,
 } from "../Movies/MovieList/moviesSlice";
 
 import {
@@ -14,6 +15,7 @@ import {
   firstPeoplePage,
   selectPeoplePage,
   fetchPeople,
+  selectMaxPeoplePages,
 } from "../People/PeopleList/peopleSlice";
 import { getWidth } from "../../common/getWidth";
 import { useDispatch, useSelector } from "react-redux";
@@ -33,7 +35,9 @@ import {
 const Pagination = ({ isMovieList }) => {
   const dispatch = useDispatch();
   const moviePage = useSelector(selectMoviePage);
+  const maxMoviePages = useSelector(selectMaxMoviePages);
   const peoplePage = useSelector(selectPeoplePage);
+  const maxPeoplePages = useSelector(selectMaxPeoplePages);
 
   const [viewportWidth, setViewportWidth] = useState(getWidth());
 
@@ -78,7 +82,7 @@ const Pagination = ({ isMovieList }) => {
           <Pages>Page</Pages>
           {moviePage}
           <Pages>of</Pages>
-          {500}
+          {maxMoviePages}
         </CurrentPages>
         <Buttons>
           <Button
@@ -86,9 +90,13 @@ const Pagination = ({ isMovieList }) => {
               dispatch(nextMoviePage());
               dispatch(fetchMovies());
             }}
-            disabled={moviePage === 500}
+            disabled={moviePage === maxMoviePages}
           >
-            {moviePage === 500 ? <VectorFirstDisabled /> : <VectorSecond />}
+            {moviePage === maxMoviePages ? (
+              <VectorFirstDisabled />
+            ) : (
+              <VectorSecond />
+            )}
             Next
           </Button>
           <Button
@@ -96,9 +104,13 @@ const Pagination = ({ isMovieList }) => {
               dispatch(lastMoviePage());
               dispatch(fetchMovies());
             }}
-            disabled={moviePage === 500}
+            disabled={moviePage === maxMoviePages}
           >
-            {moviePage === 500 ? <VectorFirstDisabled /> : <VectorSecond />}
+            {moviePage === maxMoviePages ? (
+              <VectorFirstDisabled />
+            ) : (
+              <VectorSecond />
+            )}
             Last
           </Button>
         </Buttons>
@@ -147,7 +159,7 @@ const Pagination = ({ isMovieList }) => {
           <Pages>Page</Pages>
           {moviePage}
           <Pages>of</Pages>
-          {500}
+          {maxMoviePages}
         </CurrentPages>
         <Buttons>
           <Button
@@ -155,18 +167,22 @@ const Pagination = ({ isMovieList }) => {
               dispatch(nextMoviePage());
               dispatch(fetchMovies());
             }}
-            disabled={moviePage === 500}
+            disabled={moviePage === maxMoviePages}
           >
-            {moviePage === 500 ? <VectorFirstDisabled /> : <VectorSecond />}
+            {moviePage === maxMoviePages ? (
+              <VectorFirstDisabled />
+            ) : (
+              <VectorSecond />
+            )}
           </Button>
           <Button
             onClick={() => {
               dispatch(lastMoviePage());
               dispatch(fetchMovies());
             }}
-            disabled={moviePage === 500}
+            disabled={moviePage === maxMoviePages}
           >
-            {moviePage === 500 ? (
+            {moviePage === maxMoviePages ? (
               <>
                 <VectorFirstDisabled />
                 <VectorFirstDisabled />
@@ -210,7 +226,7 @@ const Pagination = ({ isMovieList }) => {
         <Pages>Page</Pages>
         {peoplePage}
         <Pages>of</Pages>
-        {500}
+        {maxPeoplePages}
       </CurrentPages>
       <Buttons>
         <Button
@@ -218,9 +234,13 @@ const Pagination = ({ isMovieList }) => {
             dispatch(nextPeoplePage());
             dispatch(fetchPeople());
           }}
-          disabled={peoplePage === 500}
+          disabled={peoplePage === maxPeoplePages}
         >
-          {peoplePage === 500 ? <VectorFirstDisabled /> : <VectorSecond />}
+          {peoplePage === maxPeoplePages ? (
+            <VectorFirstDisabled />
+          ) : (
+            <VectorSecond />
+          )}
           Next
         </Button>
         <Button
@@ -228,9 +248,13 @@ const Pagination = ({ isMovieList }) => {
             dispatch(lastPeoplePage());
             dispatch(fetchPeople());
           }}
-          disabled={peoplePage === 500}
+          disabled={peoplePage === maxPeoplePages}
         >
-          {peoplePage === 500 ? <VectorFirstDisabled /> : <VectorSecond />}
+          {peoplePage === maxPeoplePages ? (
+            <VectorFirstDisabled />
+          ) : (
+            <VectorSecond />
+          )}
           Last
         </Button>
       </Buttons>
@@ -271,7 +295,7 @@ const Pagination = ({ isMovieList }) => {
         <Pages>Page</Pages>
         {peoplePage}
         <Pages>of</Pages>
-        {500}
+        {maxPeoplePages}
       </CurrentPages>
       <Buttons>
         <Button
@@ -279,18 +303,22 @@ const Pagination = ({ isMovieList }) => {
             dispatch(nextPeoplePage());
             dispatch(fetchPeople());
           }}
-          disabled={peoplePage === 500}
+          disabled={peoplePage === maxPeoplePages}
         >
-          {peoplePage === 500 ? <VectorFirstDisabled /> : <VectorSecond />}
+          {peoplePage === maxPeoplePages ? (
+            <VectorFirstDisabled />
+          ) : (
+            <VectorSecond />
+          )}
         </Button>
         <Button
           onClick={() => {
             dispatch(lastPeoplePage());
             dispatch(fetchPeople());
           }}
-          disabled={peoplePage === 500}
+          disabled={peoplePage === maxPeoplePages}
         >
-          {peoplePage === 500 ? (
+          {peoplePage === maxPeoplePages ? (
             <>
               <VectorFirstDisabled />
               <VectorFirstDisabled />
