@@ -1,29 +1,31 @@
-import { styled, css } from "styled-components";
+import { styled } from "styled-components";
 
 export const List = styled.ul`
   display: grid;
   gap: 24px;
-  grid-template-columns: repeat(auto-fit, 208px);
-  justify-content: space-between;
+  grid-template-columns: repeat(6, auto);
   margin: 0;
   padding: 0;
-
-  ${({ shortList }) =>
-    shortList &&
-    css`
-      justify-content: start;
-    `}
-
-  @media (max-width: 520px) {
-    justify-content: space-around;
+  @media (max-width: 1400px) {
+    grid-template-columns: repeat(5, auto);
   }
-
-  @media (max-width: 550px) and (min-width: 700px) {
-    justify-content: space-around;
+  @media (max-width: 1180px) {
+    grid-template-columns: repeat(4, auto);
   }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    grid-template-columns: repeat(auto-fit, 136px);
+  @media (max-width: 950px) {
+    grid-template-columns: repeat(3, auto);
+  }
+  @media (max-width: 700px) {
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 16px;
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 16px;
+  }
+  @media (max-width: 470px) {
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 16px;
   }
 `;
 

@@ -1,22 +1,20 @@
-import { styled, css } from "styled-components";
+import { styled } from "styled-components";
 
 export const List = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 24px;
   margin: 0;
   padding: 0;
-  ${({ shortList }) =>
-    shortList &&
-    css`
-      justify-content: flex-start;
-    `}
-  @media (max-width: 1100px) {
-    justify-content: center;
+  @media (max-width: 1400px) {
+    grid-template-columns: repeat(3, auto);
   }
-  @media (max-width: 700px) {
-    gap: 16px;
+  @media (max-width: 1070px) {
+    grid-template-columns: repeat(2, auto);
+  }
+  @media (max-width: 750px) {
+    grid-template-columns: auto;
+    grid-gap: 16px;
   }
 `;
 

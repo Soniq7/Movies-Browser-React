@@ -13,7 +13,6 @@ export const MovieTile = styled(Tile)`
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     grid-template-columns: 114px auto;
-    max-width: 445px;
   }
 `;
 
@@ -71,12 +70,8 @@ export const Description = styled.p`
   display: none;
   font-size: 14px;
   margin: 0;
-  @media (max-width: 750px) and (min-width: 650px) {
+  @media (max-width: 750px) and (min-width: 602px) {
     display: block;
-  }
-  @media (max-width: 550px) and (min-width: 420px) {
-    display: block;
-    font-size: 10px;
   }
 `;
 
@@ -119,11 +114,14 @@ export const MovieContent = styled.div`
 
 export const PersonName = styled(Title)`
   text-align: center;
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 export const PersonTile = styled(Tile)`
   justify-content: center;
   width: 208px;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: 600px) {
     padding: 8px;
     width: 136px;
   }
@@ -135,7 +133,7 @@ export const Frame = styled.div`
   margin: 0 0 12px 0;
   overflow: hidden;
   width: 176px;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: 600px) {
     height: 178px;
     margin: 0 0 8px 0;
     width: 120px;
@@ -145,7 +143,7 @@ export const Frame = styled.div`
 export const Photo = styled.img`
   height: 264px;
   width: 177px;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: 600px) {
     height: 178px;
     width: 120px;
   }
@@ -157,7 +155,7 @@ export const Role = styled.p`
   line-height: 1.5;
   margin: 0;
   text-align: center;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: 600px) {
     font-size: 12px;
   }
 `;

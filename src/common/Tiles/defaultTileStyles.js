@@ -14,9 +14,6 @@ export const Title = styled.p`
   font-weight: 500;
   line-height: 1.2;
   margin: 0;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: 14px;
-  }
 `;
 
 export const StyledLink = styled(Link)`
