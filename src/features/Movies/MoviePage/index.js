@@ -8,7 +8,6 @@ import { useParams, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectMoviesSearchTerm } from "../MovieList/moviesSlice";
 
-
 const MoviePage = () => {
   const [movieData, setMovieData] = useState(null);
   const [movieCredits, setMovieCredits] = useState(null);
@@ -45,11 +44,11 @@ const MoviePage = () => {
   useEffect(() => {
     const handleMoviesSearch = () => {
       if (searchTerm.trim() !== "") {
-        history.push("/movie-list");
+        history.push("/movies");
       }
     };
 
-    const timeoutId = setTimeout(handleMoviesSearch, 1000);
+    const timeoutId = setTimeout(handleMoviesSearch, 500);
 
     return () => {
       clearTimeout(timeoutId);

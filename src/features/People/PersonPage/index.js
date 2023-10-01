@@ -16,7 +16,7 @@ const PersonPage = () => {
   const { id } = useParams();
   const genres = useSelector(selectGenres);
   const history = useHistory();
-  const searchTerm = useSelector(selectPeopleSearchTerm)
+  const searchTerm = useSelector(selectPeopleSearchTerm);
 
   useEffect(() => {
     setPersonData("loading");
@@ -47,11 +47,11 @@ const PersonPage = () => {
   useEffect(() => {
     const handlePeopleSearch = () => {
       if (searchTerm.trim() !== "") {
-        history.push("/people-list");
+        history.push("/people");
       }
     };
 
-    const timeoutId = setTimeout(handlePeopleSearch, 1000);
+    const timeoutId = setTimeout(handlePeopleSearch, 500);
 
     return () => {
       clearTimeout(timeoutId);
