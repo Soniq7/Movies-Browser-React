@@ -4,13 +4,17 @@ import Loading from "../../../common/Loading";
 import Error from "../../../common/Error";
 import { getMovie } from "./getMovie";
 import { getMovieCredits } from "./getMovieCredits";
-import { useParams } from "react-router-dom/cjs/react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectMoviesSearchTerm } from "../MovieList/moviesSlice";
 
 const MoviePage = () => {
   const [movieData, setMovieData] = useState(null);
   const [movieCredits, setMovieCredits] = useState(null);
 
   const { id } = useParams();
+  const history = useHistory();
+  const searchTerm = useSelector(selectMoviesSearchTerm);
 
   useEffect(() => {
     setMovieData("loading");
@@ -35,7 +39,21 @@ const MoviePage = () => {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, []);
+  }, [id]);
+
+  useEffect(() => {
+    const handleMoviesSearch = () => {
+      if (searchTerm.trim() !== "") {
+        history.push("/movies");
+      }
+    };
+
+    const timeoutId = setTimeout(handleMoviesSearch, 500);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [searchTerm, history]);
 
   switch (movieData) {
     case "error":
