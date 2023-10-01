@@ -26,9 +26,24 @@ const MovieList = () => {
 
   switch (state) {
     case "loading":
-      return <Loading />;
+      return (
+        <Loading
+          header={searchTerm ? `Search results for “${searchTerm}”` : null}
+        />
+      );
     case "success":
-      return <Success movies={results} genreList={genres} />;
+      return (
+        <Success
+          movies={results}
+          genreList={genres}
+          searchTerm={searchTerm}
+          header={
+            searchTerm
+              ? `Search results for "${searchTerm}" (${movies.total_results})`
+              : "Popular movies"
+          }
+        />
+      );
     case "error":
       return <Error />;
     default:

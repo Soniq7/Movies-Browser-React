@@ -24,9 +24,23 @@ const PeopleList = () => {
 
   switch (state) {
     case "loading":
-      return <Loading />;
+      return (
+        <Loading
+          header={searchTerm ? `Search results for “${searchTerm}”` : null}
+        />
+      );
     case "success":
-      return <Success results={results} />;
+      return (
+        <Success
+          results={results}
+          searchTerm={searchTerm}
+          header={
+            searchTerm
+              ? `Search results for "${searchTerm}" (${people.total_results})`
+              : "Popular people"
+          }
+        />
+      );
     case "error":
       return <Error />;
     default:

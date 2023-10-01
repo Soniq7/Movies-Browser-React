@@ -4,7 +4,20 @@ import { ReactComponent as LoaderIcon } from "./loader.svg";
 export const Wrapper = styled.div`
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  margin-top: 56px;
+  padding: 0 14%;
+`;
+export const Header = styled.h1`
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0;
+  align-self: start;
+  @media (max-width: 500px) {
+    font-size: 20px;
+    font-weight: 600;
+  }
 `;
 
 export const spin = keyframes`

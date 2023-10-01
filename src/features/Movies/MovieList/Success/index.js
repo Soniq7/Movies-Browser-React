@@ -1,25 +1,11 @@
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
 import { List, Item } from "./styled";
 import Tile from "../../../../common/Tiles/Tile";
 import Section from "../../../../common/Section";
 import { ListMain } from "../../../../common/main";
 import Pagination from "../../../Pagination/index";
-import { selectMoviesSearchTerm } from "../moviesSlice";
 import NotFound from "../../../SearchResults/NotFound";
 
-const Success = ({ movies, genreList }) => {
-  const [pageTitle, setPageTitle] = useState("Popular movies");
-  const searchTerm = useSelector(selectMoviesSearchTerm);
-
-  useEffect(() => {
-    if (searchTerm) {
-      setPageTitle(`Search results for "${searchTerm}" (${movies.length})`);
-    } else {
-      setPageTitle("Popular movies");
-    }
-  }, [searchTerm, movies]);
-
+const Success = ({ movies, genreList, header, searchTerm }) => {
   if (movies.length === 0) {
     return <NotFound searchTerm={searchTerm} />;
   }
@@ -28,7 +14,7 @@ const Success = ({ movies, genreList }) => {
     <>
       <ListMain>
         <Section
-          header={pageTitle}
+          header={header}
           content={
             <List>
               {movies
@@ -40,6 +26,7 @@ const Success = ({ movies, genreList }) => {
                         score={movie.vote_average.toFixed(1)}
                         votes={movie.vote_count}
                         image={movie.poster_path}
+                        description={movie.overview}
                         genres={movie.genre_ids.map(
                           (genreId) =>
                             genreList.find((genre) => genre.id === genreId)

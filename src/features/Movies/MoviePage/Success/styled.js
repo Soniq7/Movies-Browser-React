@@ -11,6 +11,7 @@ export const Item = styled.li`
 export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   padding: 0;
   margin: 0;

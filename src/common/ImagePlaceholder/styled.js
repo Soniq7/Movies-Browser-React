@@ -14,7 +14,7 @@ export const MovieFrame = styled.div`
   justify-content: center;
   margin-bottom: 7px;
   width: 292px;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: 600px) {
     height: 169px;
     width: 114px;
   }
@@ -23,7 +23,7 @@ export const MovieFrame = styled.div`
 export const PersonFrame = styled(MovieFrame)`
   height: 231px;
   width: 176px;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: 600px) {
     height: 178px;
     width: 120px;
   }
