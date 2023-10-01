@@ -4,8 +4,14 @@ import { useDispatch } from "react-redux";
 import { Input, LoupeIcon, Wrapper, IconWrapper } from "./styled";
 import { useQueryParameter, useReplaceQueryParameter } from "./queryParameters";
 import searchQueryParamName from "./searchQueryParamName";
-import { updateMoviesSearchTerm } from "../../features/Movies/MovieList/moviesSlice";
-import { updatePeopleSearchTerm } from "../../features/People/PeopleList/peopleSlice";
+import {
+  firstMoviePage,
+  updateMoviesSearchTerm,
+} from "../../features/Movies/MovieList/moviesSlice";
+import {
+  firstPeoplePage,
+  updatePeopleSearchTerm,
+} from "../../features/People/PeopleList/peopleSlice";
 
 const Search = forwardRef((props, ref) => {
   const location = useLocation();
@@ -20,6 +26,8 @@ const Search = forwardRef((props, ref) => {
     const value = event.target.value;
     dispatch(updateMoviesSearchTerm(value));
     dispatch(updatePeopleSearchTerm(value));
+    dispatch(firstMoviePage());
+    dispatch(firstPeoplePage());
     setLocalSearchTerm(value);
     replaceQueryParameter({
       key: searchQueryParamName,
