@@ -1,12 +1,12 @@
-import { Wrapper, Loader } from "./styled";
-import { PageMain } from "../../common/main";
+import { Wrapper, Loader, Header } from "./styled";
 
-const Loading = () => (
-  <PageMain>
+const Loading = ({ header }) => (
+  <main>
     <Wrapper>
+      {header ? <Header>{header}</Header> : ""}
       <Loader />
     </Wrapper>
-  </PageMain>
+  </main>
 );
 
 export default Loading;
