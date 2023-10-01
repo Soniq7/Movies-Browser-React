@@ -43,7 +43,7 @@ export const Image = styled.img`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     height: 163px;
-    width: 116px;
+    width: 110px;
   }
 `;
 
@@ -111,13 +111,20 @@ export const Description = styled.p`
   @media (max-width: ${({ theme }) => theme.breakpoints.navigation}) {
     font-size: 18px;
   }
+  @media (max-width: 750px) {
+    display: none;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 14px;
   }
 `;
 
 export const MobileDescription = styled(Description)`
+  display: none;
   grid-column: span 2;
+  @media (max-width: 750px) {
+    display: block;
+  }
 `;
 
 export const Year = styled.p`

@@ -74,13 +74,9 @@ const PageTile = ({
               <Info>{placeOfBirth ? placeOfBirth : "-"}</Info>
             </InfoListWrapper>
           </InfoList>
-          {description && viewportWidth >= 700 ? (
-            <Description>{description}</Description>
-          ) : null}
+          <Description>{description}</Description>
         </PersonContent>
-        {description && viewportWidth <= 700 ? (
-          <MobileDescription>{description}</MobileDescription>
-        ) : null}
+        <MobileDescription>{description}</MobileDescription>
       </StyledTile>
     );
   }
@@ -137,11 +133,9 @@ const PageTile = ({
         ) : (
           <Votes>No votes yet</Votes>
         )}
-        {viewportWidth >= 700 ? <Description>{description}</Description> : null}
+        <Description>{description}</Description>
       </MovieContent>
-      {viewportWidth <= 700 ? (
-        <MobileDescription>{description}</MobileDescription>
-      ) : null}
+      <MobileDescription>{description}</MobileDescription>
     </StyledTile>
   );
 };
