@@ -7,23 +7,26 @@ import {
   fetchPeopleSuccess,
   selectPeopleSearchTerm,
   selectPeoplePage,
+  setMaxPeoplePages,
 } from "./peopleSlice";
 import { call, takeLatest, put, delay, select } from "redux-saga/effects";
 
 function* fetchPeopleHandler() {
+  const page = yield select(selectPeoplePage);
+  const searchTerm = yield select(selectPeopleSearchTerm);
   try {
-    const searchTerm = yield select(selectPeopleSearchTerm);
     yield put(fetchPeopleLoading());
 
     let peopleData;
-    const page = yield select(selectPeoplePage);
 
     if (searchTerm) {
       yield delay(1000);
-      peopleData = yield call(getSearchPeopleResult, searchTerm);
+      peopleData = yield call(getSearchPeopleResult, searchTerm, page);
+      yield put(setMaxPeoplePages(peopleData.total_pages));
     } else {
       yield delay(500);
-      peopleData = yield yield call(getPopularPeople, page);
+      peopleData = yield call(getPopularPeople, page);
+      yield put(setMaxPeoplePages(500));
     }
 
     yield put(fetchPeopleSuccess(peopleData));

@@ -6,6 +6,7 @@ const peopleSlice = createSlice({
     people: [],
     loading: "idle",
     searchTerm: "",
+    maxPages: 500,
     page: 1,
   },
   reducers: {
@@ -30,10 +31,13 @@ const peopleSlice = createSlice({
       state.page = state.page - 1;
     },
     lastPeoplePage: (state) => {
-      state.page = 500;
+      state.page = state.maxPages;
     },
     firstPeoplePage: (state) => {
       state.page = 1;
+    },
+    setMaxPeoplePages: (state, { payload: maxPages }) => {
+      state.maxPages = maxPages;
     },
   },
 });
@@ -48,12 +52,15 @@ export const {
   prevPeoplePage,
   lastPeoplePage,
   firstPeoplePage,
+  setMaxPeoplePages,
 } = peopleSlice.actions;
 
 const selectPeopleState = (state) => state.people;
 
 export const selectPeople = (state) => selectPeopleState(state).people;
 export const selectPeoplePage = (state) => selectPeopleState(state).page;
+export const selectMaxPeoplePages = (state) =>
+  selectPeopleState(state).maxPages;
 export const selectLoading = (state) => selectPeopleState(state).loading;
 export const selectPeopleSearchTerm = (state) =>
   selectPeopleState(state).searchTerm;
