@@ -4,26 +4,20 @@ import Loading from "../../../common/Loading";
 import Error from "../../../common/Error";
 import { getMovie } from "./getMovie";
 import { getMovieCredits } from "./getMovieCredits";
-import { useParams } from "react-router-dom/cjs/react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchMovies,
-  selectLoading,
-  selectMovies,
-  selectMoviesSearchTerm,
-} from "../MovieList/moviesSlice";
-import { selectGenres } from "../../Genres/genresSlice";
+import { useParams, useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectMoviesSearchTerm } from "../MovieList/moviesSlice";
+
 
 const MoviePage = () => {
   const [movieData, setMovieData] = useState(null);
   const [movieCredits, setMovieCredits] = useState(null);
-  const dispatch = useDispatch();
-  const searchTerm = useSelector(selectMoviesSearchTerm);
 
   const { id } = useParams();
+  const history = useHistory();
+  const searchTerm = useSelector(selectMoviesSearchTerm);
 
   useEffect(() => {
-    dispatch(fetchMovies());
     setMovieData("loading");
 
     const timeoutId = setTimeout(() => {
@@ -46,40 +40,31 @@ const MoviePage = () => {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [dispatch, searchTerm]);
+  }, [id]);
 
-  const movies = useSelector(selectMovies);
-  const state = useSelector(selectLoading);
-  const genres = useSelector(selectGenres);
-  const { results } = movies;
+  useEffect(() => {
+    const handleMoviesSearch = () => {
+      if (searchTerm.trim() !== "") {
+        history.push("/movie-list");
+      }
+    };
 
-  switch (movieData, state) {
+    const timeoutId = setTimeout(handleMoviesSearch, 1000);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [searchTerm, history]);
+
+  switch (movieData) {
     case "error":
       return <Error />;
 
     case "loading":
-      return (
-        <Loading
-          header={searchTerm ? `Search results for “${searchTerm}”` : null}
-        />
-      );
+      return <Loading />;
 
     default:
-      return (
-        <Success
-          movieData={movieData}
-          movieCredits={movieCredits}
-          searchTerm={searchTerm}
-
-          {...(searchTerm && {
-            movies: results,
-            genreList: genres,
-            header: searchTerm
-              ? `Search results for "${searchTerm}" (${movies.total_results})`
-              : "Popular movies"
-          })}
-        />
-      );
+      return <Success movieData={movieData} movieCredits={movieCredits} />;
   }
 };
 
