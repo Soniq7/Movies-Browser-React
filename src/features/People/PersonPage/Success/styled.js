@@ -21,7 +21,7 @@ export const List = styled.ul`
   @media (max-width: 1070px) {
     grid-template-columns: repeat(2, auto);
   }
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     grid-template-columns: auto;
     grid-gap: 16px;
   }

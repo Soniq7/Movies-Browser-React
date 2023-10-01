@@ -1,5 +1,5 @@
 import PageTile from "../../../../common/Tiles/PageTile";
-import Section from "../../../../common/Section";
+import { PageSection } from "../../../../common/Section";
 import Tile from "../../../../common/Tiles/Tile";
 import { Item, List } from "./styled";
 import { PageMain } from "../../../../common/main";
@@ -27,7 +27,7 @@ const Success = ({ movieData, movieCredits }) => {
         ""
       )}
       <PageMain>
-        <Section
+        <PageSection
           content={
             movieData ? (
               <PageTile
@@ -48,7 +48,7 @@ const Success = ({ movieData, movieCredits }) => {
         />
 
         {cast ? (
-          <Section
+          <PageSection
             header="Cast"
             content={
               <List>
@@ -73,7 +73,7 @@ const Success = ({ movieData, movieCredits }) => {
         )}
 
         {crew ? (
-          <Section
+          <PageSection
             header="Crew"
             content={
               <List>

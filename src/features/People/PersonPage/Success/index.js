@@ -1,5 +1,5 @@
 import PageTile from "../../../../common/Tiles/PageTile";
-import Section from "../../../../common/Section";
+import { PageSection } from "../../../../common/Section";
 import Tile from "../../../../common/Tiles/Tile";
 import { PageMain } from "../../../../common/main";
 import { Item, List } from "./styled";
@@ -15,7 +15,7 @@ const Success = ({ personData, personCreditsData, genreList }) => {
 
   return (
     <PageMain>
-      <Section
+      <PageSection
         content={
           personData ? (
             <PageTile
@@ -33,7 +33,7 @@ const Success = ({ personData, personCreditsData, genreList }) => {
       />
 
       {cast.length > 0 ? (
-        <Section
+        <PageSection
           header={`Movies - cast (${cast.length})`}
           content={
             <List>
@@ -53,6 +53,7 @@ const Success = ({ personData, personCreditsData, genreList }) => {
                         )}
                         score={role.vote_average.toFixed(1)}
                         votes={role.vote_count}
+                        description={role.overview}
                         id={role.id}
                       />
                     </Item>
@@ -66,7 +67,7 @@ const Success = ({ personData, personCreditsData, genreList }) => {
       )}
 
       {crew.length > 0 ? (
-        <Section
+        <PageSection
           header={`Movies - crew (${crew.length})`}
           content={
             <List>

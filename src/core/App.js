@@ -7,7 +7,7 @@ import {
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchGenres } from "../features/Genres/genresSlice";
-import Navigation from "../Navigation";
+import Navigation from "../features/Navigation";
 import MovieList from "../features/Movies/MovieList";
 import MoviePage from "../features/Movies/MoviePage";
 import PeopleList from "../features/People/PeopleList";
