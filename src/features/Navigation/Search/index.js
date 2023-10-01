@@ -8,12 +8,12 @@ import {
   firstMoviePage,
   selectMoviesSearchTerm,
   updateMoviesSearchTerm,
-} from "../../features/Movies/MovieList/moviesSlice";
+} from "../../Movies/MovieList/moviesSlice";
 import {
   firstPeoplePage,
   selectPeopleSearchTerm,
   updatePeopleSearchTerm,
-} from "../../features/People/PeopleList/peopleSlice";
+} from "../../People/PeopleList/peopleSlice";
 
 const Search = forwardRef((props, ref) => {
   const location = useLocation();

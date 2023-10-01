@@ -1,5 +1,5 @@
 import { getPopularPeople } from "./getPopularPeople";
-import { getSearchPeopleResult } from "../../SearchResults/SearchPeople/getSearchPeopleReasults";
+import { getSearchPeopleResult } from "../../Navigation/Search/getSearchPeople";
 import {
   fetchPeople,
   fetchPeopleError,
