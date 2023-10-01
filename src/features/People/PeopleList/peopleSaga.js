@@ -12,12 +12,12 @@ import {
 import { call, takeLatest, put, delay, select } from "redux-saga/effects";
 
 function* fetchPeopleHandler() {
+  const page = yield select(selectPeoplePage);
+  const searchTerm = yield select(selectPeopleSearchTerm);
   try {
-    const searchTerm = yield select(selectPeopleSearchTerm);
     yield put(fetchPeopleLoading());
 
     let peopleData;
-    const page = yield select(selectPeoplePage);
 
     if (searchTerm) {
       yield delay(1000);

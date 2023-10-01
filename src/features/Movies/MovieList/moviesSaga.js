@@ -18,7 +18,7 @@ function* fetchMoviesHandler() {
     yield put(fetchMoviesLoading());
     let moviesData;
     if (searchTerm) {
-      yield delay(1500);
+      yield delay(1000);
       moviesData = yield call(getSearchMoviesResult, searchTerm, page);
       yield put(setMaxMoviePages(moviesData.total_pages));
     } else {
