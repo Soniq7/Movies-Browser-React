@@ -1,4 +1,4 @@
-import { PageMain } from "../../../common/main";
+import { PageMain } from "../../common/main";
 import { NotFoundImage, Wrapper, Header } from "./styled";
 
 const NotFound = ({ searchTerm }) => (

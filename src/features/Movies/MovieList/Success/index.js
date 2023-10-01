@@ -3,7 +3,7 @@ import Tile from "../../../../common/Tiles/Tile";
 import { ListSection } from "../../../../common/Section";
 import { ListMain } from "../../../../common/main";
 import Pagination from "../../../Pagination/index";
-import NotFound from "../../../SearchResults/NotFound";
+import NotFound from "../../../../common/NotFound";
 
 const Success = ({ movies, genreList, header, searchTerm }) => {
   if (movies.length === 0) {

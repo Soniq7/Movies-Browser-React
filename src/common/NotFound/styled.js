@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { ReactComponent as NotFoundSvg } from "../../../images/notFound.svg";
+import { ReactComponent as NotFoundSvg } from "../../images/notFound.svg";
 
 export const NotFoundImage = styled(NotFoundSvg)`
   height: auto;

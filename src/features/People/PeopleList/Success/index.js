@@ -3,7 +3,7 @@ import Tile from "../../../../common/Tiles/Tile";
 import { ListSection } from "../../../../common/Section";
 import { ListMain } from "../../../../common/main";
 import Pagination from "../../../Pagination";
-import NotFound from "../../../SearchResults/NotFound";
+import NotFound from "../../../../common/NotFound";
 
 const Success = ({ results, header, searchTerm }) => {
   if (results.length === 0) {
