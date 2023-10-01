@@ -1,26 +1,38 @@
-import { useState, useImperativeHandle, forwardRef } from "react";
+import { useState, useImperativeHandle, forwardRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Input, LoupeIcon, Wrapper, IconWrapper } from "./styled";
 import { useQueryParameter, useReplaceQueryParameter } from "./queryParameters";
 import searchQueryParamName from "./searchQueryParamName";
 import {
   firstMoviePage,
+  selectMoviesSearchTerm,
   updateMoviesSearchTerm,
 } from "../../features/Movies/MovieList/moviesSlice";
 import {
   firstPeoplePage,
+  selectPeopleSearchTerm,
   updatePeopleSearchTerm,
 } from "../../features/People/PeopleList/peopleSlice";
 
 const Search = forwardRef((props, ref) => {
   const location = useLocation();
   const dispatch = useDispatch();
+  const moviesSearchTerm = useSelector(selectMoviesSearchTerm);
+  const peopleSearchTerm = useSelector(selectPeopleSearchTerm);
 
   const query = useQueryParameter(searchQueryParamName);
   const replaceQueryParameter = useReplaceQueryParameter();
 
   const [localSearchTerm, setLocalSearchTerm] = useState(query || "");
+
+  useEffect(() => {
+    if (location.pathname.startsWith("/movies")) {
+      dispatch(updateMoviesSearchTerm(localSearchTerm));
+    } else if (location.pathname.startsWith("/people")) {
+      dispatch(updatePeopleSearchTerm(localSearchTerm));
+    }
+  }, [localSearchTerm, location.pathname, dispatch]);
 
   const onInputChange = (event) => {
     const value = event.target.value;
@@ -34,11 +46,8 @@ const Search = forwardRef((props, ref) => {
       value: value.trim() !== "" ? value : undefined,
     });
   };
-
   const resetSearch = () => {
     setLocalSearchTerm("");
-    dispatch(updateMoviesSearchTerm(""));
-    dispatch(updatePeopleSearchTerm(""));
     replaceQueryParameter({
       key: searchQueryParamName,
       value: "",
@@ -49,11 +58,9 @@ const Search = forwardRef((props, ref) => {
     resetSearch,
   }));
 
-  const pathname = location.pathname;
-
-  const placeholderText = pathname.startsWith("/movies")
+  const placeholderText = location.pathname.startsWith("/movies")
     ? "Search for movies..."
-    : pathname.startsWith("/people")
+    : location.pathname.startsWith("/people")
     ? "Search for people..."
     : "";
 
