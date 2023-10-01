@@ -53,54 +53,53 @@ const Tile = ({
       </StyledLink>
     );
 
-  if (!isPersonTile)
-    return (
-      <StyledLink to={`/movies/${id}`}>
-        <MovieTile>
-          {image ? (
-            <Poster
-              src={`https://image.tmdb.org/t/p/original/${image}`}
-              alt="Movie Poster"
-            />
+  return (
+    <StyledLink to={`/movies/${id}`}>
+      <MovieTile>
+        {image ? (
+          <Poster
+            src={`https://image.tmdb.org/t/p/original/${image}`}
+            alt="Movie Poster"
+          />
+        ) : (
+          <ImagePlaceholder isPersonTile={false} />
+        )}
+        <MovieContent>
+          <MovieTitle>{name}</MovieTitle>
+          {!year && job ? <Job>{job}</Job> : ""}
+          {year && job ? (
+            <Job>
+              {job} ({year})
+            </Job>
           ) : (
-            <ImagePlaceholder isPersonTile={false} />
+            ""
           )}
-          <MovieContent>
-            <MovieTitle>{name}</MovieTitle>
-            {!year && job ? <Job>{job}</Job> : ""}
-            {year && job ? (
-              <Job>
-                {job} ({year})
-              </Job>
+          {!isActorPageTile && year ? <Year>{year}</Year> : ""}
+          {genres ? (
+            <GenreList>
+              {genres.map((genre) => (
+                <GenreTag key={genre}>{genre}</GenreTag>
+              ))}
+            </GenreList>
+          ) : (
+            ""
+          )}
+          {description ? <Description>{description}</Description> : ""}
+          <Review>
+            {score && score != 0 ? (
+              <>
+                <RatingIcon src={icon} alt="" />
+                <Rating>{score}</Rating>
+              </>
             ) : (
               ""
             )}
-            {!isActorPageTile && year ? <Year>{year}</Year> : ""}
-            {genres ? (
-              <GenreList>
-                {genres.map((genre) => (
-                  <GenreTag key={genre}>{genre}</GenreTag>
-                ))}
-              </GenreList>
-            ) : (
-              ""
-            )}
-            {description ? <Description>{description}</Description> : ""}
-            <Review>
-              {score && score != 0 ? (
-                <>
-                  <RatingIcon src={icon} alt="" />
-                  <Rating>{score}</Rating>
-                </>
-              ) : (
-                ""
-              )}
-              <Votes>{votes ? `${votes} votes` : "No votes yet"}</Votes>
-            </Review>
-          </MovieContent>
-        </MovieTile>
-      </StyledLink>
-    );
+            <Votes>{votes ? `${votes} votes` : "No votes yet"}</Votes>
+          </Review>
+        </MovieContent>
+      </MovieTile>
+    </StyledLink>
+  );
 };
 
 export default Tile;
