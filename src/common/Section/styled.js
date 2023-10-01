@@ -10,9 +10,19 @@ export const Header = styled.h1`
   }
 `;
 
-export const StyledSection = styled.section`
+export const StyledListSection = styled.section`
   display: grid;
   justify-content: center;
+  margin: 56px 0 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin: 24px auto auto;
+  }
+`;
+
+export const StyledPageSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   margin: 56px 0 0;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin: 24px auto auto;

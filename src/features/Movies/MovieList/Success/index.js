@@ -1,6 +1,6 @@
 import { List, Item } from "./styled";
 import Tile from "../../../../common/Tiles/Tile";
-import Section from "../../../../common/Section";
+import { ListSection } from "../../../../common/Section";
 import { ListMain } from "../../../../common/main";
 import Pagination from "../../../Pagination/index";
 import NotFound from "../../../SearchResults/NotFound";
@@ -13,7 +13,7 @@ const Success = ({ movies, genreList, header, searchTerm }) => {
   return (
     <>
       <ListMain>
-        <Section
+        <ListSection
           header={header}
           content={
             <List>
