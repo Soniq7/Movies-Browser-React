@@ -53,6 +53,7 @@ const Success = ({ personData, personCreditsData, genreList }) => {
                         )}
                         score={role.vote_average.toFixed(1)}
                         votes={role.vote_count}
+                        description={role.overview}
                         id={role.id}
                       />
                     </Item>
