@@ -16,7 +16,7 @@ const Success = ({ results, header, searchTerm }) => {
         <ListSection
           header={header}
           content={
-            <List shortList={results.length < 7}>
+            <List>
               {results
                 ? results.map((person) => (
                     <Item key={person.id}>
