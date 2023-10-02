@@ -14,8 +14,10 @@ import {
   selectPeopleSearchTerm,
   updatePeopleSearchTerm,
 } from "../../People/PeopleList/peopleSlice";
+import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
 const Search = forwardRef((props, ref) => {
+  const history = useHistory();
   const location = useLocation();
   const dispatch = useDispatch();
   const moviesSearchTerm = useSelector(selectMoviesSearchTerm);
@@ -36,15 +38,26 @@ const Search = forwardRef((props, ref) => {
 
   const onInputChange = (event) => {
     const value = event.target.value;
-    dispatch(updateMoviesSearchTerm(value));
-    dispatch(updatePeopleSearchTerm(value));
-    dispatch(firstMoviePage());
-    dispatch(firstPeoplePage());
+    if (location.pathname.startsWith("/movies")) {
+      dispatch(updateMoviesSearchTerm(value));
+      dispatch(firstMoviePage());
+    }
+
+    if (location.pathname.startsWith("/people")) {
+      dispatch(updatePeopleSearchTerm(value));
+      dispatch(firstPeoplePage());
+    }
     setLocalSearchTerm(value);
     replaceQueryParameter({
       key: searchQueryParamName,
       value: value.trim() !== "" ? value : undefined,
     });
+
+    if (location.pathname.startsWith("/movies")) {
+      history.push("/movies");
+    } else if (location.pathname.startsWith("/people")) {
+      history.push("/people");
+    }
   };
   const resetSearch = () => {
     setLocalSearchTerm("");
