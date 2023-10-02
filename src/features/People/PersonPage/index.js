@@ -44,20 +44,6 @@ const PersonPage = () => {
     };
   }, [id]);
 
-  useEffect(() => {
-    const handlePeopleSearch = () => {
-      if (searchTerm.trim() !== "") {
-        history.push("/people");
-      }
-    };
-
-    const timeoutId = setTimeout(handlePeopleSearch, 500);
-
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [searchTerm, history]);
-
   switch (personData) {
     case "error":
       return <Error />;

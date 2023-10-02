@@ -41,20 +41,6 @@ const MoviePage = () => {
     };
   }, [id]);
 
-  useEffect(() => {
-    const handleMoviesSearch = () => {
-      if (searchTerm.trim() !== "") {
-        history.push("/movies");
-      }
-    };
-
-    const timeoutId = setTimeout(handleMoviesSearch, 500);
-
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [searchTerm, history]);
-
   switch (movieData) {
     case "error":
       return <Error />;
