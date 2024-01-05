@@ -16,8 +16,13 @@ export const Button = styled.button`
   outline: none;
   gap: 8px;
 
+  &:hover {
+    filter: brightness(90%);
+  }
+
   &:disabled {
     background-color: #e4e6f0;
+    filter: none;
     cursor: not-allowed;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
