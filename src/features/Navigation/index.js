@@ -7,7 +7,7 @@ import {
   Logo,
   Navigation,
   NavList,
-  MenueItem,
+  MenuItem,
   StyledNavLink,
 } from "./styled";
 import Search from "./Search";
@@ -39,7 +39,7 @@ export default () => {
           <VideoIcon />
           <PageTitle>Movies Browser</PageTitle>
         </Logo>
-        <MenueItem>
+        <MenuItem>
           <StyledNavLink
             to={toMovies()}
             onClick={() => {
@@ -50,8 +50,8 @@ export default () => {
           >
             Movies
           </StyledNavLink>
-        </MenueItem>
-        <MenueItem>
+        </MenuItem>
+        <MenuItem>
           <StyledNavLink
             to={toPeople()}
             onClick={() => {
@@ -62,7 +62,7 @@ export default () => {
           >
             People
           </StyledNavLink>
-        </MenueItem>
+        </MenuItem>
         <Search ref={searchRef} />
       </NavList>
     </Navigation>

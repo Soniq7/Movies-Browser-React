@@ -11,7 +11,7 @@ export const Logo = styled(NavLink)`
   text-decoration: none;
   @media (max-width: ${({ theme }) => theme.breakpoints.navigation}) {
     height: 43px;
-    margin-right: 0;
+    margin-right: 10px;
   }
 `;
 
@@ -72,7 +72,7 @@ export const NavList = styled.ul`
   }
 `;
 
-export const MenueItem = styled.li`
+export const MenuItem = styled.li`
   display: inline-flex;
 `;
 
