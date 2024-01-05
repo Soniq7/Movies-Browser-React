@@ -2,11 +2,15 @@
 
 This is Movies Browser, OUR first project as a group. Our application allows users to easily browse through a huge database of movies and actors, which is retrieved from an API.
 
-**_NOTE:_** Project is in progress!
+**_NOTE:_** Project has been copied into my private GitHub repository with some individual styled-components changes! Private and group project demo links below.
 
 ## Demo
 
+Private:
 https://soniq7.github.io/Movies-Browser-React/
+
+Group project:
+https://marcelurbanczyk.github.io/Movies-Browser/
 
 ## Technologies
 
