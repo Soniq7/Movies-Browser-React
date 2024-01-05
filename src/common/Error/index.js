@@ -18,7 +18,7 @@ const Error = () => (
           Please check your network connection
           <br /> and try again
         </Description>
-        <Button>Back to home page</Button>
+        <Button to="/">Back to home page</Button>
       </Container>
     </Wrapper>
   </PageMain>

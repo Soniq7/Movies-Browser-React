@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 import { ReactComponent as DangerIcon } from "./danger.svg";
 
 export const Danger = styled(DangerIcon)`
@@ -46,7 +47,7 @@ export const Description = styled.p`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled(NavLink)`
   background: ${({ theme }) => theme.colors.background.button};
   border-radius: 5px;
   border: none;
@@ -57,6 +58,13 @@ export const Button = styled.button`
   gap: 10px;
   line-height: 19px;
   padding: 16px 24px;
+  text-decoration: none;
+
+  &:hover {
+    filter: brightness(120%);
+    cursor: pointer;
+  }
+
   @media (max-width: 960px) {
     font-size: 12px;
     padding: 12px 16px;
