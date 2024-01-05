@@ -6,6 +6,12 @@ export const MovieTile = styled(Tile)`
   flex-direction: column;
   gap: 16px;
   width: 324px;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+  }
+
   @media (max-width: 750px) {
     display: grid;
     grid-template-columns: 292px auto;
@@ -121,6 +127,12 @@ export const PersonName = styled(Title)`
 export const PersonTile = styled(Tile)`
   justify-content: center;
   width: 208px;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+  }
+
   @media (max-width: 600px) {
     padding: 8px;
     width: 136px;
