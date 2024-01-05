@@ -6,7 +6,7 @@ This is Movies Browser, OUR first project as a group. Our application allows use
 
 ## Demo
 
-https://marcelurbanczyk.github.io/Movies-Browser/
+https://soniq7.github.io/Movies-Browser-React/
 
 ## Technologies
 
