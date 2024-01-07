@@ -6,7 +6,7 @@ import { getPerson } from "./getPerson";
 import { getPersonCredits } from "./getPersonCredits";
 import { useParams, useHistory } from "react-router-dom/cjs/react-router-dom";
 import { useSelector } from "react-redux";
-import { selectGenres } from "../../Genres/genresSlice";
+import { selectGenres } from "../../../common/Genres/genresSlice";
 import { selectPeopleSearchTerm } from "../PeopleList/peopleSlice";
 
 const PersonPage = () => {

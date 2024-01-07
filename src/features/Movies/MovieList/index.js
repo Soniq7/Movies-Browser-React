@@ -5,7 +5,7 @@ import {
   selectLoading,
   selectMoviesSearchTerm,
 } from "./moviesSlice";
-import { selectGenres } from "../../Genres/genresSlice";
+import { selectGenres } from "../../../common/Genres/genresSlice";
 import { useEffect } from "react";
 import Success from "./Success";
 import Loading from "../../../common/Loading";

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as SearchIcon } from "../../../images/search.svg";
+import { ReactComponent as SearchIcon } from "../../../../common/images/search.svg";
 
 export const LoupeIcon = styled(SearchIcon)`
   height: 24px;

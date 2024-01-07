@@ -18,7 +18,7 @@ import {
   Description,
 } from "./styled";
 import { StyledLink, GenreTag, RatingIcon } from "../defaultTileStyles";
-import icon from "../../../images/shape-star.png";
+import icon from "../../images/shape-star.png";
 import ImagePlaceholder from "../../ImagePlaceholder";
 
 const Tile = ({

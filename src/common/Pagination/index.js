@@ -6,7 +6,7 @@ import {
   selectMoviePage,
   fetchMovies,
   selectMaxMoviePages,
-} from "../Movies/MovieList/moviesSlice";
+} from "../../features/Movies/MovieList/moviesSlice";
 
 import {
   nextPeoplePage,
@@ -16,7 +16,7 @@ import {
   selectPeoplePage,
   fetchPeople,
   selectMaxPeoplePages,
-} from "../People/PeopleList/peopleSlice";
+} from "../../features/People/PeopleList/peopleSlice";
 import { getWidth } from "../../common/getWidth";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useHistory } from "react-router-dom";
-import { toMovies, toPeople } from "../../routes";
+import { toMovies, toPeople } from "./routes";
 import {
   VideoIcon,
   PageTitle,
@@ -12,8 +12,8 @@ import {
 } from "./styled";
 import Search from "./Search";
 import { useDispatch } from "react-redux";
-import { firstMoviePage } from "../Movies/MovieList/moviesSlice";
-import { firstPeoplePage } from "../People/PeopleList/peopleSlice";
+import { firstMoviePage } from "../../../features/Movies/MovieList/moviesSlice";
+import { firstPeoplePage } from "../../../features/People/PeopleList/peopleSlice";
 
 export default () => {
   const history = useHistory();

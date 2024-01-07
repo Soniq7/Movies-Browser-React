@@ -2,7 +2,7 @@ import { List, Item } from "./styled";
 import Tile from "../../../../common/Tiles/Tile";
 import { ListSection } from "../../../../common/Section";
 import { ListMain } from "../../../../common/main";
-import Pagination from "../../../Pagination";
+import Pagination from "../../../../common/Pagination";
 import NotFound from "../../../../common/NotFound";
 
 const Success = ({ results, header, searchTerm }) => {

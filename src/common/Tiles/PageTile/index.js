@@ -20,7 +20,7 @@ import {
 import { GenreTag, RatingIcon } from "../defaultTileStyles";
 
 import { formatDate } from "../../formatDate";
-import icon from "../../../images/shape-star.png";
+import icon from "../../images/shape-star.png";
 import { useEffect, useState } from "react";
 import { getWidth } from "../../getWidth";
 import ImagePlaceholder from "../../ImagePlaceholder";

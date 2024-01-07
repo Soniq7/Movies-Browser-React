@@ -1,5 +1,5 @@
-import { ReactComponent as CameraIcon } from "../../images/cameraIcon.svg";
-import { ReactComponent as PersonIcon } from "../../images/personIcon.svg";
+import { ReactComponent as CameraIcon } from "../images/cameraIcon.svg";
+import { ReactComponent as PersonIcon } from "../images/personIcon.svg";
 import { styled } from "styled-components";
 
 export const Camera = styled(CameraIcon)``;

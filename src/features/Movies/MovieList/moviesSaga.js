@@ -1,5 +1,5 @@
 import { getPopularMovies } from "./getPopularMovies";
-import { getSearchMoviesResult } from "../../Navigation/Search/getSearchMovies";
+import { getSearchMoviesResult } from "../../../core/App/Navigation/Search/getSearchMovies";
 import {
   fetchMovies,
   fetchMoviesError,

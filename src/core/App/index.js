@@ -6,13 +6,13 @@ import {
 } from "react-router-dom/cjs/react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { fetchGenres } from "../features/Genres/genresSlice";
-import Navigation from "../features/Navigation";
-import MovieList from "../features/Movies/MovieList";
-import MoviePage from "../features/Movies/MoviePage";
-import PeopleList from "../features/People/PeopleList";
-import PersonPage from "../features/People/PersonPage";
-import { toMovies, toMovie, toPeople, toPerson } from "../routes";
+import { fetchGenres } from "../../common/Genres/genresSlice";
+import Navigation from "../../core/App/Navigation";
+import MovieList from "../../features/Movies/MovieList";
+import MoviePage from "../../features/Movies/MoviePage";
+import PeopleList from "../../features/People/PeopleList";
+import PersonPage from "../../features/People/PersonPage";
+import { toMovies, toMovie, toPeople, toPerson } from "../../core/App/Navigation/routes";
 
 const App = () => {
   const dispatch = useDispatch();

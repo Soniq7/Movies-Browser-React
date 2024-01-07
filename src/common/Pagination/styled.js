@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as PaginationVectorTwo } from "../../images/VectorTwo.svg";
-import { ReactComponent as PaginationVectorFirst } from "../../images/VectorFirst.svg";
+import { ReactComponent as PaginationVectorTwo } from "../../common/images/VectorTwo.svg";
+import { ReactComponent as PaginationVectorFirst } from "../../common/images/VectorFirst.svg";
 
 export const Button = styled.button`
   display: flex;

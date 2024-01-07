@@ -13,7 +13,7 @@ import {
 } from "./styled";
 import { useEffect, useState } from "react";
 import { getWidth } from "../../../../../common/getWidth";
-import shadow from "../../../../../images/shadow.png";
+import shadow from "../../../../../common/images/shadow.png";
 
 const Backdrop = ({ image, name, score, votes }) => {
   const [viewportWidth, setViewportWidth] = useState(getWidth());

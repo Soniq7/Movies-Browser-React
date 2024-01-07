@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { ReactComponent as Star } from "../../../../../images/shape-star.svg";
+import { ReactComponent as Star } from "../../../../../common/images/shape-star.svg";
 
 export const Header = styled.header`
   background: black;

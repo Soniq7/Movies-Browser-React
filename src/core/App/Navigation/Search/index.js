@@ -8,12 +8,12 @@ import {
   firstMoviePage,
   selectMoviesSearchTerm,
   updateMoviesSearchTerm,
-} from "../../Movies/MovieList/moviesSlice";
+} from "../../../../features/Movies/MovieList/moviesSlice";
 import {
   firstPeoplePage,
   selectPeopleSearchTerm,
   updatePeopleSearchTerm,
-} from "../../People/PeopleList/peopleSlice";
+} from "../../../../features/People/PeopleList/peopleSlice";
 import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
 const Search = forwardRef((props, ref) => {
