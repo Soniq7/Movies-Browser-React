@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/Movies-Browser-React/static/js/main.de735d20.js",
+    "main.js": "/Movies-Browser-React/static/js/main.4dfbd34a.js",
     "static/js/787.cbf59cd9.chunk.js": "/Movies-Browser-React/static/js/787.cbf59cd9.chunk.js",
     "static/media/shadow.png": "/Movies-Browser-React/static/media/shadow.69291cd1c4d1fa46ad93.png",
     "static/media/notFound.svg": "/Movies-Browser-React/static/media/notFound.03778e104c236c2e6f3a37f0afbb2311.svg",
@@ -14,10 +14,10 @@
     "static/media/cameraIcon.svg": "/Movies-Browser-React/static/media/cameraIcon.88a352691d679e1db33ee3469ebd99c9.svg",
     "static/media/search.svg": "/Movies-Browser-React/static/media/search.7920afd0b926ba1235785f5b4ddff2ab.svg",
     "static/media/loader.svg": "/Movies-Browser-React/static/media/loader.54e9d2e3054a653b7409d1f94f8d2a65.svg",
-    "main.de735d20.js.map": "/Movies-Browser-React/static/js/main.de735d20.js.map",
+    "main.4dfbd34a.js.map": "/Movies-Browser-React/static/js/main.4dfbd34a.js.map",
     "787.cbf59cd9.chunk.js.map": "/Movies-Browser-React/static/js/787.cbf59cd9.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.de735d20.js"
+    "static/js/main.4dfbd34a.js"
   ]
 }
